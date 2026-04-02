@@ -1,0 +1,844 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Portfolio — Vienne Noah</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Rajdhani:wght@400;500;600;700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <style>
+    :root {
+      --bg: #050810;
+      --bg2: #080c14;
+      --card: #0d1220;
+      --border: #1a2540;
+      --border-glow: #00ff9d40;
+      --accent: #00ff9d;
+      --accent2: #0096ff;
+      --accent3: #7000ff;
+      --text: #cdd6f4;
+      --text-muted: #6c7a9c;
+      --font-mono: 'Share Tech Mono', monospace;
+      --font-display: 'Rajdhani', sans-serif;
+      --font-body: 'DM Sans', sans-serif;
+      --radius: 8px;
+      --tr: 0.3s cubic-bezier(0.4,0,0.2,1);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--font-body);
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(0,255,157,0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0,255,157,0.03) 1px, transparent 1px);
+      background-size: 40px 40px;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    body::after {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background: repeating-linear-gradient(
+        0deg, transparent, transparent 2px,
+        rgba(0,0,0,0.07) 2px, rgba(0,0,0,0.07) 4px
+      );
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    /* NAVBAR */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1rem 3rem;
+      background: rgba(5,8,16,0.92);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--border);
+    }
+    nav::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--accent), var(--accent2), transparent);
+      opacity: 0.4;
+    }
+    .nav-logo {
+      font-family: var(--font-mono);
+      font-size: 1rem;
+      color: var(--accent);
+      text-decoration: none;
+    }
+    .nav-logo span { color: var(--text-muted); }
+    .nav-links { display: flex; gap: 2rem; list-style: none; }
+    .nav-links a {
+      font-family: var(--font-mono);
+      color: var(--text-muted);
+      text-decoration: none;
+      font-size: 0.82rem;
+      letter-spacing: 0.06em;
+      transition: color var(--tr);
+    }
+    .nav-links a::before { content: '> '; color: var(--accent); opacity: 0; transition: opacity var(--tr); }
+    .nav-links a:hover { color: var(--accent); }
+    .nav-links a:hover::before { opacity: 1; }
+
+    /* HERO */
+    #accueil {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+      padding: 8rem 3rem 4rem;
+      z-index: 1;
+    }
+    .glow-orb {
+      position: absolute;
+      border-radius: 50%;
+      pointer-events: none;
+    }
+    .glow-orb.g1 {
+      width: 700px; height: 700px;
+      background: radial-gradient(circle, rgba(0,255,157,0.06) 0%, transparent 65%);
+      top: 50%; left: 50%;
+      transform: translate(-50%,-50%);
+      animation: breathe 5s ease-in-out infinite;
+    }
+    .glow-orb.g2 {
+      width: 400px; height: 400px;
+      background: radial-gradient(circle, rgba(0,150,255,0.07) 0%, transparent 65%);
+      top: 20%; right: 10%;
+      animation: breathe 7s ease-in-out infinite reverse;
+    }
+    @keyframes breathe {
+      0%,100% { opacity: 0.5; }
+      50% { opacity: 1; }
+    }
+
+    .hero-inner {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 4rem;
+      align-items: center;
+      max-width: 1100px;
+      width: 100%;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-tag {
+      font-family: var(--font-mono);
+      font-size: 0.78rem;
+      color: var(--accent);
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+    .hero-tag::before { content: ''; width: 28px; height: 1px; background: var(--accent); }
+
+    .hero-title {
+      font-family: var(--font-display);
+      font-size: clamp(3rem, 6vw, 5.5rem);
+      font-weight: 700;
+      line-height: 1;
+      letter-spacing: 0.04em;
+      margin-bottom: 1.2rem;
+    }
+    .hero-title .name {
+      background: linear-gradient(90deg, var(--accent), var(--accent2));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .hero-subtitle {
+      font-size: 0.98rem;
+      color: var(--text-muted);
+      max-width: 460px;
+      margin-bottom: 2rem;
+      line-height: 1.85;
+    }
+    .hero-subtitle strong { color: var(--accent2); font-weight: 500; }
+
+    .hero-badges { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 2rem; }
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.28rem 0.75rem;
+      border-radius: 4px;
+      border: 1px solid var(--border);
+      background: var(--card);
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      color: var(--text-muted);
+      transition: all var(--tr);
+    }
+    .badge i { color: var(--accent); font-size: 0.65rem; }
+    .badge:hover { border-color: var(--accent); color: var(--accent); }
+
+    .hero-btns { display: flex; gap: 1rem; flex-wrap: wrap; }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.72rem 1.7rem;
+      border-radius: 4px;
+      font-family: var(--font-display);
+      font-weight: 600;
+      font-size: 0.95rem;
+      letter-spacing: 0.05em;
+      text-decoration: none;
+      transition: all var(--tr);
+      border: none;
+      cursor: pointer;
+    }
+    .btn-primary {
+      background: transparent;
+      color: var(--accent);
+      border: 1px solid var(--accent);
+    }
+    .btn-primary:hover {
+      background: var(--accent);
+      color: var(--bg);
+      box-shadow: 0 0 25px rgba(0,255,157,0.35);
+    }
+    .btn-outline {
+      background: transparent;
+      color: var(--text-muted);
+      border: 1px solid var(--border);
+    }
+    .btn-outline:hover { border-color: var(--accent2); color: var(--accent2); }
+
+    /* TERMINAL */
+    .hero-terminal {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+      min-width: 360px;
+      box-shadow: 0 0 50px rgba(0,255,157,0.05), 0 20px 60px rgba(0,0,0,0.5);
+    }
+    .t-bar {
+      background: #0a0e1a;
+      padding: 0.55rem 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.45rem;
+      border-bottom: 1px solid var(--border);
+    }
+    .t-dot { width: 10px; height: 10px; border-radius: 50%; }
+    .t-dot.r { background: #ff5f56; } .t-dot.y { background: #ffbd2e; } .t-dot.g { background: #27c93f; }
+    .t-title { font-family: var(--font-mono); font-size: 0.7rem; color: var(--text-muted); margin: 0 auto; }
+    .t-body { padding: 1.4rem; font-family: var(--font-mono); font-size: 0.8rem; line-height: 1.95; }
+    .t-line { display: flex; gap: 0.5rem; }
+    .t-prompt { color: var(--accent); flex-shrink: 0; }
+    .t-cmd { color: var(--text); }
+    .t-out { color: var(--text-muted); padding-left: 1rem; }
+    .t-out.g { color: var(--accent); }
+    .t-out.b { color: var(--accent2); }
+    .t-cursor { display: inline-block; width: 8px; height: 14px; background: var(--accent); animation: blink 1s step-end infinite; vertical-align: middle; }
+    @keyframes blink { 0%,100%{opacity:1}50%{opacity:0} }
+
+    /* SECTIONS */
+    section { padding: 6rem 3rem; position: relative; z-index: 1; }
+    section:nth-child(even) { background: rgba(8,12,20,0.7); }
+
+    .section-header { text-align: center; margin-bottom: 4rem; }
+    .section-label {
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      color: var(--accent);
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      display: block;
+      margin-bottom: 0.8rem;
+    }
+    .section-title {
+      font-family: var(--font-display);
+      font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+      font-weight: 700;
+      letter-spacing: 0.04em;
+    }
+    .section-title span {
+      background: linear-gradient(90deg, var(--accent), var(--accent2));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .section-desc { margin-top: 0.8rem; color: var(--text-muted); font-size: 0.92rem; max-width: 480px; margin-left: auto; margin-right: auto; }
+
+    /* TIMELINE */
+    .timeline { max-width: 780px; margin: 0 auto; position: relative; }
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 24px; top: 0; bottom: 0;
+      width: 1px;
+      background: linear-gradient(to bottom, var(--accent), var(--accent2), transparent);
+    }
+    .timeline-item { display: flex; gap: 2rem; margin-bottom: 2rem; }
+    .tl-icon {
+      flex-shrink: 0;
+      width: 48px; height: 48px;
+      background: var(--card);
+      border: 1px solid var(--accent);
+      border-radius: 4px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--accent);
+      font-size: 0.95rem;
+      z-index: 1;
+      transition: all var(--tr);
+      box-shadow: 0 0 12px rgba(0,255,157,0.1);
+    }
+    .timeline-item:hover .tl-icon { background: var(--accent); color: var(--bg); box-shadow: 0 0 22px rgba(0,255,157,0.3); }
+    .tl-card {
+      flex: 1;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.4rem 1.6rem;
+      transition: all var(--tr);
+      position: relative;
+      overflow: hidden;
+    }
+    .tl-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0;
+      width: 3px; height: 100%;
+      background: linear-gradient(to bottom, var(--accent), var(--accent2));
+      opacity: 0;
+      transition: opacity var(--tr);
+    }
+    .timeline-item:hover .tl-card { border-color: var(--border-glow); box-shadow: 0 4px 24px rgba(0,255,157,0.07); transform: translateX(4px); }
+    .timeline-item:hover .tl-card::before { opacity: 1; }
+    .tl-date { font-family: var(--font-mono); font-size: 0.7rem; color: var(--accent); letter-spacing: 0.1em; margin-bottom: 0.3rem; }
+    .tl-card h3 { font-family: var(--font-display); font-size: 1.1rem; font-weight: 700; letter-spacing: 0.03em; margin-bottom: 0.2rem; }
+    .tl-org { color: var(--accent2); font-size: 0.82rem; margin-bottom: 0.6rem; font-family: var(--font-mono); }
+    .tl-card p { color: var(--text-muted); font-size: 0.87rem; line-height: 1.7; }
+    .tl-type {
+      display: inline-block;
+      padding: 0.12rem 0.55rem;
+      border-radius: 3px;
+      font-family: var(--font-mono);
+      font-size: 0.65rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 0.5rem;
+    }
+    .type-f { background: rgba(0,255,157,0.1); color: var(--accent); border: 1px solid rgba(0,255,157,0.2); }
+    .type-s { background: rgba(0,150,255,0.1); color: var(--accent2); border: 1px solid rgba(0,150,255,0.2); }
+
+    /* DIPLÔMES */
+    .diplomes-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.2rem; max-width: 1000px; margin: 0 auto; }
+    .dip-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.8rem;
+      position: relative;
+      overflow: hidden;
+      transition: all var(--tr);
+    }
+    .dip-card::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 3px; background: linear-gradient(90deg, var(--accent), var(--accent2)); }
+    .dip-card:hover { border-color: var(--accent); transform: translateY(-4px); box-shadow: 0 8px 28px rgba(0,255,157,0.08); }
+    .dip-icon { width: 42px; height: 42px; background: rgba(0,255,157,0.07); border: 1px solid rgba(0,255,157,0.18); border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 1.15rem; margin-bottom: 1rem; }
+    .dip-year { font-family: var(--font-mono); font-size: 0.7rem; color: var(--accent); letter-spacing: 0.1em; margin-bottom: 0.4rem; }
+    .dip-card h3 { font-family: var(--font-display); font-size: 1rem; font-weight: 700; letter-spacing: 0.03em; margin-bottom: 0.3rem; }
+    .dip-card p { color: var(--text-muted); font-size: 0.83rem; line-height: 1.5; }
+    .dip-status {
+      display: inline-block;
+      margin-top: 0.8rem;
+      padding: 0.18rem 0.65rem;
+      border-radius: 3px;
+      font-family: var(--font-mono);
+      font-size: 0.65rem;
+      letter-spacing: 0.08em;
+    }
+    .s-ok { background: rgba(0,255,157,0.1); color: var(--accent); border: 1px solid rgba(0,255,157,0.2); }
+    .s-wip { background: rgba(255,189,46,0.1); color: #ffbd2e; border: 1px solid rgba(255,189,46,0.2); }
+
+    /* COMPÉTENCES */
+    .skills-wrapper { max-width: 900px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.4rem; }
+    .skill-group { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.5rem; transition: all var(--tr); }
+    .skill-group:hover { border-color: var(--border-glow); box-shadow: 0 4px 20px rgba(0,255,157,0.05); }
+    .sg-title { font-family: var(--font-mono); font-size: 0.72rem; color: var(--accent); letter-spacing: 0.15em; text-transform: uppercase; margin-bottom: 1.1rem; display: flex; align-items: center; gap: 0.5rem; }
+    .skill-list { display: flex; flex-wrap: wrap; gap: 0.45rem; }
+    .skill-tag { font-family: var(--font-mono); font-size: 0.73rem; padding: 0.28rem 0.65rem; border-radius: 4px; background: rgba(0,150,255,0.07); border: 1px solid rgba(0,150,255,0.14); color: var(--accent2); transition: all var(--tr); }
+    .skill-tag:hover { background: rgba(0,150,255,0.14); border-color: var(--accent2); }
+
+    /* VEILLE */
+    .veille-notice {
+      max-width: 680px;
+      margin: 0 auto;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 2.5rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .veille-notice::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, var(--accent3), var(--accent2)); }
+    .v-icon { width: 60px; height: 60px; border-radius: 50%; background: rgba(112,0,255,0.1); border: 1px solid rgba(112,0,255,0.25); display: flex; align-items: center; justify-content: center; font-size: 1.5rem; margin: 0 auto 1.4rem; }
+    .veille-notice h3 { font-family: var(--font-display); font-size: 1.25rem; font-weight: 700; margin-bottom: 0.7rem; }
+    .veille-notice p { color: var(--text-muted); font-size: 0.88rem; line-height: 1.7; margin-bottom: 0.5rem; }
+    .veille-domains { display: flex; flex-wrap: wrap; justify-content: center; gap: 0.45rem; margin-top: 1.2rem; }
+    .v-tag { padding: 0.22rem 0.75rem; border-radius: 4px; font-family: var(--font-mono); font-size: 0.7rem; background: rgba(112,0,255,0.1); border: 1px solid rgba(112,0,255,0.2); color: #a066ff; }
+    .v-bar-wrap { margin-top: 1.4rem; background: rgba(255,255,255,0.05); border-radius: 4px; height: 4px; overflow: hidden; }
+    .v-bar { height: 100%; width: 0%; background: linear-gradient(90deg, var(--accent3), var(--accent2)); border-radius: 4px; animation: vbar 2s ease forwards 0.5s; }
+    @keyframes vbar { to { width: 30%; } }
+    .v-bar-label { font-family: var(--font-mono); font-size: 0.65rem; color: var(--text-muted); margin-top: 0.35rem; text-align: right; }
+
+    /* SYNTHÈSE */
+    .synthese-wrapper { max-width: 1000px; margin: 0 auto; }
+    .img-zone {
+      background: var(--card);
+      border: 2px dashed var(--border);
+      border-radius: var(--radius);
+      padding: 3rem 2rem;
+      text-align: center;
+      cursor: pointer;
+      transition: all var(--tr);
+      margin-bottom: 2rem;
+    }
+    .img-zone:hover { border-color: var(--accent); background: rgba(0,255,157,0.02); }
+    .img-zone img { max-width: 100%; border-radius: 6px; display: none; }
+    .upload-ph { display: flex; flex-direction: column; align-items: center; gap: 0.8rem; }
+    .upload-ph i { font-size: 2.8rem; color: var(--accent); opacity: 0.45; }
+    .upload-ph h3 { font-family: var(--font-display); font-size: 1.05rem; font-weight: 600; }
+    .upload-ph p { color: var(--text-muted); font-size: 0.83rem; max-width: 360px; line-height: 1.6; }
+    .code-hint { font-family: var(--font-mono); font-size: 0.75rem; background: rgba(0,255,157,0.06); border: 1px solid rgba(0,255,157,0.14); color: var(--accent); padding: 0.45rem 1rem; border-radius: 4px; margin-top: 0.3rem; }
+    #fileInput { display: none; }
+
+    .tbl-wrap { overflow-x: auto; border-radius: var(--radius); border: 1px solid var(--border); }
+    table { width: 100%; border-collapse: collapse; background: var(--card); font-size: 0.87rem; }
+    thead { background: linear-gradient(90deg, rgba(0,255,157,0.07), rgba(0,150,255,0.07)); }
+    thead th { padding: 1rem 1.3rem; text-align: left; font-family: var(--font-mono); font-size: 0.7rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); border-bottom: 1px solid var(--border); }
+    tbody tr { border-bottom: 1px solid rgba(26,37,64,0.5); transition: background var(--tr); }
+    tbody tr:hover { background: rgba(0,255,157,0.02); }
+    tbody tr:last-child { border-bottom: none; }
+    tbody td { padding: 0.85rem 1.3rem; color: var(--text-muted); vertical-align: middle; }
+    tbody td:first-child { color: var(--text); font-weight: 500; }
+    .dot-bar { display: flex; gap: 4px; }
+    .dot-bar span { width: 10px; height: 10px; border-radius: 2px; background: var(--border); }
+    .dot-bar span.on { background: var(--accent); box-shadow: 0 0 5px rgba(0,255,157,0.4); }
+
+    /* FOOTER */
+    footer { background: var(--bg); border-top: 1px solid var(--border); padding: 2.5rem 3rem; text-align: center; position: relative; z-index: 1; }
+    footer::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1px; background: linear-gradient(90deg, transparent, var(--accent), var(--accent2), transparent); opacity: 0.35; }
+    .f-name { font-family: var(--font-mono); font-size: 1.05rem; color: var(--accent); margin-bottom: 0.25rem; }
+    .f-role { font-size: 0.82rem; color: var(--text-muted); margin-bottom: 1.4rem; }
+    .social-links { display: flex; justify-content: center; gap: 0.8rem; margin-bottom: 1.2rem; }
+    .s-link { width: 40px; height: 40px; background: var(--card); border: 1px solid var(--border); border-radius: 6px; display: flex; align-items: center; justify-content: center; color: var(--text-muted); text-decoration: none; font-size: 0.95rem; transition: all var(--tr); }
+    .s-link:hover { border-color: var(--accent); color: var(--accent); box-shadow: 0 0 14px rgba(0,255,157,0.18); transform: translateY(-2px); }
+    .f-copy { font-family: var(--font-mono); font-size: 0.68rem; color: var(--text-muted); }
+
+    /* ANIMATIONS */
+    .reveal { opacity: 0; transform: translateY(22px); transition: opacity 0.7s ease, transform 0.7s ease; }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+
+    /* RESPONSIVE */
+    @media (max-width: 900px) { .hero-inner { grid-template-columns: 1fr; } .hero-terminal { min-width: unset; width: 100%; } }
+    @media (max-width: 640px) { nav { padding: 0.9rem 1.2rem; } .nav-links { gap: 0.9rem; } .nav-links a { font-size: 0.72rem; } section { padding: 4rem 1.2rem; } #accueil { padding: 6rem 1.2rem 3rem; } }
+  </style>
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav>
+    <a href="#accueil" class="nav-logo">noah-vienne<span>.github.io</span></a>
+    <ul class="nav-links">
+      <li><a href="#parcours">Parcours</a></li>
+      <li><a href="#diplomes">Diplômes</a></li>
+      <li><a href="#competences">Compétences</a></li>
+      <li><a href="#veille">Veille</a></li>
+      <li><a href="#synthese">Synthèse</a></li>
+    </ul>
+  </nav>
+
+  <!-- ACCUEIL -->
+  <section id="accueil">
+    <div class="glow-orb g1"></div>
+    <div class="glow-orb g2"></div>
+    <div class="hero-inner">
+
+      <div class="reveal">
+        <div class="hero-tag">BTS SIO · Option SISR</div>
+        <h1 class="hero-title">
+          <span class="name">Vienne</span><br/>Noah
+        </h1>
+        <p class="hero-subtitle">
+          Étudiant en <strong>BTS SIO SISR</strong> au Lycée Pierre Poivre de Saint-Joseph, La Réunion.<br/>
+          Passionné par les <strong>réseaux</strong>, l'administration système, la cybersécurité et les nouvelles technologies.
+        </p>
+        <div class="hero-badges">
+          <span class="badge"><i class="fas fa-map-marker-alt"></i> Saint-Joseph, La Réunion</span>
+          <span class="badge"><i class="fas fa-graduation-cap"></i> BTS SIO SISR 2024–2026</span>
+          <span class="badge"><i class="fas fa-network-wired"></i> Réseaux & Systèmes</span>
+        </div>
+        <div class="hero-btns">
+          <a href="#parcours" class="btn btn-primary"><i class="fas fa-terminal"></i> Mon parcours</a>
+          <a href="mailto:noahvienne.pro@gmail.com" class="btn btn-outline"><i class="fas fa-envelope"></i> Me contacter</a>
+        </div>
+      </div>
+
+      <div class="hero-terminal reveal">
+        <div class="t-bar">
+          <div class="t-dot r"></div><div class="t-dot y"></div><div class="t-dot g"></div>
+          <span class="t-title">noah@portfolio ~ bash</span>
+        </div>
+        <div class="t-body">
+          <div class="t-line"><span class="t-prompt">$</span><span class="t-cmd"> whoami</span></div>
+          <div class="t-out g">Vienne Noah</div>
+          <br>
+          <div class="t-line"><span class="t-prompt">$</span><span class="t-cmd"> cat profil.txt</span></div>
+          <div class="t-out">Étudiant BTS SIO SISR</div>
+          <div class="t-out">Lycée Pierre Poivre</div>
+          <div class="t-out b">Saint-Joseph, La Réunion</div>
+          <br>
+          <div class="t-line"><span class="t-prompt">$</span><span class="t-cmd"> ls outils/</span></div>
+          <div class="t-out">GLPI  Zabbix  Wireshark</div>
+          <div class="t-out">VirtualBox  Cisco  Linux</div>
+          <br>
+          <div class="t-line"><span class="t-prompt">$</span><span class="t-cmd"> ping contact</span></div>
+          <div class="t-out g">noahvienne.pro@gmail.com ✓</div>
+          <br>
+          <div class="t-line"><span class="t-prompt">$</span><span class="t-cursor"></span></div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- PARCOURS -->
+  <section id="parcours">
+    <div class="section-header reveal">
+      <span class="section-label">// 01 — parcours</span>
+      <h2 class="section-title">Mon <span>parcours</span></h2>
+      <p class="section-desc">Mon évolution scolaire et professionnelle, du collège jusqu'à aujourd'hui.</p>
+    </div>
+    <div class="timeline">
+
+      <div class="timeline-item reveal">
+        <div class="tl-icon"><i class="fas fa-briefcase"></i></div>
+        <div class="tl-card">
+          <span class="tl-type type-s">Stage 2</span>
+          <div class="tl-date">14 JANVIER 2026 — 24 FÉVRIER 2026 · 6 semaines</div>
+          <h3>Technicien Informatique — Déploiement GLPI</h3>
+          <div class="tl-org"><i class="fas fa-building"></i> Arts Pour Tous — Saint-Joseph, La Réunion</div>
+          <p>Mise en place complète d'un système <strong>GLPI</strong> pour la gestion du parc informatique et du ticketing de l'association. Configuration du serveur, déploiement de l'outil et formation des utilisateurs.</p>
+        </div>
+      </div>
+
+      <div class="timeline-item reveal">
+        <div class="tl-icon"><i class="fas fa-graduation-cap"></i></div>
+        <div class="tl-card">
+          <span class="tl-type type-f">Formation</span>
+          <div class="tl-date">2024 — 2026</div>
+          <h3>BTS SIO — option SISR</h3>
+          <div class="tl-org"><i class="fas fa-school"></i> Lycée Pierre Poivre — Saint-Joseph, La Réunion</div>
+          <p>Formation en 2 ans orientée <strong>Solutions d'Infrastructure, Systèmes et Réseaux</strong>. Administration réseau, virtualisation, cybersécurité, supervision et gestion de parc informatique.</p>
+        </div>
+      </div>
+
+      <div class="timeline-item reveal">
+        <div class="tl-icon"><i class="fas fa-briefcase"></i></div>
+        <div class="tl-card">
+          <span class="tl-type type-s">Stage 1</span>
+          <div class="tl-date">2 JUIN 2025 — 27 JUIN 2025 · 4 semaines</div>
+          <h3>Webmaster — Refonte de site web</h3>
+          <div class="tl-org"><i class="fas fa-building"></i> Arts Pour Tous — Saint-Joseph, La Réunion</div>
+          <p>Modification et mise à jour du site web de l'association via la plateforme <strong>Webself</strong>. Amélioration de l'interface, mise à jour du contenu et optimisation de la présentation.</p>
+        </div>
+      </div>
+
+      <div class="timeline-item reveal">
+        <div class="tl-icon"><i class="fas fa-graduation-cap"></i></div>
+        <div class="tl-card">
+          <span class="tl-type type-f">Formation</span>
+          <div class="tl-date">2023 — 2024</div>
+          <h3>Baccalauréat STMG — option SIG</h3>
+          <div class="tl-org"><i class="fas fa-school"></i> Lycée Pierre Poivre — Saint-Joseph, La Réunion</div>
+          <p>Baccalauréat Sciences et Technologies du Management et de la Gestion, spécialité <strong>Systèmes d'Information de Gestion</strong>. Premières bases en informatique et gestion des SI.</p>
+        </div>
+      </div>
+
+      <div class="timeline-item reveal">
+        <div class="tl-icon"><i class="fas fa-award"></i></div>
+        <div class="tl-card">
+          <span class="tl-type type-f">Diplôme</span>
+          <div class="tl-date">2020 — 2021</div>
+          <h3>Brevet des Collèges (DNB)</h3>
+          <div class="tl-org"><i class="fas fa-school"></i> Collège Joseph Hubert — La Réunion</div>
+          <p>Diplôme National du Brevet obtenu au collège Joseph Hubert. Point de départ de mon parcours scolaire à La Réunion.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- DIPLÔMES -->
+  <section id="diplomes">
+    <div class="section-header reveal">
+      <span class="section-label">// 02 — diplômes & certifications</span>
+      <h2 class="section-title">Mes <span>diplômes</span></h2>
+      <p class="section-desc">Diplômes et certifications obtenus tout au long de mon parcours.</p>
+    </div>
+    <div class="diplomes-grid">
+
+      <div class="dip-card reveal">
+        <div class="dip-icon">🖧</div>
+        <div class="dip-year">2024 — 2026</div>
+        <h3>BTS SIO — option SISR</h3>
+        <p>Solutions d'Infrastructure, Systèmes et Réseaux · Lycée Pierre Poivre, Saint-Joseph</p>
+        <span class="dip-status s-wip">En cours</span>
+      </div>
+
+      <div class="dip-card reveal">
+        <div class="dip-icon">🔏</div>
+        <div class="dip-year">2024</div>
+        <h3>Certification RGPD</h3>
+        <p>Règlement Général sur la Protection des Données · Sensibilisation et conformité à la protection des données personnelles</p>
+        <span class="dip-status s-ok">Obtenu</span>
+      </div>
+
+      <div class="dip-card reveal">
+        <div class="dip-icon">🎓</div>
+        <div class="dip-year">2023 — 2024</div>
+        <h3>Baccalauréat STMG</h3>
+        <p>Option SIG — Systèmes d'Information de Gestion · Lycée Pierre Poivre, Saint-Joseph</p>
+        <span class="dip-status s-ok">Obtenu</span>
+      </div>
+
+      <div class="dip-card reveal">
+        <div class="dip-icon">📝</div>
+        <div class="dip-year">2020 — 2021</div>
+        <h3>Brevet des Collèges (DNB)</h3>
+        <p>Diplôme National du Brevet · Collège Joseph Hubert, La Réunion</p>
+        <span class="dip-status s-ok">Obtenu</span>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- COMPÉTENCES -->
+  <section id="competences">
+    <div class="section-header reveal">
+      <span class="section-label">// 03 — compétences techniques</span>
+      <h2 class="section-title">Mes <span>compétences</span></h2>
+      <p class="section-desc">Les outils et technologies maîtrisés au cours de ma formation et de mes stages.</p>
+    </div>
+    <div class="skills-wrapper">
+      <div class="skill-group reveal">
+        <div class="sg-title"><i class="fas fa-network-wired"></i> Réseaux & Supervision</div>
+        <div class="skill-list">
+          <span class="skill-tag">Cisco Packet Tracer</span>
+          <span class="skill-tag">Wireshark</span>
+          <span class="skill-tag">Zabbix</span>
+          <span class="skill-tag">VLANs</span>
+          <span class="skill-tag">TCP/IP</span>
+        </div>
+      </div>
+      <div class="skill-group reveal">
+        <div class="sg-title"><i class="fas fa-server"></i> Systèmes & Virtualisation</div>
+        <div class="skill-list">
+          <span class="skill-tag">Windows</span>
+          <span class="skill-tag">Linux</span>
+          <span class="skill-tag">VirtualBox</span>
+          <span class="skill-tag">GLPI</span>
+          <span class="skill-tag">Active Directory</span>
+        </div>
+      </div>
+      <div class="skill-group reveal">
+        <div class="sg-title"><i class="fas fa-code"></i> Développement & Web</div>
+        <div class="skill-list">
+          <span class="skill-tag">Python</span>
+          <span class="skill-tag">SQL</span>
+          <span class="skill-tag">HTML / CSS</span>
+          <span class="skill-tag">WordPress</span>
+          <span class="skill-tag">Webself</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- VEILLE TECHNOLOGIQUE -->
+  <section id="veille">
+    <div class="section-header reveal">
+      <span class="section-label">// 04 — veille technologique</span>
+      <h2 class="section-title">Veille <span>technologique</span></h2>
+      <p class="section-desc">Domaines que je surveille dans le cadre de ma formation BTS SIO SISR.</p>
+    </div>
+    <div class="veille-notice reveal">
+      <div class="v-icon">⏳</div>
+      <h3>En cours de rédaction</h3>
+      <p>Ma veille technologique est en cours de préparation. Elle portera sur les domaines clés de mon BTS SIO SISR : cybersécurité, réseaux, cloud et administration système.</p>
+      <p style="font-size:0.8rem; color:var(--text-muted)">Cette section sera complétée prochainement avec des articles, sources et analyses.</p>
+      <div class="veille-domains">
+        <span class="v-tag">🔒 Cybersécurité</span>
+        <span class="v-tag">☁️ Cloud</span>
+        <span class="v-tag">🖧 Réseaux</span>
+        <span class="v-tag">🐧 Linux</span>
+        <span class="v-tag">🤖 IA & Automatisation</span>
+      </div>
+      <div class="v-bar-wrap"><div class="v-bar"></div></div>
+      <div class="v-bar-label">En cours... 30%</div>
+    </div>
+  </section>
+
+  <!-- TABLEAU DE SYNTHÈSE -->
+  <section id="synthese">
+    <div class="section-header reveal">
+      <span class="section-label">// 05 — tableau de synthèse</span>
+      <h2 class="section-title">Tableau de <span>synthèse BTS</span></h2>
+      <p class="section-desc">Récapitulatif des compétences et activités développées sur 2 ans de BTS SIO SISR.</p>
+    </div>
+    <div class="synthese-wrapper">
+
+      <!-- ZONE IMAGE CLIQUABLE -->
+      <div class="img-zone reveal" onclick="document.getElementById('fileInput').click()">
+        <img id="tableauImg" src="" alt="Tableau de synthèse"/>
+        <div class="upload-ph" id="uploadPh">
+          <i class="fas fa-table"></i>
+          <h3>Importe ton tableau de synthèse</h3>
+          <p>Clique ici pour ajouter une capture d'écran ou une photo de ton tableau BTS SIO.</p>
+          <div class="code-hint">💡 Sur GitHub : place ton image dans assets/ et mets src="assets/tableau.png"</div>
+        </div>
+        <input type="file" id="fileInput" accept="image/*"/>
+      </div>
+
+      <!-- TABLEAU DE SECOURS -->
+      <div class="tbl-wrap reveal">
+        <table>
+          <thead>
+            <tr>
+              <th>Compétence</th>
+              <th>Activité / Contexte</th>
+              <th>Outils utilisés</th>
+              <th>Niveau</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Administration réseau</td>
+              <td>Configuration réseau en TP et en stage</td>
+              <td>Cisco, VLANs, Packet Tracer</td>
+              <td><div class="dot-bar"><span class="on"></span><span class="on"></span><span class="on"></span><span></span><span></span></div></td>
+            </tr>
+            <tr>
+              <td>Gestion de parc (GLPI)</td>
+              <td>Déploiement GLPI chez Arts Pour Tous — Stage 2</td>
+              <td>GLPI, Windows, Linux</td>
+              <td><div class="dot-bar"><span class="on"></span><span class="on"></span><span class="on"></span><span class="on"></span><span></span></div></td>
+            </tr>
+            <tr>
+              <td>Virtualisation</td>
+              <td>Déploiement de machines virtuelles en TP</td>
+              <td>VirtualBox, VMware</td>
+              <td><div class="dot-bar"><span class="on"></span><span class="on"></span><span class="on"></span><span></span><span></span></div></td>
+            </tr>
+            <tr>
+              <td>Supervision réseau</td>
+              <td>Surveillance et alertes système en TP</td>
+              <td>Zabbix, Wireshark</td>
+              <td><div class="dot-bar"><span class="on"></span><span class="on"></span><span></span><span></span><span></span></div></td>
+            </tr>
+            <tr>
+              <td>Développement Web</td>
+              <td>Mise à jour site web — Stage 1</td>
+              <td>Webself, WordPress, HTML/CSS</td>
+              <td><div class="dot-bar"><span class="on"></span><span class="on"></span><span class="on"></span><span></span><span></span></div></td>
+            </tr>
+            <tr>
+              <td>Cybersécurité / RGPD</td>
+              <td>Certification RGPD + TP sécurité réseau</td>
+              <td>Wireshark, Kali Linux</td>
+              <td><div class="dot-bar"><span class="on"></span><span class="on"></span><span></span><span></span><span></span></div></td>
+            </tr>
+            <tr>
+              <td>Programmation</td>
+              <td>Scripts et automatisation en formation</td>
+              <td>Python, SQL</td>
+              <td><div class="dot-bar"><span class="on"></span><span class="on"></span><span></span><span></span><span></span></div></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="f-name">$ Vienne Noah</div>
+    <div class="f-role">Étudiant BTS SIO SISR · Lycée Pierre Poivre · Saint-Joseph, La Réunion</div>
+    <div class="social-links">
+      <a href="https://github.com/noah-vienne" class="s-link" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+      <a href="mailto:noahvienne.pro@gmail.com" class="s-link" title="Email"><i class="fas fa-envelope"></i></a>
+    </div>
+    <p class="f-copy">© 2025 Vienne Noah · Fait depuis La Réunion 🌴</p>
+  </footer>
+
+  <script>
+    // Reveal au scroll
+    const obs = new IntersectionObserver((entries) => {
+      entries.forEach((e, i) => {
+        if (e.isIntersecting) setTimeout(() => e.target.classList.add('visible'), i * 90);
+      });
+    }, { threshold: 0.08 });
+    document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+
+    // Navbar active
+    const secs = document.querySelectorAll('section[id]');
+    const links = document.querySelectorAll('.nav-links a');
+    window.addEventListener('scroll', () => {
+      let cur = '';
+      secs.forEach(s => { if (window.scrollY >= s.offsetTop - 140) cur = s.id; });
+      links.forEach(a => { a.style.color = a.getAttribute('href') === '#' + cur ? 'var(--accent)' : ''; });
+      document.querySelector('nav').style.boxShadow = window.scrollY > 40 ? '0 4px 30px rgba(0,0,0,0.6)' : 'none';
+    });
+
+    // Upload image tableau de synthèse
+    document.getElementById('fileInput').addEventListener('change', function(e) {
+      const file = e.target.files[0];
+      if (!file) return;
+      const r = new FileReader();
+      r.onload = ev => {
+        const img = document.getElementById('tableauImg');
+        img.src = ev.target.result;
+        img.style.display = 'block';
+        document.getElementById('uploadPh').style.display = 'none';
+      };
+      r.readAsDataURL(file);
+    });
+  </script>
+</body>
+</html>
