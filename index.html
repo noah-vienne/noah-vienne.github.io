@@ -492,7 +492,8 @@
     .f-copy { font-family: var(--font-mono); font-size: 0.68rem; color: var(--text-muted); }
 
     /* ANIMATIONS */
-    .reveal { opacity: 0; transform: translateY(22px); transition: opacity 0.7s ease, transform 0.7s ease; }
+    .reveal { opacity: 1; transform: translateY(0); transition: opacity 0.7s ease, transform 0.7s ease; }
+    .reveal.hidden { opacity: 0; transform: translateY(22px); }
     .reveal.visible { opacity: 1; transform: translateY(0); }
 
     /* RESPONSIVE */
@@ -857,12 +858,21 @@
 
   <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
     // Reveal au scroll
+    const allReveal = document.querySelectorAll('.reveal');
+    // On cache d'abord tous les éléments
+    allReveal.forEach(el => el.classList.add('hidden'));
+
     const obs = new IntersectionObserver((entries) => {
       entries.forEach((e, i) => {
-        if (e.isIntersecting) setTimeout(() => e.target.classList.add('visible'), i * 90);
+        if (e.isIntersecting) {
+          setTimeout(() => {
+            e.target.classList.remove('hidden');
+            e.target.classList.add('visible');
+          }, i * 90);
+        }
       });
-    }, { threshold: 0.08 });
-    document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+    }, { threshold: 0.05, rootMargin: '0px 0px -30px 0px' });
+    allReveal.forEach(el => obs.observe(el));
 
     // Navbar active
     const secs = document.querySelectorAll('section[id]');
