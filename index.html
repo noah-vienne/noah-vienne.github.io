@@ -9,16 +9,16 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
   <style>
     :root {
-      --bg: #050810;
-      --bg2: #080c14;
-      --card: #0d1220;
-      --border: #1a2540;
+      --bg: #0e1525;
+      --bg2: #121c30;
+      --card: #182035;
+      --border: #243050;
       --border-glow: #00ff9d40;
       --accent: #00ff9d;
       --accent2: #0096ff;
       --accent3: #7000ff;
-      --text: #cdd6f4;
-      --text-muted: #6c7a9c;
+      --text: #dde6f8;
+      --text-muted: #7d8faf;
       --font-mono: 'Share Tech Mono', monospace;
       --font-display: 'Rajdhani', sans-serif;
       --font-body: 'DM Sans', sans-serif;
@@ -42,8 +42,8 @@
       position: fixed;
       inset: 0;
       background-image:
-        linear-gradient(rgba(0,255,157,0.03) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(0,255,157,0.03) 1px, transparent 1px);
+        linear-gradient(rgba(0,255,157,0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(0,255,157,0.05) 1px, transparent 1px);
       background-size: 40px 40px;
       pointer-events: none;
       z-index: 0;
@@ -55,7 +55,7 @@
       inset: 0;
       background: repeating-linear-gradient(
         0deg, transparent, transparent 2px,
-        rgba(0,0,0,0.07) 2px, rgba(0,0,0,0.07) 4px
+        rgba(0,0,0,0.04) 2px, rgba(0,0,0,0.04) 4px
       );
       pointer-events: none;
       z-index: 0;
@@ -70,7 +70,7 @@
       align-items: center;
       justify-content: space-between;
       padding: 1rem 3rem;
-      background: rgba(5,8,16,0.92);
+      background: rgba(14,21,37,0.93);
       backdrop-filter: blur(20px);
       border-bottom: 1px solid var(--border);
     }
@@ -234,6 +234,35 @@
     }
     .btn-outline:hover { border-color: var(--accent2); color: var(--accent2); }
 
+    /* BOUTON CV INLINE */
+    .cv-inline {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      padding: 0.6rem 1.3rem;
+      margin-bottom: 1.6rem;
+      border-radius: 6px;
+      background: rgba(0,255,157,0.07);
+      border: 1px solid rgba(0,255,157,0.25);
+      color: var(--accent);
+      font-family: var(--font-mono);
+      font-size: 0.82rem;
+      text-decoration: none;
+      transition: all var(--tr);
+      letter-spacing: 0.05em;
+    }
+    .cv-inline:hover {
+      background: rgba(0,255,157,0.15);
+      border-color: var(--accent);
+      box-shadow: 0 0 18px rgba(0,255,157,0.2);
+      transform: translateY(-1px);
+    }
+    .cv-arrow { font-size: 0.7rem; animation: bounce-arrow 1.5s ease-in-out infinite; }
+    @keyframes bounce-arrow {
+      0%,100% { transform: translateY(0); }
+      50% { transform: translateY(3px); }
+    }
+
     /* TERMINAL */
     .hero-terminal {
       background: var(--card);
@@ -244,7 +273,7 @@
       box-shadow: 0 0 50px rgba(0,255,157,0.05), 0 20px 60px rgba(0,0,0,0.5);
     }
     .t-bar {
-      background: #0a0e1a;
+      background: #141e32;
       padding: 0.55rem 1rem;
       display: flex;
       align-items: center;
@@ -500,14 +529,20 @@
           Étudiant en <strong>BTS SIO SISR</strong> au Lycée Pierre Poivre de Saint-Joseph, La Réunion.<br/>
           Passionné par les <strong>réseaux</strong>, l'administration système, la cybersécurité et les nouvelles technologies.
         </p>
+        <a href="assets/cv.pdf" class="cv-inline" download="CV_Vienne_Noah.pdf" title="Télécharger mon CV">
+          <i class="fas fa-file-pdf"></i>
+          <span>Télécharger mon CV</span>
+          <i class="fas fa-arrow-down cv-arrow"></i>
+        </a>
         <div class="hero-badges">
           <span class="badge"><i class="fas fa-map-marker-alt"></i> Saint-Joseph, La Réunion</span>
           <span class="badge"><i class="fas fa-graduation-cap"></i> BTS SIO SISR 2024–2026</span>
           <span class="badge"><i class="fas fa-network-wired"></i> Réseaux & Systèmes</span>
+          <span class="badge"><i class="fas fa-phone"></i> 06 93 61 15 65</span>
         </div>
         <div class="hero-btns">
           <a href="#parcours" class="btn btn-primary"><i class="fas fa-terminal"></i> Mon parcours</a>
-          <a href="mailto:noahvienne.pro@gmail.com" class="btn btn-outline"><i class="fas fa-envelope"></i> Me contacter</a>
+          <a href="/cdn-cgi/l/email-protection#80eeefe1e8f6e9e5eeeee5aef0f2efc0e7ede1e9ecaee3efed" class="btn btn-outline"><i class="fas fa-envelope"></i> Me contacter</a>
         </div>
       </div>
 
@@ -530,7 +565,7 @@
           <div class="t-out">VirtualBox  Cisco  Linux</div>
           <br>
           <div class="t-line"><span class="t-prompt">$</span><span class="t-cmd"> ping contact</span></div>
-          <div class="t-out g">noahvienne.pro@gmail.com ✓</div>
+          <div class="t-out g"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="68060709001e010d06060d46181a07280f05090104460b0705">[email&#160;protected]</a> ✓</div>
           <br>
           <div class="t-line"><span class="t-prompt">$</span><span class="t-cursor"></span></div>
         </div>
@@ -578,6 +613,17 @@
           <h3>Webmaster — Refonte de site web</h3>
           <div class="tl-org"><i class="fas fa-building"></i> Arts Pour Tous — Saint-Joseph, La Réunion</div>
           <p>Modification et mise à jour du site web de l'association via la plateforme <strong>Webself</strong>. Amélioration de l'interface, mise à jour du contenu et optimisation de la présentation.</p>
+        </div>
+      </div>
+
+      <div class="timeline-item reveal">
+        <div class="tl-icon"><i class="fas fa-globe-europe"></i></div>
+        <div class="tl-card">
+          <span class="tl-type type-s">Stage à l'étranger</span>
+          <div class="tl-date">FÉVRIER 2025 · 2 semaines · Allemagne 🇩🇪</div>
+          <h3>Développeur Web — Création de site WordPress</h3>
+          <div class="tl-org"><i class="fas fa-map-marker-alt"></i> Allemagne — Expérience internationale</div>
+          <p>Stage à l'étranger axé sur la <strong>création d'un site web avec WordPress</strong>. Conception, configuration et personnalisation du site. Expérience enrichissante alliant compétences techniques et ouverture internationale.</p>
         </div>
       </div>
 
@@ -674,8 +720,10 @@
           <span class="skill-tag">Windows</span>
           <span class="skill-tag">Linux</span>
           <span class="skill-tag">VirtualBox</span>
+          <span class="skill-tag">Proxmox</span>
           <span class="skill-tag">GLPI</span>
           <span class="skill-tag">Active Directory</span>
+          <span class="skill-tag">DHCP / DNS</span>
         </div>
       </div>
       <div class="skill-group reveal">
@@ -802,12 +850,12 @@
     <div class="f-role">Étudiant BTS SIO SISR · Lycée Pierre Poivre · Saint-Joseph, La Réunion</div>
     <div class="social-links">
       <a href="https://github.com/noah-vienne" class="s-link" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
-      <a href="mailto:noahvienne.pro@gmail.com" class="s-link" title="Email"><i class="fas fa-envelope"></i></a>
+      <a href="/cdn-cgi/l/email-protection#91fffef0f9e7f8f4fffff4bfe1e3fed1f6fcf0f8fdbff2fefc" class="s-link" title="Email"><i class="fas fa-envelope"></i></a>
     </div>
     <p class="f-copy">© 2025 Vienne Noah · Fait depuis La Réunion 🌴</p>
   </footer>
 
-  <script>
+  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
     // Reveal au scroll
     const obs = new IntersectionObserver((entries) => {
       entries.forEach((e, i) => {
@@ -830,15 +878,3 @@
     document.getElementById('fileInput').addEventListener('change', function(e) {
       const file = e.target.files[0];
       if (!file) return;
-      const r = new FileReader();
-      r.onload = ev => {
-        const img = document.getElementById('tableauImg');
-        img.src = ev.target.result;
-        img.style.display = 'block';
-        document.getElementById('uploadPh').style.display = 'none';
-      };
-      r.readAsDataURL(file);
-    });
-  </script>
-</body>
-</html>
