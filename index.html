@@ -846,80 +846,87 @@
     <div class="section-header reveal">
       <span class="section-label">// 04 — veille technologique</span>
       <h2 class="section-title">Veille <span>technologique</span></h2>
-      <p class="section-desc">L'évolution du Cloud et des infrastructures — 18 mois de suivi (Oct. 2024 – Mars 2026)</p>
+      <p class="section-desc">La cybersécurité des réseaux d'entreprise — 18 mois de suivi (Oct. 2024 – Mars 2026)</p>
     </div>
 
-    <!-- INTRO -->
     <div class="vt-intro reveal">
-      <div class="vt-intro-icon">☁️</div>
+      <div class="vt-intro-icon">🔒</div>
       <div class="vt-intro-content">
-        <h3>Sujet : L'évolution du Cloud et des infrastructures informatiques</h3>
-        <p>Le Cloud computing a profondément transformé la gestion des infrastructures en entreprise. On est passé de serveurs physiques internes à des ressources virtuelles accessibles à la demande. Cette révolution touche directement le métier d'administrateur SISR, qui doit aujourd'hui maîtriser les environnements physiques <strong>et</strong> cloud.</p>
+        <h3>Sujet : La cybersécurité des réseaux d'entreprise</h3>
+        <p>Avec l'explosion du télétravail et la sophistication croissante des cyberattaques, sécuriser les réseaux d'entreprise est devenu une priorité absolue. Ce sujet est au cœur du métier SISR : chaque administrateur réseau est en première ligne face aux menaces. Cette veille suit l'évolution des attaques, des outils de protection et des réglementations sur 18 mois.</p>
         <div class="vt-tags">
-          <span class="vt-tag">☁️ Cloud Computing</span>
-          <span class="vt-tag">🐳 Conteneurs</span>
-          <span class="vt-tag">🖥️ Virtualisation</span>
-          <span class="vt-tag">🔒 Cloud Security</span>
-          <span class="vt-tag">🌐 Cloud Hybride</span>
-          <span class="vt-tag">🤖 IA & Infra</span>
+          <span class="vt-tag">⚠️ Ransomware</span>
+          <span class="vt-tag">🔐 Zero Trust</span>
+          <span class="vt-tag">🛡️ Pare-feu</span>
+          <span class="vt-tag">🔍 IDS/IPS</span>
+          <span class="vt-tag">📋 NIS2 / RGPD</span>
+          <span class="vt-tag">🤖 IA & Attaques</span>
+          <span class="vt-tag">🖧 VLANs</span>
         </div>
       </div>
     </div>
 
     <div class="vt-wrapper">
 
-      <!-- PÉRIODE 1 -->
+      <!-- PÉRIODE 1 : Oct - Déc 2024 -->
       <div class="vt-period reveal">
         <div class="vt-period-header">
           <div class="vt-period-dot"></div>
           <div class="vt-period-label">
             <span class="vt-period-date">Octobre — Décembre 2024</span>
-            <span class="vt-period-theme">Comprendre les modèles du Cloud</span>
+            <span class="vt-period-theme">État des menaces et premiers outils de défense</span>
           </div>
         </div>
         <div class="vt-cards">
 
           <div class="vt-card reveal">
             <div class="vt-card-top">
-              <span class="vt-cat cat-tech">🛠️ Fondamentaux</span>
-              <span class="vt-card-date">Oct. – Nov. 2024</span>
+              <span class="vt-cat cat-threat">⚠️ Menace</span>
+              <span class="vt-card-date">Oct. 2024</span>
             </div>
-            <h4>IaaS, PaaS, SaaS et les modèles de déploiement</h4>
-            <p>Le Cloud se décline en trois modèles de services : <strong>IaaS</strong> (ressources virtualisées gérées par l'entreprise — ex. AWS EC2), <strong>PaaS</strong> (plateforme prête à déployer des apps — ex. Heroku) et <strong>SaaS</strong> (logiciel clé en main — ex. Microsoft 365).</p>
-            <p>Côté déploiement : le <strong>cloud public</strong> est mutualisé et économique, le <strong>cloud privé</strong> est dédié et sécurisé (banques, hôpitaux), le <strong>cloud hybride</strong> combine les deux — c'est le modèle adopté par 73% des grandes entreprises en 2024 selon Gartner.</p>
+            <h4>Ransomware : +70% d'attaques en 2024</h4>
+            <p>Un <strong>ransomware</strong> est un logiciel malveillant qui chiffre les données d'une entreprise et réclame une rançon. En 2024, ces attaques ont augmenté de <strong>+70%</strong> selon l'ANSSI. Elles ciblent principalement les PME et collectivités via le <strong>phishing</strong> : un clic sur un email piégé suffit à paralyser tout le réseau.</p>
             <div class="vt-example">
-              <span class="vt-example-label">💡 Lien SISR</span>
-              <p>L'IaaS est le modèle le plus proche de notre métier : configurer un serveur Linux sur AWS utilise les mêmes compétences que sur VirtualBox, avec en plus la scalabilité et la haute disponibilité.</p>
+              <span class="vt-example-label">💡 Exemple concret</span>
+              <p>En octobre 2024, une collectivité française a eu tous ses serveurs chiffrés après un clic sur une pièce jointe. Services paralysés pendant 3 semaines.</p>
             </div>
-            <div class="vt-source">
-              <i class="fas fa-link"></i>
-              <span>AWS Documentation / Gartner Hybrid Cloud Survey 2024</span>
-            </div>
+            <div class="vt-source"><i class="fas fa-link"></i><span>ANSSI — Panorama de la cybermenace 2024</span></div>
           </div>
 
           <div class="vt-card reveal">
             <div class="vt-card-top">
-              <span class="vt-cat cat-actu">📰 Marché</span>
+              <span class="vt-cat cat-tech">🛠️ Technique</span>
+              <span class="vt-card-date">Nov. 2024</span>
+            </div>
+            <h4>Zero Trust : ne jamais faire confiance, toujours vérifier</h4>
+            <p>Le modèle <strong>Zero Trust</strong> part du principe qu'aucun utilisateur ni appareil n'est fiable par défaut, même à l'intérieur du réseau. Il repose sur trois piliers : <strong>MFA</strong> (authentification multi-facteurs), <strong>moindre privilège</strong> (accès uniquement à ce qui est nécessaire), et <strong>microsegmentation</strong> du réseau. Indispensable à l'ère du télétravail.</p>
+            <div class="vt-source"><i class="fas fa-link"></i><span>NIST SP 800-207 — Zero Trust Architecture</span></div>
+          </div>
+
+          <div class="vt-card reveal">
+            <div class="vt-card-top">
+              <span class="vt-cat cat-tool">🔧 Outil</span>
               <span class="vt-card-date">Déc. 2024</span>
             </div>
-            <h4>Le marché mondial du Cloud : 700 milliards et 3 géants</h4>
-            <p>En 2024, le Cloud pèse plus de <strong>700 milliards de dollars</strong> avec une croissance de 20%/an. Trois acteurs dominent : <strong>AWS</strong> (31%), <strong>Microsoft Azure</strong> (25%) et <strong>Google Cloud</strong> (11%). En France, <strong>OVHcloud</strong> et <strong>Scaleway</strong> proposent des alternatives souveraines conformes au RGPD, de plus en plus demandées par les administrations publiques.</p>
-            <div class="vt-source">
-              <i class="fas fa-link"></i>
-              <span>Synergy Research Group — Cloud Market Share Q3 2024</span>
+            <h4>IDS/IPS : détecter et bloquer les intrusions réseau</h4>
+            <p>Un <strong>IDS</strong> (Intrusion Detection System) analyse le trafic réseau et génère des alertes. Un <strong>IPS</strong> (Intrusion Prevention System) va plus loin : il bloque automatiquement le trafic malveillant. Des outils open source comme <strong>Snort</strong> et <strong>Suricata</strong> sont très utilisés en entreprise pour surveiller les flux réseau en temps réel.</p>
+            <div class="vt-example">
+              <span class="vt-example-label">💡 Lien avec mon stage</span>
+              <p>Chez Arts Pour Tous, l'absence de supervision réseau signifiait qu'une intrusion pouvait passer inaperçue des semaines. GLPI permet au moins de tracer les incidents.</p>
             </div>
+            <div class="vt-source"><i class="fas fa-link"></i><span>Snort.org / Cisco Secure IPS Documentation</span></div>
           </div>
 
         </div>
       </div>
 
-      <!-- PÉRIODE 2 -->
+      <!-- PÉRIODE 2 : Jan - Avr 2025 -->
       <div class="vt-period reveal">
         <div class="vt-period-header">
           <div class="vt-period-dot"></div>
           <div class="vt-period-label">
             <span class="vt-period-date">Janvier — Avril 2025</span>
-            <span class="vt-period-theme">Virtualisation et conteneurisation</span>
+            <span class="vt-period-theme">Sécurisation des réseaux et gestion des vulnérabilités</span>
           </div>
         </div>
         <div class="vt-cards">
@@ -927,106 +934,112 @@
           <div class="vt-card reveal">
             <div class="vt-card-top">
               <span class="vt-cat cat-tech">🛠️ Technique</span>
-              <span class="vt-card-date">Jan. 2025</span>
+              <span class="vt-card-date">Jan. – Fév. 2025</span>
             </div>
-            <h4>Proxmox VE : la virtualisation open source face à VMware</h4>
-            <p><strong>Proxmox Virtual Environment</strong> est une plateforme open source qui gère des machines virtuelles (KVM) et des conteneurs (LXC) depuis une interface web. Depuis le rachat de VMware par Broadcom qui a fait exploser les prix des licences, de nombreuses entreprises migrent vers Proxmox. Il offre les mêmes fonctionnalités : snapshots, live migration, haute disponibilité et clustering.</p>
+            <h4>Segmentation réseau par VLANs : isoler pour mieux protéger</h4>
+            <p>La <strong>segmentation réseau</strong> divise le réseau en sous-réseaux isolés. Les <strong>VLANs</strong> permettent de créer cette séparation logiquement sur les switches : un VLAN pour les serveurs, un pour les postes, un pour les invités Wi-Fi. Si un attaquant compromet le réseau invité, il ne peut pas atteindre les serveurs. C'est une bonne pratique fondamentale recommandée par l'ANSSI.</p>
             <div class="vt-example">
-              <span class="vt-example-label">💡 Mon expérience</span>
-              <p>J'utilise Proxmox en BTS SISR. Il m'a permis de comprendre concrètement la virtualisation : allocation CPU/RAM, réseaux virtuels avec VLANs, et sauvegarde de VMs.</p>
+              <span class="vt-example-label">💡 Lien BTS SISR</span>
+              <p>La configuration de VLANs sur des switches Cisco fait partie de mes TP. J'applique directement ce concept de cloisonnement pour limiter la propagation des attaques.</p>
             </div>
-            <div class="vt-source">
-              <i class="fas fa-link"></i>
-              <span>Proxmox.com / Broadcom-VMware acquisition impact 2024</span>
-            </div>
+            <div class="vt-source"><i class="fas fa-link"></i><span>ANSSI — Guide sécurité des réseaux d'entreprise</span></div>
           </div>
 
           <div class="vt-card reveal">
             <div class="vt-card-top">
-              <span class="vt-cat cat-tech">🛠️ Technique</span>
-              <span class="vt-card-date">Fév. – Avr. 2025</span>
+              <span class="vt-cat cat-tool">🔧 Outil</span>
+              <span class="vt-card-date">Mars 2025</span>
             </div>
-            <h4>Docker et Kubernetes : conteneuriser et orchestrer les applications</h4>
-            <p><strong>Docker</strong> permet d'empaqueter une application et ses dépendances dans un conteneur léger et portable qui fonctionne de manière identique partout — résolvant le problème "ça marche sur ma machine". Un conteneur démarre en secondes là où une VM met plusieurs minutes.</p>
-            <p><strong>Kubernetes</strong> (K8s) orchestre des milliers de conteneurs : il redémarre automatiquement ceux qui tombent, et en déploie de nouveaux si le trafic augmente (auto-scaling). AWS, Azure et GCP proposent chacun leur Kubernetes managé (EKS, AKS, GKE). En 2025, ces outils figurent dans la majorité des offres d'emploi SISR/DevOps.</p>
-            <div class="vt-source">
-              <i class="fas fa-link"></i>
-              <span>Docker.com / Kubernetes.io / CNCF Annual Survey 2024</span>
+            <h4>Wireshark : analyser le trafic pour détecter les anomalies</h4>
+            <p><strong>Wireshark</strong> est un analyseur de paquets réseau open source qui capture et analyse en temps réel tout le trafic sur un réseau. Il permet de détecter des comportements anormaux : connexions suspectes, scans de ports, protocoles non autorisés, volumes de données inhabituels. C'est un outil clé pour diagnostiquer une intrusion ou un problème réseau.</p>
+            <div class="vt-source"><i class="fas fa-link"></i><span>Wireshark.org — Documentation officielle</span></div>
+          </div>
+
+          <div class="vt-card reveal">
+            <div class="vt-card-top">
+              <span class="vt-cat cat-actu">📰 Actualité</span>
+              <span class="vt-card-date">Avr. 2025</span>
             </div>
+            <h4>Faille critique sur les pare-feux Fortinet : patch d'urgence</h4>
+            <p>Une vulnérabilité critique a été découverte sur les équipements <strong>FortiGate</strong> de Fortinet, permettant à un attaquant non authentifié d'exécuter du code à distance — accès total au réseau de l'entreprise. L'ANSSI a émis une alerte pour appliquer le correctif en urgence. Cet événement illustre l'importance du <strong>patch management</strong> : maintenir ses équipements à jour est une mesure fondamentale.</p>
+            <div class="vt-example">
+              <span class="vt-example-label">💡 À retenir</span>
+              <p>Surveiller les CVE (Common Vulnerabilities and Exposures) quotidiennement via le bulletin CERT-FR est indispensable pour un administrateur réseau.</p>
+            </div>
+            <div class="vt-source"><i class="fas fa-link"></i><span>ANSSI / CERT-FR — Alerte sécurité Fortinet 2025 / cve.mitre.org</span></div>
           </div>
 
         </div>
       </div>
 
-      <!-- PÉRIODE 3 -->
+      <!-- PÉRIODE 3 : Mai - Sep 2025 -->
       <div class="vt-period reveal">
         <div class="vt-period-header">
           <div class="vt-period-dot"></div>
           <div class="vt-period-label">
-            <span class="vt-period-date">Mai — Août 2025</span>
-            <span class="vt-period-theme">DevOps, automatisation et résilience</span>
+            <span class="vt-period-date">Mai — Septembre 2025</span>
+            <span class="vt-period-theme">Supervision, SIEM et gestion des incidents</span>
           </div>
         </div>
         <div class="vt-cards">
 
           <div class="vt-card reveal">
             <div class="vt-card-top">
-              <span class="vt-cat cat-tech">🛠️ Technique</span>
+              <span class="vt-cat cat-tool">🔧 Outil</span>
               <span class="vt-card-date">Mai – Juin 2025</span>
             </div>
-            <h4>DevOps et Infrastructure as Code : automatiser l'infrastructure</h4>
-            <p>Le <strong>DevOps</strong> rapproche les équipes de développement et d'administration système pour livrer plus vite et plus fiablement via l'intégration continue (CI) et le déploiement continu (CD).</p>
-            <p>L'<strong>Infrastructure as Code (IaC)</strong> permet de décrire toute une infrastructure dans des fichiers texte versionnés. <strong>Terraform</strong> provisionne les ressources cloud (serveurs, réseaux) en quelques commandes. <strong>Ansible</strong> configure automatiquement des centaines de serveurs depuis une machine centrale. Ces outils évitent les erreurs humaines et permettent de recréer un environnement entier en minutes.</p>
-            <div class="vt-source">
-              <i class="fas fa-link"></i>
-              <span>HashiCorp Terraform Docs / Ansible Red Hat Documentation</span>
-            </div>
+            <h4>Zabbix et SIEM : superviser pour anticiper les attaques</h4>
+            <p><strong>Zabbix</strong> surveille en temps réel l'état des serveurs et équipements réseau. En cybersécurité, il peut détecter une charge CPU anormale (cryptominer), des tentatives de connexion répétées (brute force) ou une bande passante inhabituelle (exfiltration de données).</p>
+            <p>Un <strong>SIEM</strong> (Security Information and Event Management) centralise les logs de tous les équipements et corrèle les événements pour détecter des attaques complexes. Des solutions open source comme <strong>Wazuh</strong> permettent aux PME d'avoir un SIEM complet gratuitement.</p>
+            <div class="vt-source"><i class="fas fa-link"></i><span>Zabbix.com / Wazuh.com — Documentation officielle</span></div>
           </div>
 
           <div class="vt-card reveal">
             <div class="vt-card-top">
-              <span class="vt-cat cat-actu">📰 Événement</span>
-              <span class="vt-card-date">Juil. 2025</span>
+              <span class="vt-cat cat-threat">⚠️ Menace</span>
+              <span class="vt-card-date">Juil. – Sep. 2025</span>
             </div>
-            <h4>Panne CrowdStrike : quand le cloud amplifie les incidents à l'échelle mondiale</h4>
-            <p>En juillet 2024, une mise à jour défectueuse de <strong>CrowdStrike Falcon</strong> a mis hors service des millions de systèmes Windows dans le monde — aéroports, hôpitaux, banques — en quelques heures. C'est la plus grande panne informatique de l'histoire.</p>
-            <p>Cet incident illustre le risque de dépendance à un fournisseur unique. Il a poussé les entreprises à renforcer leurs <strong>Plans de Continuité d'Activité (PCA)</strong> et à adopter des déploiements progressifs pour valider les mises à jour avant de les appliquer partout.</p>
-            <div class="vt-example">
-              <span class="vt-example-label">💡 Ce que j'en retiens</span>
-              <p>Un administrateur SISR doit concevoir des architectures sans point de défaillance unique (SPOF) et tester régulièrement les plans de reprise après sinistre (PRA).</p>
-            </div>
-            <div class="vt-source">
-              <i class="fas fa-link"></i>
-              <span>CrowdStrike Incident Review / CISA Outage Analysis 2024</span>
-            </div>
+            <h4>Attaques DDoS contre les infrastructures critiques</h4>
+            <p>Une attaque <strong>DDoS</strong> (Distributed Denial of Service) sature un serveur avec des millions de requêtes via un botnet, le rendant indisponible. En été 2025, plusieurs hôpitaux et administrations françaises ont été visés, paralysant leurs services numériques pendant plusieurs heures. Ces attaques sont souvent menées par des groupes hacktivistes en période de tensions géopolitiques.</p>
+            <div class="vt-source"><i class="fas fa-link"></i><span>ANSSI — Rapport DDoS 2025 / Cloudflare DDoS Threat Report</span></div>
           </div>
 
         </div>
       </div>
 
-      <!-- PÉRIODE 4 -->
+      <!-- PÉRIODE 4 : Oct 2025 - Mar 2026 -->
       <div class="vt-period reveal">
         <div class="vt-period-header">
           <div class="vt-period-dot"></div>
           <div class="vt-period-label">
-            <span class="vt-period-date">Septembre 2025 — Mars 2026</span>
-            <span class="vt-period-theme">Sécurité, souveraineté et bilan</span>
+            <span class="vt-period-date">Octobre 2025 — Mars 2026</span>
+            <span class="vt-period-theme">Réglementation, IA malveillante et bilan</span>
           </div>
         </div>
         <div class="vt-cards">
 
           <div class="vt-card reveal">
             <div class="vt-card-top">
-              <span class="vt-cat cat-threat">⚠️ Sécurité</span>
-              <span class="vt-card-date">Sep. – Nov. 2025</span>
+              <span class="vt-cat cat-tech">🛠️ Réglementation</span>
+              <span class="vt-card-date">Oct. – Nov. 2025</span>
             </div>
-            <h4>Sécurité cloud et souveraineté des données en Europe</h4>
-            <p>Le <strong>modèle de responsabilité partagée</strong> définit ce que sécurise le fournisseur cloud (datacenter, hyperviseur) et ce que doit sécuriser le client (VMs, accès, données). La plupart des failles cloud viennent de mauvaises configurations côté client.</p>
-            <p>Le <strong>Cloud Act américain</strong> autorise les autorités US à accéder aux données hébergées par des entreprises américaines, même en Europe. En réponse, la France a créé le label <strong>SecNumCloud</strong> (ANSSI) pour certifier les offres souveraines (OVHcloud, Outscale). L'Europe développe <strong>GAIA-X</strong> pour une infrastructure cloud européenne indépendante.</p>
-            <div class="vt-source">
-              <i class="fas fa-link"></i>
-              <span>ANSSI — SecNumCloud / Commission Européenne — GAIA-X</span>
+            <h4>NIS2 : la directive européenne qui impose la cybersécurité</h4>
+            <p>La directive <strong>NIS2</strong> est entrée en application en octobre 2024 dans l'UE. Elle étend les obligations de cybersécurité à des milliers d'entreprises : mise en place de pare-feux et chiffrement, notification d'un incident sous <strong>24h</strong>, audits de sécurité réguliers. Les amendes peuvent atteindre <strong>10 millions d'euros</strong>. Pour les SISR, c'est une opportunité : la demande en experts cybersécurité explose.</p>
+            <div class="vt-source"><i class="fas fa-link"></i><span>EUR-Lex — Directive NIS2 / ANSSI — Guide NIS2 pour les entreprises</span></div>
+          </div>
+
+          <div class="vt-card reveal">
+            <div class="vt-card-top">
+              <span class="vt-cat cat-threat">⚠️ Menace émergente</span>
+              <span class="vt-card-date">Déc. 2025</span>
             </div>
+            <h4>L'IA au service des cyberattaquants : phishing et deepfakes</h4>
+            <p>Les cybercriminels utilisent désormais l'IA pour créer des attaques plus sophistiquées. Les emails de phishing générés par IA sont parfaits, sans fautes, et imitent le style d'un collègue. Les <strong>deepfakes audio</strong> imitent la voix d'un dirigeant pour convaincre un employé d'effectuer un virement (arnaque au président). En 2025, plusieurs entreprises européennes ont perdu des centaines de milliers d'euros via cette technique.</p>
+            <div class="vt-example">
+              <span class="vt-example-label">💡 La meilleure défense</span>
+              <p>La sensibilisation des utilisateurs reste prioritaire : apprendre à douter, vérifier les demandes inhabituelles par un autre canal, ne jamais agir dans l'urgence.</p>
+            </div>
+            <div class="vt-source"><i class="fas fa-link"></i><span>Europol — Internet Organised Crime Threat Assessment 2025</span></div>
           </div>
 
           <div class="vt-card reveal">
@@ -1036,385 +1049,31 @@
             </div>
             <h4>Ce que cette veille m'a appris</h4>
             <ul class="vt-list">
-              <li><strong>Le cloud est incontournable</strong> pour un administrateur SISR — les compétences réseau/système s'y appliquent directement.</li>
-              <li><strong>Docker et Kubernetes</strong> sont devenus des standards que les employeurs attendent.</li>
-              <li><strong>L'automatisation</strong> (Terraform, Ansible) évite les erreurs et gagne du temps sur des centaines de serveurs.</li>
-              <li><strong>La résilience</strong> doit être pensée dès la conception : PCA, PRA, pas de SPOF.</li>
-              <li><strong>La souveraineté</strong> des données est un enjeu croissant qui valorise les solutions françaises.</li>
+              <li><strong>La menace évolue constamment</strong> — les attaquants exploitent l'IA et le cloud. La veille permanente est indispensable.</li>
+              <li><strong>La sécurité est une chaîne</strong> — un seul maillon faible suffit : un email cliqué, un équipement non mis à jour.</li>
+              <li><strong>Les outils open source suffisent</strong> — Wireshark, Zabbix, Wazuh, GLPI permettent un bon niveau de sécurité même sans grand budget.</li>
+              <li><strong>NIS2 crée des opportunités</strong> — les entreprises doivent se conformer, ce qui génère une forte demande en experts SISR.</li>
+              <li><strong>La sensibilisation reste la première défense</strong> — la technique ne suffit pas sans formation des utilisateurs.</li>
             </ul>
-            <p style="margin-top:0.8rem;color:var(--text-muted);font-size:0.85rem">Objectif post-BTS : obtenir une certification AWS ou Azure pour compléter mes compétences SISR.</p>
-            <div class="vt-source">
-              <i class="fas fa-link"></i>
-              <span>Bilan personnel — BTS SIO SISR, Lycée Pierre Poivre, Saint-Joseph</span>
-            </div>
+            <div class="vt-source"><i class="fas fa-link"></i><span>Bilan personnel — BTS SIO SISR, Lycée Pierre Poivre, Saint-Joseph</span></div>
           </div>
 
         </div>
       </div>
 
-    </div><!-- fin vt-wrapper -->
+    </div>
 
-    <!-- SOURCES -->
     <div class="vt-sources-block reveal">
       <h3><i class="fas fa-bookmark"></i> Sources utilisées</h3>
       <div class="vt-sources-grid">
-        <a href="https://aws.amazon.com/fr" target="_blank" class="vt-source-link"><i class="fas fa-external-link-alt"></i> Amazon Web Services</a>
-        <a href="https://azure.microsoft.com/fr-fr" target="_blank" class="vt-source-link"><i class="fas fa-external-link-alt"></i> Microsoft Azure</a>
         <a href="https://www.ssi.gouv.fr" target="_blank" class="vt-source-link"><i class="fas fa-external-link-alt"></i> ANSSI — ssi.gouv.fr</a>
-        <a href="https://www.proxmox.com" target="_blank" class="vt-source-link"><i class="fas fa-external-link-alt"></i> Proxmox.com</a>
-        <a href="https://www.docker.com" target="_blank" class="vt-source-link"><i class="fas fa-external-link-alt"></i> Docker.com</a>
-        <a href="https://kubernetes.io/fr" target="_blank" class="vt-source-link"><i class="fas fa-external-link-alt"></i> Kubernetes.io</a>
-        <a href="https://www.terraform.io" target="_blank" class="vt-source-link"><i class="fas fa-external-link-alt"></i> Terraform — HashiCorp</a>
-        <a href="https://www.ovhcloud.com/fr" target="_blank" class="vt-source-link"><i class="fas fa-external-link-alt"></i> OVHcloud</a>
-      </div>
-    </div>
-
-  </section>
-
-    <!-- INTRO SUJET -->
-    <div class="vt-intro reveal">
-      <div class="vt-intro-icon">🔒</div>
-      <div class="vt-intro-content">
-        <h3>Sujet : La cybersécurité des réseaux d'entreprise</h3>
-        <p>La cybersécurité des réseaux d'entreprise est devenue un enjeu critique pour toutes les organisations, quelle que soit leur taille. Avec l'explosion du télétravail, la généralisation du cloud et la sophistication croissante des attaques informatiques, sécuriser les infrastructures réseau est aujourd'hui une priorité absolue pour les équipes SISR.</p>
-        <p>Cette veille technologique, réalisée sur 18 mois dans le cadre de mon BTS SIO SISR, suit l'évolution des menaces, des outils de protection et des bonnes pratiques en matière de sécurité réseau en entreprise.</p>
-        <div class="vt-tags">
-          <span class="vt-tag">🔒 Cybersécurité</span>
-          <span class="vt-tag">🖧 Réseaux</span>
-          <span class="vt-tag">🛡️ Pare-feu</span>
-          <span class="vt-tag">🔍 Détection d'intrusion</span>
-          <span class="vt-tag">⚠️ Ransomware</span>
-          <span class="vt-tag">🔐 Zero Trust</span>
-        </div>
-      </div>
-    </div>
-
-    <!-- TIMELINE VEILLE -->
-    <div class="vt-wrapper">
-
-      <!-- PÉRIODE 1 -->
-      <div class="vt-period reveal">
-        <div class="vt-period-header">
-          <div class="vt-period-dot"></div>
-          <div class="vt-period-label">
-            <span class="vt-period-date">Octobre — Décembre 2024</span>
-            <span class="vt-period-theme">État des lieux des menaces actuelles</span>
-          </div>
-        </div>
-        <div class="vt-cards">
-
-          <div class="vt-card reveal">
-            <div class="vt-card-top">
-              <span class="vt-cat cat-threat">⚠️ Menaces</span>
-              <span class="vt-card-date">Octobre 2024</span>
-            </div>
-            <h4>L'explosion des attaques par ransomware</h4>
-            <p>Les ransomwares (rançongiciels) sont des logiciels malveillants qui chiffrent les données d'une entreprise et réclament une rançon pour les déchiffrer. En 2024, les attaques par ransomware ont augmenté de <strong>+70%</strong> par rapport à 2023 selon l'ANSSI (Agence Nationale de la Sécurité des Systèmes d'Information).</p>
-            <p>Ces attaques ciblent désormais prioritairement les PME et les collectivités locales, souvent moins bien protégées que les grandes entreprises. La technique la plus répandue est le <strong>phishing</strong> (hameçonnage) : un employé clique sur un lien malveillant dans un email, ce qui installe le ransomware sur le réseau de l'entreprise.</p>
-            <div class="vt-example">
-              <span class="vt-example-label">💡 Exemple concret</span>
-              <p>En octobre 2024, une collectivité territoriale française a vu l'ensemble de ses serveurs chiffrés après qu'un agent a cliqué sur une pièce jointe piégée. L'attaque a paralysé les services pendant 3 semaines.</p>
-            </div>
-            <div class="vt-source">
-              <i class="fas fa-link"></i>
-              <span>Source : ANSSI — Panorama de la cybermenace 2024</span>
-            </div>
-          </div>
-
-          <div class="vt-card reveal">
-            <div class="vt-card-top">
-              <span class="vt-cat cat-tech">🛠️ Technique</span>
-              <span class="vt-card-date">Novembre 2024</span>
-            </div>
-            <h4>Le modèle Zero Trust : ne jamais faire confiance, toujours vérifier</h4>
-            <p>Le modèle <strong>Zero Trust</strong> (confiance zéro) est une approche de sécurité réseau qui part du principe qu'aucun utilisateur, appareil ou flux réseau ne doit être considéré comme fiable par défaut, même s'il se trouve déjà à l'intérieur du réseau de l'entreprise.</p>
-            <p>Contrairement au modèle traditionnel qui fait confiance à tout ce qui est dans le périmètre du réseau interne, le Zero Trust impose une <strong>vérification systématique</strong> de chaque accès : qui demande quoi, depuis où, avec quel appareil. C'est particulièrement adapté au contexte du télétravail où les employés se connectent depuis des réseaux extérieurs.</p>
-            <p>Les trois piliers du Zero Trust sont : <strong>l'authentification forte</strong> (MFA — Multi-Factor Authentication), le <strong>moindre privilège</strong> (chaque utilisateur n'accède qu'à ce dont il a besoin), et la <strong>microsegmentation</strong> du réseau (isolation de chaque partie du réseau).</p>
-            <div class="vt-source">
-              <i class="fas fa-link"></i>
-              <span>Source : NIST Special Publication 800-207 — Zero Trust Architecture</span>
-            </div>
-          </div>
-
-          <div class="vt-card reveal">
-            <div class="vt-card-top">
-              <span class="vt-cat cat-tool">🔧 Outil</span>
-              <span class="vt-card-date">Décembre 2024</span>
-            </div>
-            <h4>Les systèmes IDS/IPS : détecter et bloquer les intrusions</h4>
-            <p>Un <strong>IDS</strong> (Intrusion Detection System) est un outil qui surveille le trafic réseau en temps réel et génère des alertes lorsqu'il détecte un comportement suspect. Un <strong>IPS</strong> (Intrusion Prevention System) va plus loin : il bloque automatiquement le trafic malveillant détecté.</p>
-            <p>Ces systèmes analysent les paquets réseau et les comparent à une base de signatures d'attaques connues, ou détectent des anomalies comportementales. Des outils comme <strong>Snort</strong> ou <strong>Suricata</strong> sont des IDS/IPS open source très utilisés en entreprise.</p>
-            <p>En lien avec mon stage chez Arts Pour Tous, j'ai pu constater l'importance d'un tel outil : sans supervision du trafic réseau, une intrusion peut passer inaperçue pendant des semaines.</p>
-            <div class="vt-source">
-              <i class="fas fa-link"></i>
-              <span>Source : Snort.org — Documentation officielle / CISCO Secure IPS</span>
-            </div>
-          </div>
-
-        </div>
-      </div>
-
-      <!-- PÉRIODE 2 -->
-      <div class="vt-period reveal">
-        <div class="vt-period-header">
-          <div class="vt-period-dot"></div>
-          <div class="vt-period-label">
-            <span class="vt-period-date">Janvier — Avril 2025</span>
-            <span class="vt-period-theme">Sécurisation des infrastructures réseau</span>
-          </div>
-        </div>
-        <div class="vt-cards">
-
-          <div class="vt-card reveal">
-            <div class="vt-card-top">
-              <span class="vt-cat cat-threat">⚠️ Menaces</span>
-              <span class="vt-card-date">Janvier 2025</span>
-            </div>
-            <h4>Les attaques Man-in-the-Middle (MitM) sur les réseaux Wi-Fi</h4>
-            <p>Une attaque <strong>Man-in-the-Middle</strong> (homme du milieu) consiste à s'intercaler entre deux parties qui communiquent pour espionner ou modifier les échanges à leur insu. Sur les réseaux Wi-Fi d'entreprise, un attaquant peut créer un faux point d'accès (Evil Twin) qui ressemble au réseau officiel et intercepter tout le trafic des employés qui s'y connectent.</p>
-            <p>Cette menace est particulièrement sérieuse dans les environnements où le Wi-Fi n'est pas correctement sécurisé. Les contre-mesures incluent l'utilisation du protocole <strong>WPA3</strong>, la mise en place de <strong>certificats SSL/TLS</strong> et l'utilisation d'un <strong>VPN</strong> pour chiffrer les communications.</p>
-            <div class="vt-example">
-              <span class="vt-example-label">💡 Lien avec mon stage</span>
-              <p>Lors de mon stage en Allemagne (février 2025), j'ai travaillé sur un environnement WordPress et pris conscience de l'importance du HTTPS et des certificats SSL pour protéger les données des utilisateurs.</p>
-            </div>
-            <div class="vt-source">
-              <i class="fas fa-link"></i>
-              <span>Source : CISA — Man-in-the-Middle Attacks / OWASP</span>
-            </div>
-          </div>
-
-          <div class="vt-card reveal">
-            <div class="vt-card-top">
-              <span class="vt-cat cat-tech">🛠️ Technique</span>
-              <span class="vt-card-date">Février 2025</span>
-            </div>
-            <h4>La segmentation réseau par VLANs : isoler pour mieux protéger</h4>
-            <p>La <strong>segmentation réseau</strong> consiste à diviser un réseau informatique en sous-réseaux isolés (segments) pour limiter la propagation des attaques. Les <strong>VLANs</strong> (Virtual Local Area Networks) permettent de créer cette séparation logique sur les équipements réseau (switches, routeurs) sans avoir besoin de câblage physique séparé.</p>
-            <p>Par exemple, dans une entreprise, on peut créer un VLAN pour les serveurs, un pour les postes de travail, un pour les invités Wi-Fi et un pour les caméras de surveillance. Si un attaquant compromet le réseau invité, il ne peut pas accéder aux serveurs car ils sont dans un VLAN différent.</p>
-            <p>En 2025, la segmentation par VLAN est considérée comme une bonne pratique fondamentale par l'ANSSI dans ses recommandations pour la sécurité des réseaux d'entreprise. J'ai mis en pratique cette technique lors de mes cours et travaux pratiques de BTS.</p>
-            <div class="vt-source">
-              <i class="fas fa-link"></i>
-              <span>Source : ANSSI — Guide de recommandations relatives à la sécurité des réseaux</span>
-            </div>
-          </div>
-
-          <div class="vt-card reveal">
-            <div class="vt-card-top">
-              <span class="vt-cat cat-tool">🔧 Outil</span>
-              <span class="vt-card-date">Mars 2025</span>
-            </div>
-            <h4>Wireshark : analyser le trafic réseau pour détecter les anomalies</h4>
-            <p><strong>Wireshark</strong> est un analyseur de protocoles réseau (sniffer) open source permettant de capturer et d'analyser en temps réel tous les paquets qui transitent sur un réseau. C'est un outil indispensable pour les administrateurs réseau et les professionnels de la cybersécurité.</p>
-            <p>Wireshark permet de détecter des comportements anormaux sur le réseau : des connexions suspectes vers des adresses IP inconnues, des volumes de données anormaux, des tentatives de scan de ports, ou encore des protocoles non autorisés. Il peut aussi aider à diagnostiquer des problèmes de performance réseau.</p>
-            <p>Dans le cadre de mon BTS SISR, j'utilise Wireshark régulièrement en TP pour analyser le trafic réseau et comprendre le fonctionnement des protocoles comme ARP, DHCP, DNS, TCP/IP.</p>
-            <div class="vt-source">
-              <i class="fas fa-link"></i>
-              <span>Source : Wireshark.org — Documentation officielle</span>
-            </div>
-          </div>
-
-          <div class="vt-card reveal">
-            <div class="vt-card-top">
-              <span class="vt-cat cat-actu">📰 Actualité</span>
-              <span class="vt-card-date">Avril 2025</span>
-            </div>
-            <h4>Vulnérabilité critique dans les pare-feux Fortinet : patch d'urgence</h4>
-            <p>En avril 2025, une vulnérabilité critique (CVE-2025-XXXX) a été découverte dans les équipements <strong>FortiGate</strong> de Fortinet, l'un des pare-feux les plus utilisés en entreprise. Cette faille permettait à un attaquant non authentifié d'exécuter du code à distance sur l'équipement, lui donnant potentiellement un accès total au réseau de l'entreprise.</p>
-            <p>Cet événement illustre l'importance de la <strong>gestion des correctifs</strong> (patch management) : maintenir ses équipements à jour est une mesure de sécurité fondamentale. L'ANSSI a émis une alerte recommandant à toutes les entreprises utilisant FortiGate d'appliquer le correctif en urgence.</p>
-            <div class="vt-example">
-              <span class="vt-example-label">💡 Ce que j'en retiens</span>
-              <p>La veille sur les CVE (Common Vulnerabilities and Exposures) est une activité quotidienne pour un administrateur réseau. Des sites comme le CVE Mitre ou le bulletin de l'ANSSI permettent d'être alerté rapidement.</p>
-            </div>
-            <div class="vt-source">
-              <i class="fas fa-link"></i>
-              <span>Source : ANSSI — Bulletin d'alerte / cve.mitre.org</span>
-            </div>
-          </div>
-
-        </div>
-      </div>
-
-      <!-- PÉRIODE 3 -->
-      <div class="vt-period reveal">
-        <div class="vt-period-header">
-          <div class="vt-period-dot"></div>
-          <div class="vt-period-label">
-            <span class="vt-period-date">Mai — Août 2025</span>
-            <span class="vt-period-theme">Outils de supervision et de réponse aux incidents</span>
-          </div>
-        </div>
-        <div class="vt-cards">
-
-          <div class="vt-card reveal">
-            <div class="vt-card-top">
-              <span class="vt-cat cat-tool">🔧 Outil</span>
-              <span class="vt-card-date">Mai 2025</span>
-            </div>
-            <h4>Zabbix : supervision réseau et détection d'anomalies</h4>
-            <p><strong>Zabbix</strong> est une plateforme open source de supervision d'infrastructure réseau et système. Elle permet de surveiller en temps réel l'état des serveurs, des équipements réseau, des services applicatifs et de générer des alertes automatiques en cas de problème.</p>
-            <p>En matière de cybersécurité, Zabbix peut jouer un rôle de première ligne : il détecte des anomalies comme une charge CPU anormalement élevée (signe possible d'un cryptominer), des tentatives de connexion répétées (brute force), ou une bande passante inhabituelle (exfiltration de données).</p>
-            <p>Zabbix est un outil que j'utilise dans le cadre de ma formation BTS SISR. Sa maîtrise est directement applicable en entreprise pour assurer la disponibilité et la sécurité du réseau.</p>
-            <div class="vt-source">
-              <i class="fas fa-link"></i>
-              <span>Source : Zabbix.com — Documentation officielle</span>
-            </div>
-          </div>
-
-          <div class="vt-card reveal">
-            <div class="vt-card-top">
-              <span class="vt-cat cat-tech">🛠️ Technique</span>
-              <span class="vt-card-date">Juin 2025</span>
-            </div>
-            <h4>Le SIEM : centraliser les logs pour mieux détecter les attaques</h4>
-            <p>Un <strong>SIEM</strong> (Security Information and Event Management) est une solution qui collecte et centralise les journaux d'événements (logs) de tous les équipements d'un réseau (pare-feux, serveurs, switches, applications) pour les analyser et détecter des comportements suspects.</p>
-            <p>Là où un administrateur ne peut pas surveiller manuellement des milliers d'événements par seconde, le SIEM le fait automatiquement grâce à des règles de corrélation. Par exemple, si un même utilisateur échoue à se connecter 50 fois en 1 minute depuis plusieurs pays différents, le SIEM déclenche une alerte de tentative de brute force.</p>
-            <p>Des solutions SIEM populaires incluent <strong>Splunk</strong>, <strong>IBM QRadar</strong> et la solution open source <strong>Wazuh</strong>, cette dernière étant très utilisée dans les PME pour sa gratuité et ses fonctionnalités complètes.</p>
-            <div class="vt-source">
-              <i class="fas fa-link"></i>
-              <span>Source : Wazuh.com / Splunk Security — Documentation</span>
-            </div>
-          </div>
-
-          <div class="vt-card reveal">
-            <div class="vt-card-top">
-              <span class="vt-cat cat-actu">📰 Actualité</span>
-              <span class="vt-card-date">Juillet 2025</span>
-            </div>
-            <h4>Augmentation des attaques DDoS contre les infrastructures critiques</h4>
-            <p>Une attaque <strong>DDoS</strong> (Distributed Denial of Service) consiste à saturer un serveur ou un réseau avec un volume massif de requêtes générées par des milliers de machines infectées (botnet), le rendant indisponible pour ses utilisateurs légitimes.</p>
-            <p>En été 2025, plusieurs hôpitaux et administrations françaises ont subi des attaques DDoS de grande ampleur, perturbant l'accès à leurs services numériques pendant plusieurs heures. Ces attaques sont souvent menées par des groupes hacktivistes ou des États, et leur fréquence augmente en période de tensions géopolitiques.</p>
-            <p>La protection contre les DDoS passe par des solutions de <strong>scrubbing</strong> (filtrage du trafic malveillant en amont), des CDN (Content Delivery Networks) et des équipements réseau capables d'absorber des volumes de trafic importants.</p>
-            <div class="vt-source">
-              <i class="fas fa-link"></i>
-              <span>Source : ANSSI — Rapport sur les attaques DDoS 2025 / Cloudflare DDoS Report</span>
-            </div>
-          </div>
-
-        </div>
-      </div>
-
-      <!-- PÉRIODE 4 -->
-      <div class="vt-period reveal">
-        <div class="vt-period-header">
-          <div class="vt-period-dot"></div>
-          <div class="vt-period-label">
-            <span class="vt-period-date">Septembre — Décembre 2025</span>
-            <span class="vt-period-theme">Nouvelles tendances et réglementations</span>
-          </div>
-        </div>
-        <div class="vt-cards">
-
-          <div class="vt-card reveal">
-            <div class="vt-card-top">
-              <span class="vt-cat cat-tech">🛠️ Technique</span>
-              <span class="vt-card-date">Septembre 2025</span>
-            </div>
-            <h4>NIS2 : la nouvelle directive européenne sur la cybersécurité</h4>
-            <p>La directive <strong>NIS2</strong> (Network and Information Security 2) est entrée en application en octobre 2024 dans l'Union Européenne. Elle impose des obligations de cybersécurité à un périmètre beaucoup plus large d'entreprises et d'organisations qu'auparavant.</p>
-            <p>Parmi les principales obligations : la mise en place de mesures techniques adaptées (pare-feux, chiffrement, gestion des accès), la notification obligatoire des incidents de sécurité sous 24h à l'autorité compétente, et la réalisation d'audits de sécurité réguliers. Le non-respect peut entraîner des amendes allant jusqu'à <strong>10 millions d'euros</strong> ou 2% du chiffre d'affaires mondial.</p>
-            <p>Pour les professionnels SISR, la directive NIS2 représente une opportunité : elle crée une forte demande en expertise cybersécurité dans les entreprises soumises à ces obligations.</p>
-            <div class="vt-source">
-              <i class="fas fa-link"></i>
-              <span>Source : EUR-Lex — Directive NIS2 / ANSSI — Guide NIS2</span>
-            </div>
-          </div>
-
-          <div class="vt-card reveal">
-            <div class="vt-card-top">
-              <span class="vt-cat cat-threat">⚠️ Menaces</span>
-              <span class="vt-card-date">Octobre 2025</span>
-            </div>
-            <h4>L'IA au service des cyberattaquants : phishing et deepfakes</h4>
-            <p>L'intelligence artificielle générative est désormais utilisée par les cybercriminels pour créer des attaques plus sophistiquées. Les emails de phishing générés par IA sont indiscernables de vrais emails : ils sont personnalisés, sans fautes d'orthographe, et imitent parfaitement le style de communication d'un collègue ou d'un supérieur.</p>
-            <p>Les <strong>deepfakes audio</strong> représentent une menace émergente : des enregistrements vocaux falsifiés imitant la voix d'un dirigeant peuvent convaincre un employé d'effectuer un virement bancaire urgent (arnaque au président). En 2025, plusieurs entreprises européennes ont perdu des centaines de milliers d'euros via cette technique.</p>
-            <p>Face à ces nouvelles menaces, la <strong>sensibilisation des utilisateurs</strong> reste la meilleure défense : apprendre à douter, vérifier les demandes inhabituelles par un autre canal de communication, et ne jamais agir dans l'urgence.</p>
-            <div class="vt-source">
-              <i class="fas fa-link"></i>
-              <span>Source : Europol — Internet Organised Crime Threat Assessment 2025</span>
-            </div>
-          </div>
-
-          <div class="vt-card reveal">
-            <div class="vt-card-top">
-              <span class="vt-cat cat-tool">🔧 Outil</span>
-              <span class="vt-card-date">Novembre 2025</span>
-            </div>
-            <h4>GLPI et la sécurité du parc informatique</h4>
-            <p><strong>GLPI</strong> (Gestionnaire Libre de Parc Informatique) est un outil open source de gestion d'inventaire et de helpdesk. Au-delà de sa fonction première, GLPI contribue directement à la cybersécurité : un inventaire précis et à jour du parc est indispensable pour identifier rapidement les équipements vulnérables et s'assurer que tous les correctifs de sécurité ont bien été appliqués.</p>
-            <p>Lors de mon stage de 6 semaines chez Arts Pour Tous (janvier-février 2026), j'ai mis en place GLPI pour l'association. Cette expérience m'a permis de comprendre que sans inventaire fiable, il est impossible de savoir quels équipements n'ont pas reçu leurs mises à jour de sécurité.</p>
-            <p>GLPI peut également être interfacé avec des outils de scan réseau comme <strong>FusionInventory</strong> pour automatiser la collecte d'informations sur les équipements et détecter des postes non autorisés sur le réseau.</p>
-            <div class="vt-source">
-              <i class="fas fa-link"></i>
-              <span>Source : GLPI-project.org — Documentation / Mon expérience en stage</span>
-            </div>
-          </div>
-
-        </div>
-      </div>
-
-      <!-- PÉRIODE 5 -->
-      <div class="vt-period reveal">
-        <div class="vt-period-header">
-          <div class="vt-period-dot"></div>
-          <div class="vt-period-label">
-            <span class="vt-period-date">Janvier — Mars 2026</span>
-            <span class="vt-period-theme">Bilan et perspectives d'avenir</span>
-          </div>
-        </div>
-        <div class="vt-cards">
-
-          <div class="vt-card reveal">
-            <div class="vt-card-top">
-              <span class="vt-cat cat-tech">🛠️ Technique</span>
-              <span class="vt-card-date">Janvier 2026</span>
-            </div>
-            <h4>SD-WAN : vers des réseaux d'entreprise plus sécurisés et flexibles</h4>
-            <p>Le <strong>SD-WAN</strong> (Software-Defined Wide Area Network) est une technologie qui permet de gérer et d'optimiser les connexions réseau d'une entreprise de manière logicielle, indépendamment du matériel physique. En matière de sécurité, le SD-WAN intègre nativement des fonctionnalités comme le chiffrement de bout en bout, la segmentation du trafic et la détection d'anomalies.</p>
-            <p>Pour les entreprises multi-sites ou avec de nombreux télétravailleurs, le SD-WAN représente une évolution majeure : il permet de centraliser la politique de sécurité tout en offrant une connectivité flexible et performante. Cette technologie est de plus en plus adoptée par les entreprises de toutes tailles.</p>
-            <div class="vt-source">
-              <i class="fas fa-link"></i>
-              <span>Source : Gartner — Magic Quadrant for SD-WAN 2025 / Cisco SD-WAN</span>
-            </div>
-          </div>
-
-          <div class="vt-card reveal">
-            <div class="vt-card-top">
-              <span class="vt-cat cat-actu">📰 Bilan</span>
-              <span class="vt-card-date">Mars 2026</span>
-            </div>
-            <h4>Synthèse : ce que cette veille m'a appris</h4>
-            <p>Au terme de ces 18 mois de veille technologique sur la cybersécurité des réseaux d'entreprise, plusieurs enseignements clés se dégagent :</p>
-            <ul class="vt-list">
-              <li><strong>La menace évolue constamment</strong> : les attaquants s'adaptent rapidement et exploitent les nouvelles technologies (IA, cloud) pour leurs attaques. La veille permanente est indispensable.</li>
-              <li><strong>La sécurité est une chaîne</strong> : un seul maillon faible (un employé mal sensibilisé, un équipement non mis à jour) suffit à compromettre tout le réseau.</li>
-              <li><strong>Les outils open source sont puissants</strong> : Wireshark, Zabbix, GLPI, Wazuh — des outils accessibles permettent d'assurer un bon niveau de sécurité même sans budget important.</li>
-              <li><strong>La réglementation pousse à l'action</strong> : NIS2 et le RGPD obligent les entreprises à prendre la cybersécurité au sérieux, créant de nombreuses opportunités professionnelles pour les spécialistes SISR.</li>
-              <li><strong>La sensibilisation des utilisateurs</strong> reste la première ligne de défense contre le phishing et l'ingénierie sociale.</li>
-            </ul>
-            <p style="margin-top:0.8rem">Cette veille nourrit directement ma pratique professionnelle : les concepts étudiés (VLANs, IDS/IPS, Zero Trust, SIEM) sont des sujets que j'applique ou que j'appliquerai dans mes missions d'administrateur réseau.</p>
-            <div class="vt-source">
-              <i class="fas fa-link"></i>
-              <span>Bilan personnel — BTS SIO SISR, Lycée Pierre Poivre, Saint-Joseph</span>
-            </div>
-          </div>
-
-        </div>
-      </div>
-
-    </div><!-- fin vt-wrapper -->
-
-    <!-- SOURCES -->
-    <div class="vt-sources-block reveal">
-      <h3><i class="fas fa-bookmark"></i> Sources utilisées pour cette veille</h3>
-      <div class="vt-sources-grid">
-        <a href="https://www.ssi.gouv.fr" target="_blank" class="vt-source-link"><i class="fas fa-external-link-alt"></i> ANSSI — ssi.gouv.fr</a>
-        <a href="https://cve.mitre.org" target="_blank" class="vt-source-link"><i class="fas fa-external-link-alt"></i> CVE Mitre — cve.mitre.org</a>
-        <a href="https://www.cert.ssi.gouv.fr" target="_blank" class="vt-source-link"><i class="fas fa-external-link-alt"></i> CERT-FR — cert.ssi.gouv.fr</a>
+        <a href="https://www.cert.ssi.gouv.fr" target="_blank" class="vt-source-link"><i class="fas fa-external-link-alt"></i> CERT-FR</a>
+        <a href="https://cve.mitre.org" target="_blank" class="vt-source-link"><i class="fas fa-external-link-alt"></i> CVE Mitre</a>
         <a href="https://www.wireshark.org" target="_blank" class="vt-source-link"><i class="fas fa-external-link-alt"></i> Wireshark.org</a>
         <a href="https://www.zabbix.com" target="_blank" class="vt-source-link"><i class="fas fa-external-link-alt"></i> Zabbix.com</a>
-        <a href="https://www.glpi-project.org" target="_blank" class="vt-source-link"><i class="fas fa-external-link-alt"></i> GLPI-project.org</a>
+        <a href="https://wazuh.com" target="_blank" class="vt-source-link"><i class="fas fa-external-link-alt"></i> Wazuh.com</a>
         <a href="https://owasp.org" target="_blank" class="vt-source-link"><i class="fas fa-external-link-alt"></i> OWASP.org</a>
-        <a href="https://eur-lex.europa.eu" target="_blank" class="vt-source-link"><i class="fas fa-external-link-alt"></i> EUR-Lex — Directive NIS2</a>
+        <a href="https://eur-lex.europa.eu" target="_blank" class="vt-source-link"><i class="fas fa-external-link-alt"></i> Directive NIS2</a>
       </div>
     </div>
 
