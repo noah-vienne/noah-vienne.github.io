@@ -572,7 +572,9 @@
     .tbl-wrap { overflow-x: auto; border-radius: var(--radius); border: 1px solid var(--border); }
     table { width: 100%; border-collapse: collapse; background: var(--card); font-size: 0.87rem; }
     thead { background: linear-gradient(90deg, rgba(0,255,157,0.07), rgba(0,150,255,0.07)); }
-    thead th { padding: 1rem 1.3rem; text-align: left; font-family: var(--font-mono); font-size: 0.7rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent); border-bottom: 1px solid var(--border); }
+    thead th { padding: 1rem 1.3rem; text-align: left; font-family: var(--font-display); font-size: 0.78rem; font-weight: 700; letter-spacing: 0.03em; color: var(--accent); border-bottom: 1px solid var(--border); vertical-align: top; }
+    .th-desc { display: flex; flex-direction: column; gap: 0.25rem; margin-top: 0.6rem; padding-top: 0.6rem; border-top: 1px solid rgba(0,255,157,0.15); }
+    .th-desc span { font-family: var(--font-body); font-size: 0.7rem; font-weight: 400; color: var(--text-muted); letter-spacing: 0; line-height: 1.4; }
     tbody tr { border-bottom: 1px solid rgba(26,37,64,0.5); transition: background var(--tr); }
     tbody tr:hover { background: rgba(0,255,157,0.02); }
     tbody tr:last-child { border-bottom: none; }
@@ -1141,12 +1143,58 @@
             <tr>
               <th style="min-width:220px">Réalisation professionnelle</th>
               <th style="min-width:80px">Période</th>
-              <th style="text-align:center;min-width:90px">Gérer le patrimoine informatique</th>
-              <th style="text-align:center;min-width:90px">Répondre aux incidents et demandes</th>
-              <th style="text-align:center;min-width:90px">Développer la présence en ligne</th>
-              <th style="text-align:center;min-width:90px">Travailler en mode projet</th>
-              <th style="text-align:center;min-width:90px">Mettre à disposition un service</th>
-              <th style="text-align:center;min-width:90px">Développement professionnel</th>
+              <th style="text-align:left;min-width:130px">
+                Gérer le patrimoine informatique
+                <div class="th-desc">
+                  <span>▸ Recenser et identifier les ressources numériques</span>
+                  <span>▸ Exploiter des référentiels, normes et standards</span>
+                  <span>▸ Mettre en place et vérifier les niveaux d'habilitation</span>
+                  <span>▸ Vérifier les conditions de continuité d'un service</span>
+                  <span>▸ Gérer des sauvegardes</span>
+                  <span>▸ Vérifier le respect des règles d'utilisation des ressources</span>
+                </div>
+              </th>
+              <th style="text-align:left;min-width:130px">
+                Répondre aux incidents et aux demandes d'assistance et d'évolution
+                <div class="th-desc">
+                  <span>▸ Collecter, suivre et orienter des demandes</span>
+                  <span>▸ Traiter des demandes concernant les services réseau et système, applicatifs</span>
+                  <span>▸ Traiter des demandes concernant les applications</span>
+                </div>
+              </th>
+              <th style="text-align:left;min-width:130px">
+                Développer la présence en ligne de l'organisation
+                <div class="th-desc">
+                  <span>▸ Participer à la valorisation de l'image sur les médias numériques</span>
+                  <span>▸ Référencer les services en ligne et mesurer leur visibilité</span>
+                  <span>▸ Participer à l'évolution d'un site Web exploitant les données de l'organisation</span>
+                </div>
+              </th>
+              <th style="text-align:left;min-width:130px">
+                Travailler en mode projet
+                <div class="th-desc">
+                  <span>▸ Analyser les objectifs et les modalités d'organisation d'un projet</span>
+                  <span>▸ Planifier les activités</span>
+                  <span>▸ Évaluer les indicateurs de suivi d'un projet et analyser les écarts</span>
+                </div>
+              </th>
+              <th style="text-align:left;min-width:130px">
+                Mettre à disposition des utilisateurs un service informatique
+                <div class="th-desc">
+                  <span>▸ Réaliser les tests d'intégration et d'acceptation d'un service</span>
+                  <span>▸ Déployer un service</span>
+                  <span>▸ Accompagner les utilisateurs dans la mise en place d'un service</span>
+                </div>
+              </th>
+              <th style="text-align:left;min-width:130px">
+                Organiser son développement professionnel
+                <div class="th-desc">
+                  <span>▸ Mettre en place son environnement d'apprentissage personnel</span>
+                  <span>▸ Mettre en œuvre des outils et stratégies de veille informationnelle</span>
+                  <span>▸ Gérer son identité professionnelle</span>
+                  <span>▸ Développer son projet professionnel</span>
+                </div>
+              </th>
             </tr>
           </thead>
           <tbody>
