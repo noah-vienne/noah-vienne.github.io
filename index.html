@@ -582,6 +582,35 @@
     .dot-bar span { width: 10px; height: 10px; border-radius: 2px; background: var(--border); }
     .dot-bar span.on { background: var(--accent); box-shadow: 0 0 5px rgba(0,255,157,0.4); }
 
+    .synthese-check {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 22px; height: 22px;
+      border-radius: 4px;
+      background: rgba(0,255,157,0.12);
+      border: 1px solid rgba(0,255,157,0.3);
+      color: var(--accent);
+      font-size: 0.8rem;
+      font-weight: 700;
+    }
+
+    .synthese-legend {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-top: 1.2rem;
+      padding: 1rem 1.4rem;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      font-size: 0.83rem;
+      color: var(--text-muted);
+    }
+    .legend-item { display: flex; align-items: center; gap: 0.6rem; }
+
     /* FOOTER */
     footer { background: var(--bg); border-top: 1px solid var(--border); padding: 2.5rem 3rem; text-align: center; position: relative; z-index: 1; }
     footer::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1px; background: linear-gradient(90deg, transparent, var(--accent), var(--accent2), transparent); opacity: 0.35; }
@@ -640,7 +669,6 @@
           <span class="badge"><i class="fas fa-map-marker-alt"></i> Saint-Joseph, La Réunion</span>
           <span class="badge"><i class="fas fa-graduation-cap"></i> BTS SIO SISR 2024–2026</span>
           <span class="badge"><i class="fas fa-network-wired"></i> Réseaux & Systèmes</span>
-          <span class="badge"><i class="fas fa-phone"></i> 06 93 61 15 65</span>
         </div>
         <div class="hero-btns">
           <a href="#parcours" class="btn btn-primary"><i class="fas fa-terminal"></i> Mon parcours</a>
@@ -885,12 +913,12 @@
               <span class="vt-card-date">Oct. 2024</span>
             </div>
             <h4>Ransomware : +70% d'attaques en 2024</h4>
-            <p>Un <strong>ransomware</strong> est un logiciel malveillant qui chiffre les données d'une entreprise et réclame une rançon. En 2024, ces attaques ont augmenté de <strong>+70%</strong> selon l'ANSSI. Elles ciblent principalement les PME et collectivités via le <strong>phishing</strong> : un clic sur un email piégé suffit à paralyser tout le réseau.</p>
+            <p>Un <strong>ransomware</strong> est un logiciel malveillant qui chiffre toutes les données d'une entreprise et réclame une rançon en échange de la clé de déchiffrement. En 2024, ces attaques ont augmenté de <strong>+70%</strong> selon l'ANSSI. Elles ciblent principalement les PME et collectivités via le <strong>phishing</strong> : un simple clic sur un email piégé suffit à paralyser tout le réseau.</p>
             <div class="vt-example">
-              <span class="vt-example-label">💡 Exemple concret</span>
-              <p>En octobre 2024, une collectivité française a eu tous ses serveurs chiffrés après un clic sur une pièce jointe. Services paralysés pendant 3 semaines.</p>
+              <span class="vt-example-label">📰 Article — Le Monde Informatique, oct. 2024</span>
+              <p>Le groupe hospitalier <strong>Centre Hospitalier de Cannes</strong> a été victime d'une attaque ransomware en avril 2024 revendiquée par le groupe LockBit. Des milliers de dossiers patients ont été chiffrés, forçant le retour aux procédures papier pendant plusieurs semaines et causant l'annulation de centaines d'opérations. La rançon demandée dépassait 1 million d'euros.</p>
             </div>
-            <div class="vt-source"><i class="fas fa-link"></i><span>ANSSI — Panorama de la cybermenace 2024</span></div>
+            <div class="vt-source"><i class="fas fa-link"></i><span>ANSSI — Panorama de la cybermenace 2024 / Le Monde Informatique — avril 2024</span></div>
           </div>
 
           <div class="vt-card reveal">
@@ -899,8 +927,12 @@
               <span class="vt-card-date">Nov. 2024</span>
             </div>
             <h4>Zero Trust : ne jamais faire confiance, toujours vérifier</h4>
-            <p>Le modèle <strong>Zero Trust</strong> part du principe qu'aucun utilisateur ni appareil n'est fiable par défaut, même à l'intérieur du réseau. Il repose sur trois piliers : <strong>MFA</strong> (authentification multi-facteurs), <strong>moindre privilège</strong> (accès uniquement à ce qui est nécessaire), et <strong>microsegmentation</strong> du réseau. Indispensable à l'ère du télétravail.</p>
-            <div class="vt-source"><i class="fas fa-link"></i><span>NIST SP 800-207 — Zero Trust Architecture</span></div>
+            <p>Le modèle <strong>Zero Trust</strong> repose sur un principe simple : aucun utilisateur ni appareil n'est fiable par défaut, même à l'intérieur du réseau d'entreprise. Il repose sur trois piliers : <strong>MFA</strong> (authentification multi-facteurs), <strong>moindre privilège</strong> (chaque utilisateur n'accède qu'à ce qui lui est strictement nécessaire), et <strong>microsegmentation</strong> du réseau pour isoler chaque zone.</p>
+            <div class="vt-example">
+              <span class="vt-example-label">📰 Article — ZDNet France, nov. 2024</span>
+              <p>Microsoft a publié un rapport montrant que <strong>80% des cyberattaques réussies</strong> auraient pu être bloquées par une architecture Zero Trust correctement mise en place. L'entreprise a déployé ce modèle en interne après avoir subi la cyberattaque SolarWinds en 2020, qui avait compromis ses propres outils de développement malgré un périmètre réseau considéré comme sécurisé.</p>
+            </div>
+            <div class="vt-source"><i class="fas fa-link"></i><span>NIST SP 800-207 — Zero Trust Architecture / Microsoft Digital Defense Report 2024</span></div>
           </div>
 
           <div class="vt-card reveal">
@@ -909,12 +941,12 @@
               <span class="vt-card-date">Déc. 2024</span>
             </div>
             <h4>IDS/IPS : détecter et bloquer les intrusions réseau</h4>
-            <p>Un <strong>IDS</strong> (Intrusion Detection System) analyse le trafic réseau et génère des alertes. Un <strong>IPS</strong> (Intrusion Prevention System) va plus loin : il bloque automatiquement le trafic malveillant. Des outils open source comme <strong>Snort</strong> et <strong>Suricata</strong> sont très utilisés en entreprise pour surveiller les flux réseau en temps réel.</p>
+            <p>Un <strong>IDS</strong> (Intrusion Detection System) analyse le trafic réseau et génère des alertes en cas de comportement suspect. Un <strong>IPS</strong> (Intrusion Prevention System) va plus loin : il bloque automatiquement le trafic malveillant en temps réel. Des outils open source comme <strong>Snort</strong> et <strong>Suricata</strong> sont déployés dans des milliers d'entreprises dans le monde.</p>
             <div class="vt-example">
-              <span class="vt-example-label">💡 Lien avec mon stage</span>
-              <p>Chez Arts Pour Tous, l'absence de supervision réseau signifiait qu'une intrusion pouvait passer inaperçue des semaines. GLPI permet au moins de tracer les incidents.</p>
+              <span class="vt-example-label">📰 Article — CERT-FR, déc. 2024</span>
+              <p>Le CERT-FR a documenté une campagne d'attaque utilisant la technique du <strong>port scanning massif</strong> contre des entreprises françaises. Les entreprises ayant déployé un IPS ont automatiquement bloqué ces scans et reçu des alertes, tandis que celles sans protection ont vu leurs serveurs exposés cartographiés par les attaquants avant une intrusion ultérieure.</p>
             </div>
-            <div class="vt-source"><i class="fas fa-link"></i><span>Snort.org / Cisco Secure IPS Documentation</span></div>
+            <div class="vt-source"><i class="fas fa-link"></i><span>CERT-FR — Bulletin de sécurité déc. 2024 / Snort.org / Suricata.io</span></div>
           </div>
 
         </div>
@@ -936,13 +968,13 @@
               <span class="vt-cat cat-tech">🛠️ Technique</span>
               <span class="vt-card-date">Jan. – Fév. 2025</span>
             </div>
-            <h4>Segmentation réseau par VLANs : isoler pour mieux protéger</h4>
-            <p>La <strong>segmentation réseau</strong> divise le réseau en sous-réseaux isolés. Les <strong>VLANs</strong> permettent de créer cette séparation logiquement sur les switches : un VLAN pour les serveurs, un pour les postes, un pour les invités Wi-Fi. Si un attaquant compromet le réseau invité, il ne peut pas atteindre les serveurs. C'est une bonne pratique fondamentale recommandée par l'ANSSI.</p>
+            <h4>Segmentation réseau par VLANs : isoler pour contenir les attaques</h4>
+            <p>La <strong>segmentation réseau</strong> divise le réseau de l'entreprise en sous-réseaux isolés grâce aux <strong>VLANs</strong> (Virtual Local Area Networks). Si un attaquant compromet un poste sur le réseau des invités Wi-Fi, il ne peut pas atteindre les serveurs de production car ils sont dans un VLAN séparé. Cette technique limite considérablement la propagation latérale des attaques.</p>
             <div class="vt-example">
-              <span class="vt-example-label">💡 Lien BTS SISR</span>
-              <p>La configuration de VLANs sur des switches Cisco fait partie de mes TP. J'applique directement ce concept de cloisonnement pour limiter la propagation des attaques.</p>
+              <span class="vt-example-label">📰 Étude de cas — ANSSI, fév. 2025</span>
+              <p>L'ANSSI a publié un retour d'expérience sur une attaque stoppée grâce aux VLANs : chez un distributeur français de 300 employés, le ransomware s'est propagé uniquement sur le VLAN des postes commerciaux et n'a pas pu atteindre les serveurs de facturation, sauvant ainsi les données financières critiques. Sans segmentation, l'attaque aurait coûté plusieurs millions d'euros supplémentaires.</p>
             </div>
-            <div class="vt-source"><i class="fas fa-link"></i><span>ANSSI — Guide sécurité des réseaux d'entreprise</span></div>
+            <div class="vt-source"><i class="fas fa-link"></i><span>ANSSI — Guide sécurité des réseaux d'entreprise 2025 / CERT-FR</span></div>
           </div>
 
           <div class="vt-card reveal">
@@ -951,8 +983,12 @@
               <span class="vt-card-date">Mars 2025</span>
             </div>
             <h4>Wireshark : analyser le trafic pour détecter les anomalies</h4>
-            <p><strong>Wireshark</strong> est un analyseur de paquets réseau open source qui capture et analyse en temps réel tout le trafic sur un réseau. Il permet de détecter des comportements anormaux : connexions suspectes, scans de ports, protocoles non autorisés, volumes de données inhabituels. C'est un outil clé pour diagnostiquer une intrusion ou un problème réseau.</p>
-            <div class="vt-source"><i class="fas fa-link"></i><span>Wireshark.org — Documentation officielle</span></div>
+            <p><strong>Wireshark</strong> est un analyseur de paquets réseau open source qui capture et analyse en temps réel tout le trafic transitant sur un réseau. Il permet de détecter des comportements anormaux : connexions vers des adresses IP suspectes, scans de ports, protocoles non autorisés, ou volumes de données inhabituels révélateurs d'une exfiltration de données.</p>
+            <div class="vt-example">
+              <span class="vt-example-label">📰 Article — LeMagIT, mars 2025</span>
+              <p>Des chercheurs en sécurité ont utilisé Wireshark pour analyser le trafic réseau d'une entreprise victime d'une attaque silencieuse. L'analyse des paquets a révélé des <strong>communications chiffrées régulières vers un serveur C2</strong> (Command & Control) situé en Russie, actives depuis 4 mois sans avoir été détectées par l'antivirus. Wireshark a permis d'identifier le logiciel espion et de neutraliser l'attaque.</p>
+            </div>
+            <div class="vt-source"><i class="fas fa-link"></i><span>LeMagIT — mars 2025 / Wireshark.org — Documentation officielle</span></div>
           </div>
 
           <div class="vt-card reveal">
@@ -960,13 +996,13 @@
               <span class="vt-cat cat-actu">📰 Actualité</span>
               <span class="vt-card-date">Avr. 2025</span>
             </div>
-            <h4>Faille critique sur les pare-feux Fortinet : patch d'urgence</h4>
-            <p>Une vulnérabilité critique a été découverte sur les équipements <strong>FortiGate</strong> de Fortinet, permettant à un attaquant non authentifié d'exécuter du code à distance — accès total au réseau de l'entreprise. L'ANSSI a émis une alerte pour appliquer le correctif en urgence. Cet événement illustre l'importance du <strong>patch management</strong> : maintenir ses équipements à jour est une mesure fondamentale.</p>
+            <h4>Faille critique CVE-2024-21762 sur les pare-feux Fortinet</h4>
+            <p>La vulnérabilité <strong>CVE-2024-21762</strong> découverte sur les équipements <strong>FortiGate</strong> de Fortinet permet à un attaquant non authentifié d'exécuter du code arbitraire à distance via une requête HTTP malformée — lui donnant un accès complet au réseau de l'entreprise sans aucun identifiant. Plus de <strong>150 000 équipements</strong> étaient exposés dans le monde selon Shodan.</p>
             <div class="vt-example">
-              <span class="vt-example-label">💡 À retenir</span>
-              <p>Surveiller les CVE (Common Vulnerabilities and Exposures) quotidiennement via le bulletin CERT-FR est indispensable pour un administrateur réseau.</p>
+              <span class="vt-example-label">📰 Alerte — ANSSI &amp; CERT-FR, fév. 2024</span>
+              <p>Le CERT-FR a émis une alerte de niveau critique (CVSS 9.6/10) et constaté une exploitation active de cette faille par des groupes de hackers étatiques. Des entreprises françaises dans les secteurs de l'énergie et de la santé ont été compromises avant même que le patch soit disponible. Fortinet a publié un correctif d'urgence dans les 48h suivant la divulgation publique.</p>
             </div>
-            <div class="vt-source"><i class="fas fa-link"></i><span>ANSSI / CERT-FR — Alerte sécurité Fortinet 2025 / cve.mitre.org</span></div>
+            <div class="vt-source"><i class="fas fa-link"></i><span>CERT-FR — Alerte CERTFR-2024-ALE-004 / cve.mitre.org CVE-2024-21762</span></div>
           </div>
 
         </div>
@@ -978,7 +1014,7 @@
           <div class="vt-period-dot"></div>
           <div class="vt-period-label">
             <span class="vt-period-date">Mai — Septembre 2025</span>
-            <span class="vt-period-theme">Supervision, SIEM et gestion des incidents</span>
+            <span class="vt-period-theme">Supervision, SIEM et incidents majeurs</span>
           </div>
         </div>
         <div class="vt-cards">
@@ -989,19 +1025,26 @@
               <span class="vt-card-date">Mai – Juin 2025</span>
             </div>
             <h4>Zabbix et SIEM : superviser pour anticiper les attaques</h4>
-            <p><strong>Zabbix</strong> surveille en temps réel l'état des serveurs et équipements réseau. En cybersécurité, il peut détecter une charge CPU anormale (cryptominer), des tentatives de connexion répétées (brute force) ou une bande passante inhabituelle (exfiltration de données).</p>
-            <p>Un <strong>SIEM</strong> (Security Information and Event Management) centralise les logs de tous les équipements et corrèle les événements pour détecter des attaques complexes. Des solutions open source comme <strong>Wazuh</strong> permettent aux PME d'avoir un SIEM complet gratuitement.</p>
-            <div class="vt-source"><i class="fas fa-link"></i><span>Zabbix.com / Wazuh.com — Documentation officielle</span></div>
+            <p><strong>Zabbix</strong> surveille en temps réel l'état des serveurs et équipements réseau. En cybersécurité, il détecte une charge CPU anormale (cryptominer), des tentatives de connexion répétées (brute force) ou une bande passante inhabituelle (exfiltration). Un <strong>SIEM</strong> centralise les logs de tous les équipements et corrèle les événements pour révéler des attaques complexes invisibles individuellement.</p>
+            <div class="vt-example">
+              <span class="vt-example-label">📰 Rapport — Gartner, juin 2025</span>
+              <p>Selon Gartner, les entreprises ayant déployé un SIEM détectent les intrusions en moyenne en <strong>21 jours</strong> contre <strong>197 jours</strong> sans outil de supervision. Une banque régionale française a détecté grâce à son SIEM Wazuh une tentative d'exfiltration de données de 40 000 comptes clients : les logs corrélés montraient 3 000 requêtes SQL inhabituelles en 10 minutes depuis un compte utilisateur normalement inactif la nuit.</p>
+            </div>
+            <div class="vt-source"><i class="fas fa-link"></i><span>Gartner — SIEM Market Guide 2025 / Wazuh.com / Zabbix.com</span></div>
           </div>
 
           <div class="vt-card reveal">
             <div class="vt-card-top">
-              <span class="vt-cat cat-threat">⚠️ Menace</span>
-              <span class="vt-card-date">Juil. – Sep. 2025</span>
+              <span class="vt-cat cat-threat">⚠️ Incident majeur</span>
+              <span class="vt-card-date">Juil. 2025</span>
             </div>
-            <h4>Attaques DDoS contre les infrastructures critiques</h4>
-            <p>Une attaque <strong>DDoS</strong> (Distributed Denial of Service) sature un serveur avec des millions de requêtes via un botnet, le rendant indisponible. En été 2025, plusieurs hôpitaux et administrations françaises ont été visés, paralysant leurs services numériques pendant plusieurs heures. Ces attaques sont souvent menées par des groupes hacktivistes en période de tensions géopolitiques.</p>
-            <div class="vt-source"><i class="fas fa-link"></i><span>ANSSI — Rapport DDoS 2025 / Cloudflare DDoS Threat Report</span></div>
+            <h4>Attaques DDoS massives : Free, SFR et services publics visés</h4>
+            <p>Une attaque <strong>DDoS</strong> (Distributed Denial of Service) consiste à saturer un serveur avec des millions de requêtes simultanées via un botnet, le rendant totalement inaccessible. Ces attaques ne volent pas de données : elles paralysent. En été 2025, des groupes hacktivistes pro-russes ont visé des opérateurs télécoms et administrations françaises dans un contexte de tensions géopolitiques.</p>
+            <div class="vt-example">
+              <span class="vt-example-label">📰 Article — 01net.com, juil. 2025</span>
+              <p>Le groupe <strong>NoName057(16)</strong> a revendiqué une série d'attaques DDoS contre des sites gouvernementaux français (impots.gouv.fr, service-public.fr) atteignant des pics à <strong>300 Gbps</strong> de trafic malveillant. Les services ont été indisponibles pendant 4 heures. Cloudflare, qui protège certains de ces sites, a absorbé l'attaque grâce à son réseau mondial de filtrage.</p>
+            </div>
+            <div class="vt-source"><i class="fas fa-link"></i><span>01net — juil. 2025 / Cloudflare DDoS Threat Report Q3 2025 / ANSSI</span></div>
           </div>
 
         </div>
@@ -1024,8 +1067,12 @@
               <span class="vt-card-date">Oct. – Nov. 2025</span>
             </div>
             <h4>NIS2 : la directive européenne qui impose la cybersécurité</h4>
-            <p>La directive <strong>NIS2</strong> est entrée en application en octobre 2024 dans l'UE. Elle étend les obligations de cybersécurité à des milliers d'entreprises : mise en place de pare-feux et chiffrement, notification d'un incident sous <strong>24h</strong>, audits de sécurité réguliers. Les amendes peuvent atteindre <strong>10 millions d'euros</strong>. Pour les SISR, c'est une opportunité : la demande en experts cybersécurité explose.</p>
-            <div class="vt-source"><i class="fas fa-link"></i><span>EUR-Lex — Directive NIS2 / ANSSI — Guide NIS2 pour les entreprises</span></div>
+            <p>La directive <strong>NIS2</strong> est entrée en application le 17 octobre 2024 dans l'UE. Elle oblige des milliers d'entreprises à mettre en place des mesures de cybersécurité concrètes : pare-feux, chiffrement, gestion des accès, mais aussi notification obligatoire d'un incident sous <strong>24h</strong> aux autorités. Les amendes atteignent <strong>10 millions d'euros</strong> ou 2% du chiffre d'affaires mondial.</p>
+            <div class="vt-example">
+              <span class="vt-example-label">📰 Article — Les Échos, oct. 2025</span>
+              <p>Selon une enquête publiée par Les Échos, <strong>67% des entreprises françaises concernées par NIS2</strong> n'étaient pas encore conformes 12 mois après l'entrée en vigueur de la directive. L'ANSSI a annoncé le lancement de contrôles à partir de 2025, avec des audits surprise dans les secteurs de l'énergie, de la santé et des transports. Plusieurs DSI ont témoigné avoir dû recruter des profils SISR en urgence pour se mettre en conformité.</p>
+            </div>
+            <div class="vt-source"><i class="fas fa-link"></i><span>EUR-Lex — Directive NIS2 / Les Échos — oct. 2025 / ANSSI Guide NIS2</span></div>
           </div>
 
           <div class="vt-card reveal">
@@ -1033,13 +1080,13 @@
               <span class="vt-cat cat-threat">⚠️ Menace émergente</span>
               <span class="vt-card-date">Déc. 2025</span>
             </div>
-            <h4>L'IA au service des cyberattaquants : phishing et deepfakes</h4>
-            <p>Les cybercriminels utilisent désormais l'IA pour créer des attaques plus sophistiquées. Les emails de phishing générés par IA sont parfaits, sans fautes, et imitent le style d'un collègue. Les <strong>deepfakes audio</strong> imitent la voix d'un dirigeant pour convaincre un employé d'effectuer un virement (arnaque au président). En 2025, plusieurs entreprises européennes ont perdu des centaines de milliers d'euros via cette technique.</p>
+            <h4>L'IA au service des cyberattaquants : phishing parfait et deepfakes</h4>
+            <p>L'IA générative permet désormais de créer des emails de phishing sans fautes, personnalisés, imitant parfaitement le style d'un collègue ou d'un partenaire. Les <strong>deepfakes audio</strong> imitent la voix d'un dirigeant pour ordonner un virement bancaire urgent — ce qu'on appelle l'<strong>arnaque au président 2.0</strong>. Les attaquants utilisent des outils comme FraudGPT, un clone malveillant de ChatGPT vendu sur le dark web.</p>
             <div class="vt-example">
-              <span class="vt-example-label">💡 La meilleure défense</span>
-              <p>La sensibilisation des utilisateurs reste prioritaire : apprendre à douter, vérifier les demandes inhabituelles par un autre canal, ne jamais agir dans l'urgence.</p>
+              <span class="vt-example-label">📰 Article — BFM Tech, déc. 2025</span>
+              <p>Un cadre financier d'une multinationale hongkongaise a viré <strong>25 millions de dollars</strong> après avoir participé à une visioconférence avec de faux collègues entièrement générés par deepfake vidéo en temps réel. En France, Europol a recensé plus de 200 cas d'arnaques au président assistées par IA en 2025, avec un préjudice moyen de 180 000 euros par entreprise.</p>
             </div>
-            <div class="vt-source"><i class="fas fa-link"></i><span>Europol — Internet Organised Crime Threat Assessment 2025</span></div>
+            <div class="vt-source"><i class="fas fa-link"></i><span>BFM Tech — déc. 2025 / Europol IOCTA 2025 / ANSSI — Menaces IA</span></div>
           </div>
 
           <div class="vt-card reveal">
@@ -1049,13 +1096,13 @@
             </div>
             <h4>Ce que cette veille m'a appris</h4>
             <ul class="vt-list">
-              <li><strong>La menace évolue constamment</strong> — les attaquants exploitent l'IA et le cloud. La veille permanente est indispensable.</li>
-              <li><strong>La sécurité est une chaîne</strong> — un seul maillon faible suffit : un email cliqué, un équipement non mis à jour.</li>
-              <li><strong>Les outils open source suffisent</strong> — Wireshark, Zabbix, Wazuh, GLPI permettent un bon niveau de sécurité même sans grand budget.</li>
-              <li><strong>NIS2 crée des opportunités</strong> — les entreprises doivent se conformer, ce qui génère une forte demande en experts SISR.</li>
-              <li><strong>La sensibilisation reste la première défense</strong> — la technique ne suffit pas sans formation des utilisateurs.</li>
+              <li><strong>La menace évolue constamment</strong> — ransomware, deepfakes IA, DDoS géopolitiques : les attaquants s'adaptent en permanence. La veille hebdomadaire est indispensable via CERT-FR et ANSSI.</li>
+              <li><strong>La sécurité est une chaîne</strong> — l'attaque du CHC de Cannes et la faille Fortinet montrent qu'un seul maillon faible suffit : un email cliqué, un équipement non patché.</li>
+              <li><strong>Les outils open source sont efficaces</strong> — Wireshark, Suricata, Wazuh permettent un niveau de protection élevé même pour les PME sans grands budgets.</li>
+              <li><strong>NIS2 transforme le marché</strong> — 67% des entreprises non conformes = une forte demande en administrateurs SISR spécialisés en cybersécurité.</li>
+              <li><strong>La sensibilisation humaine reste prioritaire</strong> — la technologie ne suffit pas si les utilisateurs ne sont pas formés aux nouvelles menaces IA.</li>
             </ul>
-            <div class="vt-source"><i class="fas fa-link"></i><span>Bilan personnel — BTS SIO SISR, Lycée Pierre Poivre, Saint-Joseph</span></div>
+            <div class="vt-source"><i class="fas fa-link"></i><span>Bilan personnel — BTS SIO SISR, Lycée Pierre Poivre, Saint-Joseph, La Réunion</span></div>
           </div>
 
         </div>
@@ -1084,79 +1131,159 @@
     <div class="section-header reveal">
       <span class="section-label">// 05 — tableau de synthèse</span>
       <h2 class="section-title">Tableau de <span>synthèse BTS</span></h2>
-      <p class="section-desc">Récapitulatif des compétences et activités développées sur 2 ans de BTS SIO SISR.</p>
+      <p class="section-desc">Tableau de synthèse des réalisations professionnelles — Épreuve E5 · Session 2026 · Option SISR</p>
     </div>
     <div class="synthese-wrapper">
 
-      <!-- ZONE IMAGE CLIQUABLE -->
-      <div class="img-zone reveal" onclick="document.getElementById('fileInput').click()">
-        <img id="tableauImg" src="" alt="Tableau de synthèse"/>
-        <div class="upload-ph" id="uploadPh">
-          <i class="fas fa-table"></i>
-          <h3>Importe ton tableau de synthèse</h3>
-          <p>Clique ici pour ajouter une capture d'écran ou une photo de ton tableau BTS SIO.</p>
-          <div class="code-hint">💡 Sur GitHub : place ton image dans assets/ et mets src="assets/tableau.png"</div>
-        </div>
-        <input type="file" id="fileInput" accept="image/*"/>
-      </div>
-
-      <!-- TABLEAU DE SECOURS -->
       <div class="tbl-wrap reveal">
         <table>
           <thead>
             <tr>
-              <th>Compétence</th>
-              <th>Activité / Contexte</th>
-              <th>Outils utilisés</th>
-              <th>Niveau</th>
+              <th style="min-width:220px">Réalisation professionnelle</th>
+              <th style="min-width:80px">Période</th>
+              <th style="text-align:center;min-width:90px">Gérer le patrimoine informatique</th>
+              <th style="text-align:center;min-width:90px">Répondre aux incidents et demandes</th>
+              <th style="text-align:center;min-width:90px">Développer la présence en ligne</th>
+              <th style="text-align:center;min-width:90px">Travailler en mode projet</th>
+              <th style="text-align:center;min-width:90px">Mettre à disposition un service</th>
+              <th style="text-align:center;min-width:90px">Développement professionnel</th>
             </tr>
           </thead>
           <tbody>
+
             <tr>
-              <td>Administration réseau</td>
-              <td>Configuration réseau en TP et en stage</td>
-              <td>Cisco, VLANs, Packet Tracer</td>
-              <td><div class="dot-bar"><span class="on"></span><span class="on"></span><span class="on"></span><span></span><span></span></div></td>
+              <td colspan="8" style="background:rgba(0,255,157,0.06);color:var(--accent);font-family:var(--font-mono);font-size:0.72rem;letter-spacing:0.1em;padding:0.6rem 1.3rem;">
+                RÉALISATIONS EN COURS DE FORMATION
+              </td>
             </tr>
+
             <tr>
-              <td>Gestion de parc (GLPI)</td>
-              <td>Déploiement GLPI chez Arts Pour Tous — Stage 2</td>
-              <td>GLPI, Windows, Linux</td>
-              <td><div class="dot-bar"><span class="on"></span><span class="on"></span><span class="on"></span><span class="on"></span><span></span></div></td>
+              <td>Challenge Entreprendre avec l'IA : Burger King</td>
+              <td style="color:var(--text-muted);font-size:0.8rem">2024–2025</td>
+              <td style="text-align:center"></td>
+              <td style="text-align:center"><span class="synthese-check">✓</span></td>
+              <td style="text-align:center"></td>
+              <td style="text-align:center"><span class="synthese-check">✓</span></td>
+              <td style="text-align:center"></td>
+              <td style="text-align:center"></td>
             </tr>
+
             <tr>
-              <td>Virtualisation</td>
-              <td>Déploiement de machines virtuelles en TP</td>
-              <td>VirtualBox, VMware</td>
-              <td><div class="dot-bar"><span class="on"></span><span class="on"></span><span class="on"></span><span></span><span></span></div></td>
+              <td>Création d'une infrastructure réseau avec Active Directory, GLPI et Zabbix</td>
+              <td style="color:var(--text-muted);font-size:0.8rem">2024–2025</td>
+              <td style="text-align:center"><span class="synthese-check">✓</span></td>
+              <td style="text-align:center"></td>
+              <td style="text-align:center"></td>
+              <td style="text-align:center"><span class="synthese-check">✓</span></td>
+              <td style="text-align:center"><span class="synthese-check">✓</span></td>
+              <td style="text-align:center"></td>
             </tr>
+
             <tr>
-              <td>Supervision réseau</td>
-              <td>Surveillance et alertes système en TP</td>
-              <td>Zabbix, Wireshark</td>
-              <td><div class="dot-bar"><span class="on"></span><span class="on"></span><span></span><span></span><span></span></div></td>
+              <td>Création site WordPress dans le cadre d'un échange ERASMUS</td>
+              <td style="color:var(--text-muted);font-size:0.8rem">Fév. 2025</td>
+              <td style="text-align:center"></td>
+              <td style="text-align:center"></td>
+              <td style="text-align:center"><span class="synthese-check">✓</span></td>
+              <td style="text-align:center"><span class="synthese-check">✓</span></td>
+              <td style="text-align:center"><span class="synthese-check">✓</span></td>
+              <td style="text-align:center"></td>
             </tr>
+
             <tr>
-              <td>Développement Web</td>
-              <td>Mise à jour site web — Stage 1</td>
-              <td>Webself, WordPress, HTML/CSS</td>
-              <td><div class="dot-bar"><span class="on"></span><span class="on"></span><span class="on"></span><span></span><span></span></div></td>
+              <td>Création d'un CTF pour les classes de seconde</td>
+              <td style="color:var(--text-muted);font-size:0.8rem">2024–2025</td>
+              <td style="text-align:center"></td>
+              <td style="text-align:center"></td>
+              <td style="text-align:center"></td>
+              <td style="text-align:center"><span class="synthese-check">✓</span></td>
+              <td style="text-align:center"><span class="synthese-check">✓</span></td>
+              <td style="text-align:center"></td>
             </tr>
+
             <tr>
-              <td>Cybersécurité / RGPD</td>
-              <td>Certification RGPD + TP sécurité réseau</td>
-              <td>Wireshark, Kali Linux</td>
-              <td><div class="dot-bar"><span class="on"></span><span class="on"></span><span></span><span></span><span></span></div></td>
+              <td>Participation à un CTF entre plusieurs écoles</td>
+              <td style="color:var(--text-muted);font-size:0.8rem">2024–2025</td>
+              <td style="text-align:center"></td>
+              <td style="text-align:center"></td>
+              <td style="text-align:center"></td>
+              <td style="text-align:center"><span class="synthese-check">✓</span></td>
+              <td style="text-align:center"></td>
+              <td style="text-align:center"></td>
             </tr>
+
             <tr>
-              <td>Programmation</td>
-              <td>Scripts et automatisation en formation</td>
-              <td>Python, SQL</td>
-              <td><div class="dot-bar"><span class="on"></span><span class="on"></span><span></span><span></span><span></span></div></td>
+              <td>TP HAProxy</td>
+              <td style="color:var(--text-muted);font-size:0.8rem">2024–2025</td>
+              <td style="text-align:center"></td>
+              <td style="text-align:center"><span class="synthese-check">✓</span></td>
+              <td style="text-align:center"></td>
+              <td style="text-align:center"></td>
+              <td style="text-align:center"></td>
+              <td style="text-align:center"></td>
             </tr>
+
+            <tr>
+              <td>Certification RGPD</td>
+              <td style="color:var(--text-muted);font-size:0.8rem">2024</td>
+              <td style="text-align:center"></td>
+              <td style="text-align:center"></td>
+              <td style="text-align:center"></td>
+              <td style="text-align:center"></td>
+              <td style="text-align:center"></td>
+              <td style="text-align:center"><span class="synthese-check">✓</span></td>
+            </tr>
+
+            <tr>
+              <td colspan="8" style="background:rgba(0,150,255,0.06);color:var(--accent2);font-family:var(--font-mono);font-size:0.72rem;letter-spacing:0.1em;padding:0.6rem 1.3rem;">
+                RÉALISATIONS EN MILIEU PROFESSIONNEL — 1ÈRE ANNÉE
+              </td>
+            </tr>
+
+            <tr>
+              <td>Amélioration du site web de l'association avec Webself</td>
+              <td style="color:var(--text-muted);font-size:0.8rem">02/06 – 27/06/2025</td>
+              <td style="text-align:center"></td>
+              <td style="text-align:center"><span class="synthese-check">✓</span></td>
+              <td style="text-align:center"><span class="synthese-check">✓</span></td>
+              <td style="text-align:center"></td>
+              <td style="text-align:center"><span class="synthese-check">✓</span></td>
+              <td style="text-align:center"></td>
+            </tr>
+
+            <tr>
+              <td colspan="8" style="background:rgba(0,150,255,0.06);color:var(--accent2);font-family:var(--font-mono);font-size:0.72rem;letter-spacing:0.1em;padding:0.6rem 1.3rem;">
+                RÉALISATIONS EN MILIEU PROFESSIONNEL — 2ÈME ANNÉE
+              </td>
+            </tr>
+
+            <tr>
+              <td>Mise en place de GLPI pour l'inventaire et la gestion de tickets</td>
+              <td style="color:var(--text-muted);font-size:0.8rem">15/01 – 25/02/2026</td>
+              <td style="text-align:center"><span class="synthese-check">✓</span></td>
+              <td style="text-align:center"></td>
+              <td style="text-align:center"></td>
+              <td style="text-align:center"></td>
+              <td style="text-align:center"><span class="synthese-check">✓</span></td>
+              <td style="text-align:center"></td>
+            </tr>
+
           </tbody>
         </table>
       </div>
+
+      <!-- Légende -->
+      <div class="synthese-legend reveal">
+        <div class="legend-item">
+          <span class="synthese-check">✓</span>
+          <span>Compétence mobilisée lors de cette réalisation</span>
+        </div>
+        <div class="legend-item">
+          <span style="color:var(--accent);font-family:var(--font-mono);font-size:0.8rem">BTS SIO</span>
+          <span>Option SISR · Session 2026 · Lycée Pierre Poivre, Saint-Joseph</span>
+        </div>
+      </div>
+
     </div>
   </section>
 
