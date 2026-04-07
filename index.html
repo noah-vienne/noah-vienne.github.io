@@ -420,7 +420,7 @@
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
       gap: 1.4rem;
-      max-width: 1000px;
+      max-width: 1100px;
       margin: 0 auto;
     }
     .certif-card {
@@ -434,23 +434,70 @@
     }
     .certif-card:hover { border-color: var(--accent); transform: translateY(-4px); box-shadow: 0 8px 28px rgba(0,255,157,0.08); }
     .certif-logo-wrap {
-      height: 80px;
+      height: 90px;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 2rem;
       position: relative;
     }
-    .certif-rgpd { background: linear-gradient(135deg, rgba(0,150,255,0.12), rgba(0,150,255,0.05)); color: var(--accent2); border-bottom: 1px solid rgba(0,150,255,0.15); }
-    .certif-pix   { background: linear-gradient(135deg, rgba(255,189,46,0.12), rgba(255,189,46,0.05)); color: #ffbd2e; border-bottom: 1px solid rgba(255,189,46,0.15); }
-    .certif-storm { background: linear-gradient(135deg, rgba(255,80,50,0.12), rgba(255,80,50,0.05)); color: #ff6b4a; border-bottom: 1px solid rgba(255,80,50,0.15); }
-    .certif-body { padding: 1.4rem; flex: 1; display: flex; flex-direction: column; gap: 0.5rem; }
+    .certif-rgpd { background: linear-gradient(135deg, #001f5c18, #e3061310); border-bottom: 1px solid rgba(0,49,137,0.2); }
+    .certif-pix   { background: linear-gradient(135deg, #5c2d9118, #7c3aed10); border-bottom: 1px solid rgba(124,58,237,0.2); }
+    .certif-storm { background: linear-gradient(135deg, #ff660018, #ff440010); border-bottom: 1px solid rgba(255,102,0,0.2); }
+    .certif-body { padding: 1.4rem; flex: 1; display: flex; flex-direction: column; gap: 0.6rem; }
     .certif-year { font-family: var(--font-mono); font-size: 0.7rem; color: var(--accent); letter-spacing: 0.1em; }
     .certif-body h3 { font-family: var(--font-display); font-size: 1.05rem; font-weight: 700; letter-spacing: 0.03em; }
     .certif-body p { color: var(--text-muted); font-size: 0.83rem; line-height: 1.6; flex: 1; }
-    .certif-footer { display: flex; align-items: center; justify-content: space-between; gap: 0.5rem; margin-top: 0.5rem; padding-top: 0.8rem; border-top: 1px solid var(--border); }
+    .certif-modules { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: 0.2rem; }
+    .certif-mod { font-family: var(--font-mono); font-size: 0.68rem; padding: 0.2rem 0.6rem; border-radius: 4px; background: rgba(0,255,157,0.07); border: 1px solid rgba(0,255,157,0.15); color: var(--accent); }
+    .certif-footer { display: flex; align-items: center; justify-content: space-between; gap: 0.5rem; padding-top: 0.8rem; border-top: 1px solid var(--border); }
     .certif-org { font-family: var(--font-mono); font-size: 0.7rem; color: var(--text-muted); display: flex; align-items: center; gap: 0.4rem; }
     .certif-org i { color: var(--accent); font-size: 0.65rem; }
+    .certif-dl-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-top: 0.8rem;
+      padding: 0.55rem 1.1rem;
+      border-radius: 6px;
+      background: rgba(0,255,157,0.08);
+      border: 1px solid rgba(0,255,157,0.2);
+      color: var(--accent);
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      text-decoration: none;
+      transition: all var(--tr);
+      width: fit-content;
+    }
+    .certif-dl-btn:hover { background: rgba(0,255,157,0.16); border-color: var(--accent); box-shadow: 0 0 14px rgba(0,255,157,0.15); }
+
+    /* STAGES */
+    .stages-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 1.5rem; max-width: 1100px; margin: 0 auto; }
+    .stage-card { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; transition: all var(--tr); }
+    .stage-card:hover { border-color: var(--border-glow); box-shadow: 0 8px 30px rgba(0,255,157,0.07); }
+    .stage-header {
+      padding: 1.1rem 1.5rem;
+      background: linear-gradient(90deg, rgba(0,255,157,0.08), rgba(0,150,255,0.06));
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 0.4rem;
+    }
+    .stage-header-erasmus { background: linear-gradient(90deg, rgba(0,80,200,0.12), rgba(200,0,0,0.08)); }
+    .stage-num { font-family: var(--font-mono); font-size: 0.72rem; color: var(--accent); letter-spacing: 0.12em; font-weight: 600; text-transform: uppercase; }
+    .stage-dates { font-family: var(--font-mono); font-size: 0.68rem; color: var(--text-muted); }
+    .stage-body { padding: 1.5rem; display: flex; flex-direction: column; gap: 0.8rem; }
+    .stage-title-row h3 { font-family: var(--font-display); font-size: 1.1rem; font-weight: 700; margin-bottom: 0.3rem; }
+    .stage-lieu { font-family: var(--font-mono); font-size: 0.75rem; color: var(--accent2); display: flex; align-items: center; gap: 0.4rem; }
+    .stage-lieu i { font-size: 0.65rem; }
+    .stage-section-title { font-family: var(--font-mono); font-size: 0.72rem; color: var(--accent); letter-spacing: 0.1em; text-transform: uppercase; display: flex; align-items: center; gap: 0.5rem; margin-top: 0.3rem; padding-top: 0.7rem; border-top: 1px solid var(--border); }
+    .stage-section-title i { font-size: 0.7rem; }
+    .stage-text { color: var(--text-muted); font-size: 0.86rem; line-height: 1.7; }
+    .stage-list { color: var(--text-muted); font-size: 0.84rem; line-height: 1.8; padding-left: 1.2rem; }
+    .stage-list li { margin-bottom: 0.1rem; }
+    .stage-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+    .stage-tag { font-family: var(--font-mono); font-size: 0.72rem; padding: 0.25rem 0.65rem; border-radius: 4px; background: rgba(0,150,255,0.07); border: 1px solid rgba(0,150,255,0.14); color: var(--accent2); }
 
     /* COMPÉTENCES */
     .skills-wrapper { max-width: 900px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.4rem; }
@@ -759,6 +806,7 @@
       <li><a href="#parcours">Parcours</a></li>
       <li><a href="#diplomes">Diplômes</a></li>
       <li><a href="#certifications">Certifications</a></li>
+      <li><a href="#stages">Stages</a></li>
       <li><a href="#competences">Compétences</a></li>
       <li><a href="#veille">Veille</a></li>
       <li><a href="#synthese">Synthèse</a></li>
@@ -938,6 +986,7 @@
     </div>
   </section>
 
+
   <!-- CERTIFICATIONS -->
   <section id="certifications">
     <div class="section-header reveal">
@@ -947,46 +996,84 @@
     </div>
     <div class="certif-grid">
 
+      <!-- RGPD -->
       <div class="certif-card reveal">
         <div class="certif-logo-wrap certif-rgpd">
-          <i class="fas fa-shield-alt"></i>
+          <svg viewBox="0 0 120 50" width="110" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="30" cy="14" r="7" fill="#003189"/>
+            <circle cx="47" cy="14" r="7" fill="#e30613"/>
+            <circle cx="38" cy="28" r="7" fill="#003189"/>
+            <text x="60" y="20" font-family="Arial" font-weight="bold" font-size="13" fill="#003189">L'ATELIER</text>
+            <text x="60" y="34" font-family="Arial" font-weight="bold" font-size="11" fill="#e30613">RGPD</text>
+          </svg>
         </div>
         <div class="certif-body">
-          <div class="certif-year">2024</div>
-          <h3>Certification RGPD</h3>
-          <p>Règlement Général sur la Protection des Données — Sensibilisation aux règles de conformité, de protection et de traitement des données personnelles en entreprise.</p>
+          <div class="certif-year">Décembre 2024</div>
+          <h3>Certification RGPD — CNIL</h3>
+          <p>5 modules complétés avec un score de <strong>100%</strong> à chaque évaluation : notions clés, principes de protection des données, responsabilités des acteurs, DPO et outils de conformité, collectivités territoriales.</p>
+          <div class="certif-modules">
+            <span class="certif-mod">Module 1 · 100%</span>
+            <span class="certif-mod">Module 2 · 100%</span>
+            <span class="certif-mod">Module 3 · 100%</span>
+            <span class="certif-mod">Module 4 · 100%</span>
+            <span class="certif-mod">Module 5 · 100%</span>
+          </div>
           <div class="certif-footer">
-            <span class="certif-org"><i class="fas fa-building"></i> CNIL / Formation BTS</span>
+            <span class="certif-org"><i class="fas fa-building"></i> CNIL — L'Atelier RGPD</span>
             <span class="dip-status s-ok">Obtenu</span>
           </div>
+          <a href="assets/certif-rgpd.pdf" class="certif-dl-btn" download="Certification_RGPD_Vienne_Noah.pdf">
+            <i class="fas fa-download"></i> Télécharger le certificat
+          </a>
         </div>
       </div>
 
+      <!-- PIX -->
       <div class="certif-card reveal">
         <div class="certif-logo-wrap certif-pix">
-          <i class="fas fa-star"></i>
+          <svg viewBox="0 0 100 40" width="90" xmlns="http://www.w3.org/2000/svg">
+            <text x="0" y="32" font-family="Arial" font-weight="900" font-size="38" fill="white" letter-spacing="-2">pix</text>
+          </svg>
         </div>
         <div class="certif-body">
-          <div class="certif-year">2026</div>
+          <div class="certif-year">23 mars 2026</div>
           <h3>Certification PIX</h3>
-          <p>Certification nationale des compétences numériques — Évaluation des compétences digitales sur 5 domaines : information, communication, création, protection et environnement numérique.</p>
+          <p>Score de <strong>460 / 895 points</strong> — Niveau global <strong>Indépendant 2</strong>. Délivrée au Lycée Pierre Poivre. Compétences évaluées : recherche d'information, outils collaboratifs, sécurité des données, pratiques numériques responsables.</p>
+          <div class="certif-modules">
+            <span class="certif-mod">460 / 895 pts</span>
+            <span class="certif-mod">Indépendant 2</span>
+            <span class="certif-mod">Code : P-BJJK3HQK</span>
+          </div>
           <div class="certif-footer">
-            <span class="certif-org"><i class="fas fa-building"></i> PIX — GIP Pix</span>
+            <span class="certif-org"><i class="fas fa-building"></i> GIP Pix — app.pix.fr</span>
             <span class="dip-status s-ok">Obtenu</span>
           </div>
+          <a href="assets/certif-pix.pdf" class="certif-dl-btn" download="Certification_PIX_Vienne_Noah.pdf">
+            <i class="fas fa-download"></i> Télécharger le certificat
+          </a>
         </div>
       </div>
 
+      <!-- STORMSHIELD -->
       <div class="certif-card reveal">
         <div class="certif-logo-wrap certif-storm">
-          <i class="fas fa-fire-alt"></i>
+          <svg viewBox="0 0 140 45" width="130" xmlns="http://www.w3.org/2000/svg">
+            <polygon points="10,5 22,5 16,22" fill="#ff6600"/>
+            <polygon points="22,5 34,5 28,22" fill="#ff6600" opacity="0.7"/>
+            <text x="42" y="30" font-family="Arial" font-weight="bold" font-size="18" fill="white" letter-spacing="0.5">STORMSHIELD</text>
+          </svg>
         </div>
         <div class="certif-body">
           <div class="certif-year">2025 — 2026</div>
-          <h3>Certification Stormshield</h3>
-          <p>Certification sur les solutions de sécurité réseau Stormshield (pare-feux, filtrage, VPN) — Formation aux produits SNS (Stormshield Network Security) utilisés dans les entreprises françaises.</p>
+          <h3>Certification Stormshield SNS</h3>
+          <p>Formation aux solutions de sécurité réseau <strong>Stormshield Network Security</strong> — pare-feux nouvelle génération, filtrage applicatif, VPN IPsec/SSL, détection d'intrusions. Stormshield est qualifié par l'ANSSI pour les organismes d'importance vitale.</p>
+          <div class="certif-modules">
+            <span class="certif-mod">Pare-feu SNS</span>
+            <span class="certif-mod">VPN IPsec</span>
+            <span class="certif-mod">ANSSI qualifié</span>
+          </div>
           <div class="certif-footer">
-            <span class="certif-org"><i class="fas fa-building"></i> Stormshield — Anssi qualifié</span>
+            <span class="certif-org"><i class="fas fa-building"></i> Stormshield — Airbus CyberSecurity</span>
             <span class="dip-status s-wip">En cours</span>
           </div>
         </div>
@@ -994,9 +1081,146 @@
 
     </div>
   </section>
+
+  <!-- STAGES -->
+  <section id="stages">
+    <div class="section-header reveal">
+      <span class="section-label">// 04 — stages</span>
+      <h2 class="section-title">Mes <span>stages</span></h2>
+      <p class="section-desc">Détail de mes expériences professionnelles en entreprise.</p>
+    </div>
+    <div class="stages-grid">
+
+      <!-- STAGE 2 -->
+      <div class="stage-card reveal">
+        <div class="stage-header">
+          <div class="stage-num">Stage 2</div>
+          <div class="stage-dates">14 janvier — 24 février 2026 · 6 semaines</div>
+        </div>
+        <div class="stage-body">
+          <div class="stage-title-row">
+            <h3>Technicien informatique</h3>
+            <div class="stage-lieu"><i class="fas fa-map-marker-alt"></i> Arts Pour Tous — Saint-Joseph, La Réunion</div>
+          </div>
+
+          <div class="stage-section-title"><i class="fas fa-bullseye"></i> Mission principale</div>
+          <p class="stage-text">Mise en place complète d'un système <strong>GLPI</strong> (Gestionnaire Libre de Parc Informatique) pour l'association Arts Pour Tous. L'objectif était de structurer la gestion du parc informatique et de mettre en place un système de ticketing pour le support utilisateur.</p>
+
+          <div class="stage-section-title"><i class="fas fa-tasks"></i> Tâches réalisées</div>
+          <ul class="stage-list">
+            <li>Installation et configuration du serveur GLPI sur un environnement Linux</li>
+            <li>Inventaire et recensement de tous les équipements informatiques de l'association</li>
+            <li>Création des comptes utilisateurs et configuration des droits d'accès</li>
+            <li>Mise en place du module de gestion des tickets d'incidents</li>
+            <li>Formation des utilisateurs à l'utilisation de l'outil</li>
+            <li>Rédaction de la documentation technique et du guide utilisateur</li>
+          </ul>
+
+          <div class="stage-section-title"><i class="fas fa-tools"></i> Outils & technologies</div>
+          <div class="stage-tags">
+            <span class="stage-tag">GLPI</span>
+            <span class="stage-tag">Linux</span>
+            <span class="stage-tag">Windows</span>
+            <span class="stage-tag">Apache</span>
+            <span class="stage-tag">MySQL</span>
+            <span class="stage-tag">FusionInventory</span>
+          </div>
+
+          <div class="stage-section-title"><i class="fas fa-lightbulb"></i> Compétences développées</div>
+          <p class="stage-text">Administration système Linux, gestion de parc informatique, relation utilisateur, rédaction de documentation technique, déploiement d'un outil ITSM en environnement de production.</p>
+
+          <a href="assets/attestation-stage-2.pdf" class="certif-dl-btn" download="Attestation_Stage_2_Vienne_Noah.pdf">
+            <i class="fas fa-download"></i> Télécharger l'attestation de stage
+          </a>
+        </div>
+      </div>
+
+      <!-- STAGE ERASMUS -->
+      <div class="stage-card reveal">
+        <div class="stage-header stage-header-erasmus">
+          <div class="stage-num">Stage ERASMUS 🇩🇪</div>
+          <div class="stage-dates">9 — 24 février 2025 · 2 semaines · Allemagne</div>
+        </div>
+        <div class="stage-body">
+          <div class="stage-title-row">
+            <h3>Développeur Web — WordPress</h3>
+            <div class="stage-lieu"><i class="fas fa-map-marker-alt"></i> Allemagne — Programme ERASMUS+</div>
+          </div>
+
+          <div class="stage-section-title"><i class="fas fa-bullseye"></i> Mission principale</div>
+          <p class="stage-text">Dans le cadre du programme d'échange européen <strong>ERASMUS+</strong>, création d'un site web complet avec <strong>WordPress</strong>. Stage réalisé entièrement en anglais, en immersion professionnelle et culturelle dans un pays étranger.</p>
+
+          <div class="stage-section-title"><i class="fas fa-tasks"></i> Tâches réalisées</div>
+          <ul class="stage-list">
+            <li>Création et configuration d'un site WordPress from scratch</li>
+            <li>Installation et personnalisation d'un thème adapté aux besoins du client</li>
+            <li>Intégration de contenu : textes, images, pages</li>
+            <li>Configuration des plugins essentiels (SEO, formulaire de contact, sécurité)</li>
+            <li>Communication professionnelle en anglais avec l'équipe</li>
+          </ul>
+
+          <div class="stage-section-title"><i class="fas fa-tools"></i> Outils & technologies</div>
+          <div class="stage-tags">
+            <span class="stage-tag">WordPress</span>
+            <span class="stage-tag">HTML / CSS</span>
+            <span class="stage-tag">PHP</span>
+            <span class="stage-tag">Elementor</span>
+            <span class="stage-tag">Anglais professionnel</span>
+          </div>
+
+          <div class="stage-section-title"><i class="fas fa-lightbulb"></i> Compétences développées</div>
+          <p class="stage-text">Développement web avec WordPress, adaptabilité en environnement international, communication professionnelle en anglais, autonomie et gestion de projet à l'étranger.</p>
+        </div>
+      </div>
+
+      <!-- STAGE 1 -->
+      <div class="stage-card reveal">
+        <div class="stage-header">
+          <div class="stage-num">Stage 1</div>
+          <div class="stage-dates">2 juin — 27 juin 2025 · 4 semaines</div>
+        </div>
+        <div class="stage-body">
+          <div class="stage-title-row">
+            <h3>Webmaster — Refonte de site web</h3>
+            <div class="stage-lieu"><i class="fas fa-map-marker-alt"></i> Arts Pour Tous — Saint-Joseph, La Réunion</div>
+          </div>
+
+          <div class="stage-section-title"><i class="fas fa-bullseye"></i> Mission principale</div>
+          <p class="stage-text">Amélioration et mise à jour du site web de l'association <strong>Arts Pour Tous</strong> via la plateforme no-code <strong>Webself</strong>. L'objectif était de moderniser la présence en ligne de l'association et d'améliorer l'expérience des visiteurs.</p>
+
+          <div class="stage-section-title"><i class="fas fa-tasks"></i> Tâches réalisées</div>
+          <ul class="stage-list">
+            <li>Audit de l'existant et identification des points d'amélioration</li>
+            <li>Refonte du design et de la mise en page des pages principales</li>
+            <li>Mise à jour et rédaction des contenus (textes, photos, événements)</li>
+            <li>Optimisation de la navigation et de l'ergonomie du site</li>
+            <li>Amélioration du référencement (balises méta, titres, descriptions)</li>
+          </ul>
+
+          <div class="stage-section-title"><i class="fas fa-tools"></i> Outils & technologies</div>
+          <div class="stage-tags">
+            <span class="stage-tag">Webself</span>
+            <span class="stage-tag">HTML / CSS</span>
+            <span class="stage-tag">SEO</span>
+            <span class="stage-tag">Gestion de contenu</span>
+          </div>
+
+          <div class="stage-section-title"><i class="fas fa-lightbulb"></i> Compétences développées</div>
+          <p class="stage-text">Gestion de site web no-code, rédaction de contenu web, sens du client et de la communication, autonomie dans la gestion d'un projet de refonte.</p>
+
+          <a href="assets/attestation-stage-1.pdf" class="certif-dl-btn" download="Attestation_Stage_1_Vienne_Noah.pdf">
+            <i class="fas fa-download"></i> Télécharger l'attestation de stage
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- COMPÉTENCES -->
   <section id="competences">
     <div class="section-header reveal">
-      <span class="section-label">// 04 — compétences techniques</span>
+      <span class="section-label">// 05 — compétences techniques</span>
       <h2 class="section-title">Mes <span>compétences</span></h2>
       <p class="section-desc">Les outils et technologies maîtrisés au cours de ma formation et de mes stages.</p>
     </div>
@@ -1039,7 +1263,7 @@
   <!-- VEILLE TECHNOLOGIQUE -->
   <section id="veille">
     <div class="section-header reveal">
-      <span class="section-label">// 05 — veille technologique</span>
+      <span class="section-label">// 06 — veille technologique</span>
       <h2 class="section-title">Veille <span>technologique</span></h2>
       <p class="section-desc">La cybersécurité des réseaux d'entreprise — 18 mois de suivi (Oct. 2024 – Mars 2026)</p>
     </div>
@@ -1296,7 +1520,7 @@
   <!-- TABLEAU DE SYNTHÈSE -->
   <section id="synthese">
     <div class="section-header reveal">
-      <span class="section-label">// 06 — tableau de synthèse</span>
+      <span class="section-label">// 07 — tableau de synthèse</span>
       <h2 class="section-title">Tableau de <span>synthèse BTS</span></h2>
       <p class="section-desc">Tableau de synthèse des réalisations professionnelles — Épreuve E5 · Session 2026 · Option SISR</p>
     </div>
