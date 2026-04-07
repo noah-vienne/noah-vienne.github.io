@@ -787,6 +787,38 @@
     .s-link:hover { border-color: var(--accent); color: var(--accent); box-shadow: 0 0 14px rgba(0,255,157,0.18); transform: translateY(-2px); }
     .f-copy { font-family: var(--font-mono); font-size: 0.68rem; color: var(--text-muted); }
 
+    .contact-email-hero {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      margin-top: 1.2rem;
+      padding: 0.5rem 1.1rem;
+      border-radius: 6px;
+      background: rgba(0,255,157,0.06);
+      border: 1px solid rgba(0,255,157,0.18);
+      font-family: var(--font-mono);
+      font-size: 0.82rem;
+      color: var(--accent);
+      letter-spacing: 0.03em;
+      user-select: all;
+    }
+    .contact-email-hero i { font-size: 0.75rem; }
+
+    .f-email-block {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-bottom: 1rem;
+      padding: 0.4rem 1rem;
+      border-radius: 6px;
+      background: rgba(0,255,157,0.05);
+      border: 1px solid rgba(0,255,157,0.15);
+      font-family: var(--font-mono);
+      font-size: 0.8rem;
+      color: var(--accent);
+    }
+    .f-email-block i { font-size: 0.7rem; }
+
     /* ANIMATIONS */
     .reveal { opacity: 1; transform: translateY(0); transition: opacity 0.7s ease, transform 0.7s ease; }
     .reveal.hidden { opacity: 0; transform: translateY(22px); }
@@ -840,7 +872,10 @@
         </div>
         <div class="hero-btns">
           <a href="#parcours" class="btn btn-primary"><i class="fas fa-terminal"></i> Mon parcours</a>
-          <a href="/cdn-cgi/l/email-protection#80eeefe1e8f6e9e5eeeee5aef0f2efc0e7ede1e9ecaee3efed" class="btn btn-outline"><i class="fas fa-envelope"></i> Me contacter</a>
+        </div>
+        <div class="contact-email-hero">
+          <i class="fas fa-envelope"></i>
+          <span>noahvienne.pro@gmail.com</span>
         </div>
       </div>
 
@@ -1753,7 +1788,10 @@
     <div class="f-role">Étudiant BTS SIO SISR · Lycée Pierre Poivre · Saint-Joseph, La Réunion</div>
     <div class="social-links">
       <a href="https://github.com/noah-vienne" class="s-link" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
-      <a href="/cdn-cgi/l/email-protection#91fffef0f9e7f8f4fffff4bfe1e3fed1f6fcf0f8fdbff2fefc" class="s-link" title="Email"><i class="fas fa-envelope"></i></a>
+    </div>
+    <div class="f-email-block">
+      <i class="fas fa-envelope"></i>
+      <span>noahvienne.pro@gmail.com</span>
     </div>
     <p class="f-copy">© 2025 Vienne Noah · Fait depuis La Réunion 🌴</p>
   </footer>
