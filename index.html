@@ -415,6 +415,43 @@
     .s-ok { background: rgba(0,255,157,0.1); color: var(--accent); border: 1px solid rgba(0,255,157,0.2); }
     .s-wip { background: rgba(255,189,46,0.1); color: #ffbd2e; border: 1px solid rgba(255,189,46,0.2); }
 
+    /* CERTIFICATIONS */
+    .certif-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.4rem;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+    .certif-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      transition: all var(--tr);
+    }
+    .certif-card:hover { border-color: var(--accent); transform: translateY(-4px); box-shadow: 0 8px 28px rgba(0,255,157,0.08); }
+    .certif-logo-wrap {
+      height: 80px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2rem;
+      position: relative;
+    }
+    .certif-rgpd { background: linear-gradient(135deg, rgba(0,150,255,0.12), rgba(0,150,255,0.05)); color: var(--accent2); border-bottom: 1px solid rgba(0,150,255,0.15); }
+    .certif-pix   { background: linear-gradient(135deg, rgba(255,189,46,0.12), rgba(255,189,46,0.05)); color: #ffbd2e; border-bottom: 1px solid rgba(255,189,46,0.15); }
+    .certif-storm { background: linear-gradient(135deg, rgba(255,80,50,0.12), rgba(255,80,50,0.05)); color: #ff6b4a; border-bottom: 1px solid rgba(255,80,50,0.15); }
+    .certif-body { padding: 1.4rem; flex: 1; display: flex; flex-direction: column; gap: 0.5rem; }
+    .certif-year { font-family: var(--font-mono); font-size: 0.7rem; color: var(--accent); letter-spacing: 0.1em; }
+    .certif-body h3 { font-family: var(--font-display); font-size: 1.05rem; font-weight: 700; letter-spacing: 0.03em; }
+    .certif-body p { color: var(--text-muted); font-size: 0.83rem; line-height: 1.6; flex: 1; }
+    .certif-footer { display: flex; align-items: center; justify-content: space-between; gap: 0.5rem; margin-top: 0.5rem; padding-top: 0.8rem; border-top: 1px solid var(--border); }
+    .certif-org { font-family: var(--font-mono); font-size: 0.7rem; color: var(--text-muted); display: flex; align-items: center; gap: 0.4rem; }
+    .certif-org i { color: var(--accent); font-size: 0.65rem; }
+
     /* COMPÉTENCES */
     .skills-wrapper { max-width: 900px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.4rem; }
     .skill-group { background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.5rem; transition: all var(--tr); }
@@ -721,6 +758,7 @@
     <ul class="nav-links">
       <li><a href="#parcours">Parcours</a></li>
       <li><a href="#diplomes">Diplômes</a></li>
+      <li><a href="#certifications">Certifications</a></li>
       <li><a href="#competences">Compétences</a></li>
       <li><a href="#veille">Veille</a></li>
       <li><a href="#synthese">Synthèse</a></li>
@@ -867,9 +905,9 @@
   <!-- DIPLÔMES -->
   <section id="diplomes">
     <div class="section-header reveal">
-      <span class="section-label">// 02 — diplômes & certifications</span>
+      <span class="section-label">// 02 — diplômes</span>
       <h2 class="section-title">Mes <span>diplômes</span></h2>
-      <p class="section-desc">Diplômes et certifications obtenus tout au long de mon parcours.</p>
+      <p class="section-desc">Diplômes scolaires obtenus au cours de mon parcours.</p>
     </div>
     <div class="diplomes-grid">
 
@@ -879,14 +917,6 @@
         <h3>BTS SIO — option SISR</h3>
         <p>Solutions d'Infrastructure, Systèmes et Réseaux · Lycée Pierre Poivre, Saint-Joseph</p>
         <span class="dip-status s-wip">En cours</span>
-      </div>
-
-      <div class="dip-card reveal">
-        <div class="dip-icon">🔏</div>
-        <div class="dip-year">2024</div>
-        <h3>Certification RGPD</h3>
-        <p>Règlement Général sur la Protection des Données · Sensibilisation et conformité à la protection des données personnelles</p>
-        <span class="dip-status s-ok">Obtenu</span>
       </div>
 
       <div class="dip-card reveal">
@@ -908,10 +938,65 @@
     </div>
   </section>
 
-  <!-- COMPÉTENCES -->
+  <!-- CERTIFICATIONS -->
+  <section id="certifications">
+    <div class="section-header reveal">
+      <span class="section-label">// 03 — certifications</span>
+      <h2 class="section-title">Mes <span>certifications</span></h2>
+      <p class="section-desc">Certifications professionnelles et annexes obtenues ou en cours d'obtention.</p>
+    </div>
+    <div class="certif-grid">
+
+      <div class="certif-card reveal">
+        <div class="certif-logo-wrap certif-rgpd">
+          <i class="fas fa-shield-alt"></i>
+        </div>
+        <div class="certif-body">
+          <div class="certif-year">2024</div>
+          <h3>Certification RGPD</h3>
+          <p>Règlement Général sur la Protection des Données — Sensibilisation aux règles de conformité, de protection et de traitement des données personnelles en entreprise.</p>
+          <div class="certif-footer">
+            <span class="certif-org"><i class="fas fa-building"></i> CNIL / Formation BTS</span>
+            <span class="dip-status s-ok">Obtenu</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="certif-card reveal">
+        <div class="certif-logo-wrap certif-pix">
+          <i class="fas fa-star"></i>
+        </div>
+        <div class="certif-body">
+          <div class="certif-year">2024</div>
+          <h3>Certification PIX</h3>
+          <p>Certification nationale des compétences numériques — Évaluation des compétences digitales sur 5 domaines : information, communication, création, protection et environnement numérique.</p>
+          <div class="certif-footer">
+            <span class="certif-org"><i class="fas fa-building"></i> PIX — GIP Pix</span>
+            <span class="dip-status s-ok">Obtenu</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="certif-card reveal">
+        <div class="certif-logo-wrap certif-storm">
+          <i class="fas fa-fire-alt"></i>
+        </div>
+        <div class="certif-body">
+          <div class="certif-year">2025 — 2026</div>
+          <h3>Certification Stormshield</h3>
+          <p>Certification sur les solutions de sécurité réseau Stormshield (pare-feux, filtrage, VPN) — Formation aux produits SNS (Stormshield Network Security) utilisés dans les entreprises françaises.</p>
+          <div class="certif-footer">
+            <span class="certif-org"><i class="fas fa-building"></i> Stormshield — Anssi qualifié</span>
+            <span class="dip-status s-wip">En cours</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
   <section id="competences">
     <div class="section-header reveal">
-      <span class="section-label">// 03 — compétences techniques</span>
+      <span class="section-label">// 04 — compétences techniques</span>
       <h2 class="section-title">Mes <span>compétences</span></h2>
       <p class="section-desc">Les outils et technologies maîtrisés au cours de ma formation et de mes stages.</p>
     </div>
@@ -954,7 +1039,7 @@
   <!-- VEILLE TECHNOLOGIQUE -->
   <section id="veille">
     <div class="section-header reveal">
-      <span class="section-label">// 04 — veille technologique</span>
+      <span class="section-label">// 05 — veille technologique</span>
       <h2 class="section-title">Veille <span>technologique</span></h2>
       <p class="section-desc">La cybersécurité des réseaux d'entreprise — 18 mois de suivi (Oct. 2024 – Mars 2026)</p>
     </div>
@@ -1211,7 +1296,7 @@
   <!-- TABLEAU DE SYNTHÈSE -->
   <section id="synthese">
     <div class="section-header reveal">
-      <span class="section-label">// 05 — tableau de synthèse</span>
+      <span class="section-label">// 06 — tableau de synthèse</span>
       <h2 class="section-title">Tableau de <span>synthèse BTS</span></h2>
       <p class="section-desc">Tableau de synthèse des réalisations professionnelles — Épreuve E5 · Session 2026 · Option SISR</p>
     </div>
