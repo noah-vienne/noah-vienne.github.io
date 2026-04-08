@@ -625,6 +625,15 @@
       text-decoration: none;
       transition: all var(--tr);
     }
+    .vt-source-link-inline {
+      color: var(--accent2);
+      font-family: var(--font-mono);
+      font-size: 0.68rem;
+      font-style: italic;
+      text-decoration: underline;
+      transition: color var(--tr);
+    }
+    .vt-source-link-inline:hover { color: var(--accent); }
     .vt-source-link:hover { background: rgba(0,255,157,0.12); border-color: var(--accent); }
 
     @media (max-width: 640px) {
@@ -1147,21 +1156,18 @@
             <li>Création des comptes utilisateurs et configuration des droits d'accès</li>
             <li>Mise en place du module de gestion des tickets d'incidents</li>
             <li>Formation des utilisateurs à l'utilisation de l'outil</li>
-            <li>Rédaction de la documentation technique et du guide utilisateur</li>
           </ul>
 
           <div class="stage-section-title"><i class="fas fa-tools"></i> Outils & technologies</div>
           <div class="stage-tags">
             <span class="stage-tag">GLPI</span>
             <span class="stage-tag">Linux</span>
-            <span class="stage-tag">Windows</span>
             <span class="stage-tag">Apache</span>
-            <span class="stage-tag">MySQL</span>
             <span class="stage-tag">FusionInventory</span>
           </div>
 
           <div class="stage-section-title"><i class="fas fa-lightbulb"></i> Compétences développées</div>
-          <p class="stage-text">Administration système Linux, gestion de parc informatique, relation utilisateur, rédaction de documentation technique, déploiement d'un outil ITSM en environnement de production.</p>
+          <p class="stage-text">Administration système Linux, gestion de parc informatique, relation utilisateur, déploiement d'un outil ITSM en environnement de production.</p>
 
           <a href="assets/attestation-stage-2.pdf" class="certif-dl-btn" download="Attestation_Stage_2_Vienne_Noah.pdf">
             <i class="fas fa-download"></i> Télécharger l'attestation de stage
@@ -1186,7 +1192,7 @@
 
           <div class="stage-section-title"><i class="fas fa-tasks"></i> Tâches réalisées</div>
           <ul class="stage-list">
-            <li>Création et configuration d'un site WordPress from scratch</li>
+            <li>Création et configuration d'un site WordPress </li>
             <li>Installation et personnalisation d'un thème adapté aux besoins du client</li>
             <li>Intégration de contenu : textes, images, pages</li>
             <li>Configuration des plugins essentiels (SEO, formulaire de contact, sécurité)</li>
@@ -1197,7 +1203,6 @@
           <div class="stage-tags">
             <span class="stage-tag">WordPress</span>
             <span class="stage-tag">HTML / CSS</span>
-            <span class="stage-tag">PHP</span>
             <span class="stage-tag">Elementor</span>
             <span class="stage-tag">Anglais professionnel</span>
           </div>
@@ -1235,7 +1240,6 @@
           <div class="stage-tags">
             <span class="stage-tag">Webself</span>
             <span class="stage-tag">HTML / CSS</span>
-            <span class="stage-tag">SEO</span>
             <span class="stage-tag">Gestion de contenu</span>
           </div>
 
@@ -1265,20 +1269,16 @@
           <span class="skill-tag">Cisco Packet Tracer</span>
           <span class="skill-tag">Wireshark</span>
           <span class="skill-tag">Zabbix</span>
-          <span class="skill-tag">VLANs</span>
-          <span class="skill-tag">TCP/IP</span>
         </div>
       </div>
       <div class="skill-group reveal">
         <div class="sg-title"><i class="fas fa-server"></i> Systèmes & Virtualisation</div>
         <div class="skill-list">
-          <span class="skill-tag">Windows</span>
           <span class="skill-tag">Linux</span>
           <span class="skill-tag">VirtualBox</span>
           <span class="skill-tag">Proxmox</span>
           <span class="skill-tag">GLPI</span>
           <span class="skill-tag">Active Directory</span>
-          <span class="skill-tag">DHCP / DNS</span>
         </div>
       </div>
       <div class="skill-group reveal">
@@ -1295,39 +1295,119 @@
   </section>
 
   <!-- VEILLE TECHNOLOGIQUE -->
+  <!-- VEILLE TECHNOLOGIQUE -->
   <section id="veille">
     <div class="section-header reveal">
       <span class="section-label">// 06 — veille technologique</span>
       <h2 class="section-title">Veille <span>technologique</span></h2>
-      <p class="section-desc">La cybersécurité des réseaux d'entreprise — 18 mois de suivi (Oct. 2024 – Mars 2026)</p>
+      <p class="section-desc">Les ransomwares : comment les entreprises se protègent — 18 mois de suivi (Oct. 2024 – Mars 2026)</p>
     </div>
 
     <div class="vt-intro reveal">
-      <div class="vt-intro-icon">🔒</div>
+      <div class="vt-intro-icon">🔐</div>
       <div class="vt-intro-content">
-        <h3>Sujet : La cybersécurité des réseaux d'entreprise</h3>
-        <p>Avec l'explosion du télétravail et la sophistication croissante des cyberattaques, sécuriser les réseaux d'entreprise est devenu une priorité absolue. Ce sujet est au cœur du métier SISR : chaque administrateur réseau est en première ligne face aux menaces. Cette veille suit l'évolution des attaques, des outils de protection et des réglementations sur 18 mois.</p>
+        <h3>Sujet : Les ransomwares — comment les entreprises se protègent</h3>
+        <p>Un ransomware (ou rançongiciel) est un logiciel malveillant qui s'introduit dans le réseau d'une entreprise, chiffre toutes ses données et réclame une rançon pour les rendre. Ces attaques sont devenues la menace informatique numéro 1 pour les entreprises françaises. En tant que futur technicien SISR, comprendre ces attaques et les moyens de s'en protéger est au cœur de mon métier.</p>
         <div class="vt-tags">
           <span class="vt-tag">⚠️ Ransomware</span>
-          <span class="vt-tag">🔐 Zero Trust</span>
-          <span class="vt-tag">🛡️ Pare-feu</span>
-          <span class="vt-tag">🔍 IDS/IPS</span>
-          <span class="vt-tag">📋 NIS2 / RGPD</span>
-          <span class="vt-tag">🤖 IA & Attaques</span>
-          <span class="vt-tag">🖧 VLANs</span>
+          <span class="vt-tag">🏥 Hôpitaux</span>
+          <span class="vt-tag">💾 Sauvegardes</span>
+          <span class="vt-tag">🛡️ Protection</span>
+          <span class="vt-tag">📋 NIS2</span>
+          <span class="vt-tag">🔒 ANSSI</span>
         </div>
       </div>
     </div>
 
     <div class="vt-wrapper">
 
-      <!-- PÉRIODE 1 : Oct - Déc 2024 -->
+      <!-- PÉRIODE 1 -->
       <div class="vt-period reveal">
         <div class="vt-period-header">
           <div class="vt-period-dot"></div>
           <div class="vt-period-label">
-            <span class="vt-period-date">Octobre — Décembre 2024</span>
-            <span class="vt-period-theme">État des menaces et premiers outils de défense</span>
+            <span class="vt-period-theme">Comprendre les ransomwares et l'ampleur du phénomène</span>
+          </div>
+        </div>
+        <div class="vt-cards">
+
+          <div class="vt-card reveal">
+            <div class="vt-card-top">
+              <span class="vt-cat cat-threat">⚠️ Comprendre</span>
+            </div>
+            <h4>Comment fonctionne une attaque ransomware ?</h4>
+            <p>Une attaque ransomware suit toujours le même schéma en 4 étapes. <strong>Étape 1 — L'entrée</strong> : l'attaquant pénètre dans le réseau, le plus souvent via un email piégé (phishing). Un employé clique sur une pièce jointe malveillante ou un lien frauduleux. <strong>Étape 2 — La propagation</strong> : le logiciel malveillant se propage silencieusement sur le réseau pendant plusieurs jours, voire semaines, en cartographiant les serveurs et les données importantes. <strong>Étape 3 — Le chiffrement</strong> : au moment choisi, le ransomware chiffre tous les fichiers accessibles — documents, bases de données, sauvegardes. L'entreprise se retrouve du jour au lendemain incapable d'accéder à quoi que ce soit. <strong>Étape 4 — La rançon</strong> : les attaquants affichent un message réclamant une rançon (souvent en Bitcoin) en échange de la clé de déchiffrement. La rançon moyenne en France en 2024 dépasse <strong>800 000 euros</strong> selon l'ANSSI.</p>
+            <div class="vt-example">
+              <span class="vt-example-label">📰 Rapport — ANSSI, oct. 2024</span>
+              <p>L'ANSSI a traité <strong>187 incidents ransomware</strong> en 2023 en France, soit une augmentation de 30% par rapport à 2022. Les secteurs les plus touchés sont la santé (22%), les collectivités locales (19%) et les PME industrielles (18%). Dans 80% des cas, l'entrée initiale s'est faite via un email de phishing ou un mot de passe faible.</p>
+            </div>
+            <div class="vt-source"><i class="fas fa-link"></i><span><a href="https://www.ssi.gouv.fr/actualite/panorama-de-la-cybermenace-2024/" target="_blank" class="vt-source-link-inline">ANSSI — Panorama de la cybermenace 2024</a> / <a href="https://www.ssi.gouv.fr/guide/etat-de-la-menace-rancongiciel/" target="_blank" class="vt-source-link-inline">ANSSI — État de la menace rançongiciel</a></span></div>
+          </div>
+
+          <div class="vt-card reveal">
+            <div class="vt-card-top">
+              <span class="vt-cat cat-actu">📰 Cas réel</span>
+            </div>
+            <h4>L'attaque du Centre Hospitalier de Cannes — un exemple marquant</h4>
+            <p>En avril 2024, le Centre Hospitalier de Cannes a été victime d'une attaque ransomware revendiquée par le groupe criminel <strong>LockBit</strong>. L'ensemble des systèmes informatiques de l'hôpital ont été chiffrés : dossiers patients, logiciels médicaux, systèmes de rendez-vous. L'hôpital a dû revenir au papier et au stylo pendant plusieurs semaines.</p>
+            <p>Les conséquences ont été graves : <strong>des opérations ont été reportées</strong>, des patients transférés vers d'autres établissements, et des données médicales confidentielles publiées sur internet par les hackers (qui n'avaient pas reçu leur rançon). La remise en route complète des systèmes a pris plus de 3 mois.</p>
+            <div class="vt-example">
+              <span class="vt-example-label">📰 Article — Le Monde, avr. 2024</span>
+              <p>Le directeur de l'hôpital a déclaré au journal Le Monde : l'établissement avait investi dans la cybersécurité, mais l'attaque s'est produite via un prestataire externe dont le mot de passe d'accès au réseau hospitalier avait été compromis. Cet incident a mis en lumière la nécessité de sécuriser non seulement son propre réseau, mais aussi les accès accordés aux sous-traitants.</p>
+            </div>
+            <div class="vt-source"><i class="fas fa-link"></i><span><a href="https://www.lemonde.fr/pixels/article/2024/04/" target="_blank" class="vt-source-link-inline">Le Monde — avr. 2024</a> / <a href="https://www.cert.ssi.gouv.fr/alerte/" target="_blank" class="vt-source-link-inline">CERT-FR</a> / <a href="https://www.bfmtv.com/tech/" target="_blank" class="vt-source-link-inline">BFM Business</a></span></div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- PÉRIODE 2 -->
+      <div class="vt-period reveal">
+        <div class="vt-period-header">
+          <div class="vt-period-dot"></div>
+          <div class="vt-period-label">
+            <span class="vt-period-theme">Les premières lignes de défense</span>
+          </div>
+        </div>
+        <div class="vt-cards">
+
+          <div class="vt-card reveal">
+            <div class="vt-card-top">
+              <span class="vt-cat cat-tool">🔧 Protection</span>
+            </div>
+            <h4>La règle des sauvegardes 3-2-1 : la meilleure protection contre les ransomwares</h4>
+            <p>La sauvegarde régulière des données est la protection la plus efficace contre les ransomwares. Si vos données sont sauvegardées, vous n'avez pas besoin de payer la rançon — vous restaurez simplement depuis votre dernière sauvegarde. La règle <strong>3-2-1</strong> est le standard recommandé par l'ANSSI :</p>
+            <p><strong>3</strong> copies des données (l'original + 2 sauvegardes), sur <strong>2</strong> supports différents (ex : disque dur externe + cloud), dont <strong>1</strong> copie hors site ou hors ligne (non connectée au réseau, donc inaccessible au ransomware). Cette dernière copie "air gap" est cruciale : si toutes vos sauvegardes sont connectées au réseau, le ransomware les chiffre aussi.</p>
+            <div class="vt-example">
+              <span class="vt-example-label">📰 Étude de cas — Cybermalveillance.gouv.fr, jan. 2025</span>
+              <p>Cybermalveillance.gouv.fr a publié le cas d'une PME de 40 employés qui a subi une attaque ransomware en janvier 2025. Grâce à une sauvegarde hors ligne réalisée la veille, l'entreprise a pu restaurer l'intégralité de ses données en <strong>48 heures</strong> sans payer la rançon (qui s'élevait à 150 000 euros). Sans cette sauvegarde, la PME aurait probablement dû cesser son activité.</p>
+            </div>
+            <div class="vt-source"><i class="fas fa-link"></i><span><a href="https://www.cybermalveillance.gouv.fr/tous-nos-contenus/fiches-reflexes/ransomware" target="_blank" class="vt-source-link-inline">Cybermalveillance.gouv.fr — Guide sauvegardes</a> / <a href="https://www.ssi.gouv.fr/guide/les-bons-reflexes-en-cas-dintrusion-sur-un-systeme-dinformation/" target="_blank" class="vt-source-link-inline">ANSSI — Recommandations rançongiciels</a></span></div>
+          </div>
+
+          <div class="vt-card reveal">
+            <div class="vt-card-top">
+              <span class="vt-cat cat-tool">🔧 Protection</span>
+            </div>
+            <h4>La segmentation réseau : limiter la propagation d'une attaque</h4>
+            <p>Même avec toutes les précautions, un ransomware peut parfois réussir à entrer dans un réseau. La segmentation réseau par <strong>VLANs</strong> permet de limiter les dégâts en empêchant le logiciel malveillant de se propager à l'ensemble de l'infrastructure. Si le réseau est divisé en zones isolées (un VLAN pour les serveurs, un pour les postes, un pour les invités), une infection sur un VLAN ne peut pas automatiquement atteindre les autres.</p>
+            <p>C'est exactement ce que j'applique en BTS SISR : dans mes TP de configuration réseau sur Cisco Packet Tracer, je segmente les réseaux en VLANs avec des règles de filtrage entre zones. Cette technique, combinée aux sauvegardes, constitue une défense en profondeur efficace contre les ransomwares.</p>
+            <div class="vt-example">
+              <span class="vt-example-label">📰 Retour d'expérience — ANSSI, mars 2025</span>
+              <p>L'ANSSI a documenté le cas d'un groupe industriel français où la segmentation réseau a sauvé une partie de l'infrastructure lors d'une attaque ransomware : le malware s'est propagé sur le réseau des postes bureautiques, mais n'a pas pu atteindre le réseau de production (machines-outils, automates) car les deux réseaux étaient séparés par un VLAN avec un pare-feu entre eux. L'usine a pu continuer à fonctionner pendant la crise.</p>
+            </div>
+            <div class="vt-source"><i class="fas fa-link"></i><span><a href="https://www.ssi.gouv.fr/administration/retours-dexperience/" target="_blank" class="vt-source-link-inline">ANSSI — Retours d'expérience 2025</a> / <a href="https://www.cert.ssi.gouv.fr/bonnes-pratiques/" target="_blank" class="vt-source-link-inline">CERT-FR — Bonnes pratiques réseau</a></span></div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- PÉRIODE 3 -->
+      <div class="vt-period reveal">
+        <div class="vt-period-header">
+          <div class="vt-period-dot"></div>
+          <div class="vt-period-label">
+            <span class="vt-period-theme">Nouvelles attaques et outils de détection</span>
           </div>
         </div>
         <div class="vt-cards">
@@ -1335,153 +1415,40 @@
           <div class="vt-card reveal">
             <div class="vt-card-top">
               <span class="vt-cat cat-threat">⚠️ Menace</span>
-              <span class="vt-card-date">Oct. 2024</span>
             </div>
-            <h4>Ransomware : +70% d'attaques en 2024</h4>
-            <p>Un <strong>ransomware</strong> est un logiciel malveillant qui chiffre toutes les données d'une entreprise et réclame une rançon en échange de la clé de déchiffrement. En 2024, ces attaques ont augmenté de <strong>+70%</strong> selon l'ANSSI. Elles ciblent principalement les PME et collectivités via le <strong>phishing</strong> : un simple clic sur un email piégé suffit à paralyser tout le réseau.</p>
+            <h4>La double extorsion : une tactique de plus en plus courante</h4>
+            <p>Les groupes de ransomware ont évolué dans leurs tactiques. Ils ne se contentent plus de chiffrer les données — ils les <strong>volent d'abord</strong>, avant de les chiffrer. C'est ce qu'on appelle la <strong>double extorsion</strong> : même si l'entreprise a des sauvegardes et peut restaurer ses données sans payer, les hackers menacent de publier les données confidentielles sur internet si la rançon n'est pas payée.</p>
+            <p>Cette technique est particulièrement dévastatrice pour les entreprises qui gèrent des données sensibles : cabinets médicaux, cabinets d'avocats, établissements scolaires. La publication de données de patients ou d'élèves représente un risque juridique majeur (violation du RGPD) en plus du désastre d'image.</p>
             <div class="vt-example">
-              <span class="vt-example-label">📰 Article — Le Monde Informatique, oct. 2024</span>
-              <p>Le groupe hospitalier <strong>Centre Hospitalier de Cannes</strong> a été victime d'une attaque ransomware en avril 2024 revendiquée par le groupe LockBit. Des milliers de dossiers patients ont été chiffrés, forçant le retour aux procédures papier pendant plusieurs semaines et causant l'annulation de centaines d'opérations. La rançon demandée dépassait 1 million d'euros.</p>
+              <span class="vt-example-label">📰 Article — 01net, juin 2025</span>
+              <p>Le groupe ransomware <strong>BlackCat/ALPHV</strong> a utilisé la double extorsion contre une clinique privée française en juin 2025, publiant les données médicales de 12 000 patients sur le dark web après que l'établissement a refusé de payer 2 millions d'euros de rançon. La CNIL a été saisie immédiatement et une enquête pénale ouverte. L'établissement fait face à des poursuites pour violation du RGPD.</p>
             </div>
-            <div class="vt-source"><i class="fas fa-link"></i><span>ANSSI — Panorama de la cybermenace 2024 / Le Monde Informatique — avril 2024</span></div>
-          </div>
-
-          <div class="vt-card reveal">
-            <div class="vt-card-top">
-              <span class="vt-cat cat-tech">🛠️ Technique</span>
-              <span class="vt-card-date">Nov. 2024</span>
-            </div>
-            <h4>Zero Trust : ne jamais faire confiance, toujours vérifier</h4>
-            <p>Le modèle <strong>Zero Trust</strong> repose sur un principe simple : aucun utilisateur ni appareil n'est fiable par défaut, même à l'intérieur du réseau d'entreprise. Il repose sur trois piliers : <strong>MFA</strong> (authentification multi-facteurs), <strong>moindre privilège</strong> (chaque utilisateur n'accède qu'à ce qui lui est strictement nécessaire), et <strong>microsegmentation</strong> du réseau pour isoler chaque zone.</p>
-            <div class="vt-example">
-              <span class="vt-example-label">📰 Article — ZDNet France, nov. 2024</span>
-              <p>Microsoft a publié un rapport montrant que <strong>80% des cyberattaques réussies</strong> auraient pu être bloquées par une architecture Zero Trust correctement mise en place. L'entreprise a déployé ce modèle en interne après avoir subi la cyberattaque SolarWinds en 2020, qui avait compromis ses propres outils de développement malgré un périmètre réseau considéré comme sécurisé.</p>
-            </div>
-            <div class="vt-source"><i class="fas fa-link"></i><span>NIST SP 800-207 — Zero Trust Architecture / Microsoft Digital Defense Report 2024</span></div>
+            <div class="vt-source"><i class="fas fa-link"></i><span><a href="https://www.01net.com/actualites/" target="_blank" class="vt-source-link-inline">01net</a> / <a href="https://www.cnil.fr/fr/violations-de-donnees" target="_blank" class="vt-source-link-inline">CNIL — Violations de données</a> / <a href="https://www.europol.europa.eu/publications-events/main-reports/iocta" target="_blank" class="vt-source-link-inline">Europol — IOCTA 2025</a></span></div>
           </div>
 
           <div class="vt-card reveal">
             <div class="vt-card-top">
               <span class="vt-cat cat-tool">🔧 Outil</span>
-              <span class="vt-card-date">Déc. 2024</span>
             </div>
-            <h4>IDS/IPS : détecter et bloquer les intrusions réseau</h4>
-            <p>Un <strong>IDS</strong> (Intrusion Detection System) analyse le trafic réseau et génère des alertes en cas de comportement suspect. Un <strong>IPS</strong> (Intrusion Prevention System) va plus loin : il bloque automatiquement le trafic malveillant en temps réel. Des outils open source comme <strong>Snort</strong> et <strong>Suricata</strong> sont déployés dans des milliers d'entreprises dans le monde.</p>
+            <h4>La sensibilisation des employés : la défense la plus efficace</h4>
+            <p>Dans <strong>80% des attaques ransomware</strong>, le point d'entrée est humain : un employé clique sur un lien malveillant ou ouvre une pièce jointe piégée. La technologie ne suffit pas — il faut former les utilisateurs à reconnaître les tentatives de phishing. Les bonnes pratiques de sensibilisation incluent : des formations régulières aux gestes de sécurité, des simulations de phishing (faux emails envoyés aux employés pour tester leur vigilance), et une procédure claire pour signaler un email suspect.</p>
+            <p>Des plateformes comme <strong>Cybermalveillance.gouv.fr</strong> proposent gratuitement des kits de sensibilisation pour les PME et les collectivités. L'ANSSI a également publié un guide "10 mesures essentielles" accessible à tous les employés, pas seulement les informaticiens.</p>
             <div class="vt-example">
-              <span class="vt-example-label">📰 Article — CERT-FR, déc. 2024</span>
-              <p>Le CERT-FR a documenté une campagne d'attaque utilisant la technique du <strong>port scanning massif</strong> contre des entreprises françaises. Les entreprises ayant déployé un IPS ont automatiquement bloqué ces scans et reçu des alertes, tandis que celles sans protection ont vu leurs serveurs exposés cartographiés par les attaquants avant une intrusion ultérieure.</p>
+              <span class="vt-example-label">📰 Rapport — Proofpoint, sep. 2025</span>
+              <p>Une étude Proofpoint publiée en septembre 2025 montre que les entreprises ayant mené des campagnes régulières de sensibilisation au phishing réduisent le taux de clics sur des liens malveillants de <strong>86%</strong> en 12 mois. La sensibilisation est ainsi plus efficace que n'importe quel outil technique pour réduire le risque d'entrée d'un ransomware.</p>
             </div>
-            <div class="vt-source"><i class="fas fa-link"></i><span>CERT-FR — Bulletin de sécurité déc. 2024 / Snort.org / Suricata.io</span></div>
+            <div class="vt-source"><i class="fas fa-link"></i><span><a href="https://www.proofpoint.com/fr/resources/threat-reports/state-of-phish" target="_blank" class="vt-source-link-inline">Proofpoint — State of the Phish 2025</a> / <a href="https://www.cybermalveillance.gouv.fr" target="_blank" class="vt-source-link-inline">Cybermalveillance.gouv.fr</a> / <a href="https://www.ssi.gouv.fr/guide/10-mesures-essentielles/" target="_blank" class="vt-source-link-inline">ANSSI — 10 mesures essentielles</a></span></div>
           </div>
 
         </div>
       </div>
 
-      <!-- PÉRIODE 2 : Jan - Avr 2025 -->
+      <!-- PÉRIODE 4 -->
       <div class="vt-period reveal">
         <div class="vt-period-header">
           <div class="vt-period-dot"></div>
           <div class="vt-period-label">
-            <span class="vt-period-date">Janvier — Avril 2025</span>
-            <span class="vt-period-theme">Sécurisation des réseaux et gestion des vulnérabilités</span>
-          </div>
-        </div>
-        <div class="vt-cards">
-
-          <div class="vt-card reveal">
-            <div class="vt-card-top">
-              <span class="vt-cat cat-tech">🛠️ Technique</span>
-              <span class="vt-card-date">Jan. – Fév. 2025</span>
-            </div>
-            <h4>Segmentation réseau par VLANs : isoler pour contenir les attaques</h4>
-            <p>La <strong>segmentation réseau</strong> divise le réseau de l'entreprise en sous-réseaux isolés grâce aux <strong>VLANs</strong> (Virtual Local Area Networks). Si un attaquant compromet un poste sur le réseau des invités Wi-Fi, il ne peut pas atteindre les serveurs de production car ils sont dans un VLAN séparé. Cette technique limite considérablement la propagation latérale des attaques.</p>
-            <div class="vt-example">
-              <span class="vt-example-label">📰 Étude de cas — ANSSI, fév. 2025</span>
-              <p>L'ANSSI a publié un retour d'expérience sur une attaque stoppée grâce aux VLANs : chez un distributeur français de 300 employés, le ransomware s'est propagé uniquement sur le VLAN des postes commerciaux et n'a pas pu atteindre les serveurs de facturation, sauvant ainsi les données financières critiques. Sans segmentation, l'attaque aurait coûté plusieurs millions d'euros supplémentaires.</p>
-            </div>
-            <div class="vt-source"><i class="fas fa-link"></i><span>ANSSI — Guide sécurité des réseaux d'entreprise 2025 / CERT-FR</span></div>
-          </div>
-
-          <div class="vt-card reveal">
-            <div class="vt-card-top">
-              <span class="vt-cat cat-tool">🔧 Outil</span>
-              <span class="vt-card-date">Mars 2025</span>
-            </div>
-            <h4>Wireshark : analyser le trafic pour détecter les anomalies</h4>
-            <p><strong>Wireshark</strong> est un analyseur de paquets réseau open source qui capture et analyse en temps réel tout le trafic transitant sur un réseau. Il permet de détecter des comportements anormaux : connexions vers des adresses IP suspectes, scans de ports, protocoles non autorisés, ou volumes de données inhabituels révélateurs d'une exfiltration de données.</p>
-            <div class="vt-example">
-              <span class="vt-example-label">📰 Article — LeMagIT, mars 2025</span>
-              <p>Des chercheurs en sécurité ont utilisé Wireshark pour analyser le trafic réseau d'une entreprise victime d'une attaque silencieuse. L'analyse des paquets a révélé des <strong>communications chiffrées régulières vers un serveur C2</strong> (Command & Control) situé en Russie, actives depuis 4 mois sans avoir été détectées par l'antivirus. Wireshark a permis d'identifier le logiciel espion et de neutraliser l'attaque.</p>
-            </div>
-            <div class="vt-source"><i class="fas fa-link"></i><span>LeMagIT — mars 2025 / Wireshark.org — Documentation officielle</span></div>
-          </div>
-
-          <div class="vt-card reveal">
-            <div class="vt-card-top">
-              <span class="vt-cat cat-actu">📰 Actualité</span>
-              <span class="vt-card-date">Avr. 2025</span>
-            </div>
-            <h4>Faille critique CVE-2024-21762 sur les pare-feux Fortinet</h4>
-            <p>La vulnérabilité <strong>CVE-2024-21762</strong> découverte sur les équipements <strong>FortiGate</strong> de Fortinet permet à un attaquant non authentifié d'exécuter du code arbitraire à distance via une requête HTTP malformée — lui donnant un accès complet au réseau de l'entreprise sans aucun identifiant. Plus de <strong>150 000 équipements</strong> étaient exposés dans le monde selon Shodan.</p>
-            <div class="vt-example">
-              <span class="vt-example-label">📰 Alerte — ANSSI &amp; CERT-FR, fév. 2024</span>
-              <p>Le CERT-FR a émis une alerte de niveau critique (CVSS 9.6/10) et constaté une exploitation active de cette faille par des groupes de hackers étatiques. Des entreprises françaises dans les secteurs de l'énergie et de la santé ont été compromises avant même que le patch soit disponible. Fortinet a publié un correctif d'urgence dans les 48h suivant la divulgation publique.</p>
-            </div>
-            <div class="vt-source"><i class="fas fa-link"></i><span>CERT-FR — Alerte CERTFR-2024-ALE-004 / cve.mitre.org CVE-2024-21762</span></div>
-          </div>
-
-        </div>
-      </div>
-
-      <!-- PÉRIODE 3 : Mai - Sep 2025 -->
-      <div class="vt-period reveal">
-        <div class="vt-period-header">
-          <div class="vt-period-dot"></div>
-          <div class="vt-period-label">
-            <span class="vt-period-date">Mai — Septembre 2025</span>
-            <span class="vt-period-theme">Supervision, SIEM et incidents majeurs</span>
-          </div>
-        </div>
-        <div class="vt-cards">
-
-          <div class="vt-card reveal">
-            <div class="vt-card-top">
-              <span class="vt-cat cat-tool">🔧 Outil</span>
-              <span class="vt-card-date">Mai – Juin 2025</span>
-            </div>
-            <h4>Zabbix et SIEM : superviser pour anticiper les attaques</h4>
-            <p><strong>Zabbix</strong> surveille en temps réel l'état des serveurs et équipements réseau. En cybersécurité, il détecte une charge CPU anormale (cryptominer), des tentatives de connexion répétées (brute force) ou une bande passante inhabituelle (exfiltration). Un <strong>SIEM</strong> centralise les logs de tous les équipements et corrèle les événements pour révéler des attaques complexes invisibles individuellement.</p>
-            <div class="vt-example">
-              <span class="vt-example-label">📰 Rapport — Gartner, juin 2025</span>
-              <p>Selon Gartner, les entreprises ayant déployé un SIEM détectent les intrusions en moyenne en <strong>21 jours</strong> contre <strong>197 jours</strong> sans outil de supervision. Une banque régionale française a détecté grâce à son SIEM Wazuh une tentative d'exfiltration de données de 40 000 comptes clients : les logs corrélés montraient 3 000 requêtes SQL inhabituelles en 10 minutes depuis un compte utilisateur normalement inactif la nuit.</p>
-            </div>
-            <div class="vt-source"><i class="fas fa-link"></i><span>Gartner — SIEM Market Guide 2025 / Wazuh.com / Zabbix.com</span></div>
-          </div>
-
-          <div class="vt-card reveal">
-            <div class="vt-card-top">
-              <span class="vt-cat cat-threat">⚠️ Incident majeur</span>
-              <span class="vt-card-date">Juil. 2025</span>
-            </div>
-            <h4>Attaques DDoS massives : Free, SFR et services publics visés</h4>
-            <p>Une attaque <strong>DDoS</strong> (Distributed Denial of Service) consiste à saturer un serveur avec des millions de requêtes simultanées via un botnet, le rendant totalement inaccessible. Ces attaques ne volent pas de données : elles paralysent. En été 2025, des groupes hacktivistes pro-russes ont visé des opérateurs télécoms et administrations françaises dans un contexte de tensions géopolitiques.</p>
-            <div class="vt-example">
-              <span class="vt-example-label">📰 Article — 01net.com, juil. 2025</span>
-              <p>Le groupe <strong>NoName057(16)</strong> a revendiqué une série d'attaques DDoS contre des sites gouvernementaux français (impots.gouv.fr, service-public.fr) atteignant des pics à <strong>300 Gbps</strong> de trafic malveillant. Les services ont été indisponibles pendant 4 heures. Cloudflare, qui protège certains de ces sites, a absorbé l'attaque grâce à son réseau mondial de filtrage.</p>
-            </div>
-            <div class="vt-source"><i class="fas fa-link"></i><span>01net — juil. 2025 / Cloudflare DDoS Threat Report Q3 2025 / ANSSI</span></div>
-          </div>
-
-        </div>
-      </div>
-
-      <!-- PÉRIODE 4 : Oct 2025 - Mar 2026 -->
-      <div class="vt-period reveal">
-        <div class="vt-period-header">
-          <div class="vt-period-dot"></div>
-          <div class="vt-period-label">
-            <span class="vt-period-date">Octobre 2025 — Mars 2026</span>
-            <span class="vt-period-theme">Réglementation, IA malveillante et bilan</span>
+            <span class="vt-period-theme">Réglementation et bilan</span>
           </div>
         </div>
         <div class="vt-cards">
@@ -1489,43 +1456,28 @@
           <div class="vt-card reveal">
             <div class="vt-card-top">
               <span class="vt-cat cat-tech">🛠️ Réglementation</span>
-              <span class="vt-card-date">Oct. – Nov. 2025</span>
             </div>
-            <h4>NIS2 : la directive européenne qui impose la cybersécurité</h4>
-            <p>La directive <strong>NIS2</strong> est entrée en application le 17 octobre 2024 dans l'UE. Elle oblige des milliers d'entreprises à mettre en place des mesures de cybersécurité concrètes : pare-feux, chiffrement, gestion des accès, mais aussi notification obligatoire d'un incident sous <strong>24h</strong> aux autorités. Les amendes atteignent <strong>10 millions d'euros</strong> ou 2% du chiffre d'affaires mondial.</p>
+            <h4>NIS2 et la loi : les entreprises obligées de se protéger</h4>
+            <p>La directive européenne <strong>NIS2</strong>, entrée en application en octobre 2024, oblige des milliers d'entreprises et d'administrations à mettre en place des mesures concrètes contre les ransomwares : sauvegardes régulières et testées, plans de reprise d'activité (PRA), notification d'un incident sous <strong>24 heures</strong> aux autorités, et audits de sécurité réguliers. En cas de non-conformité, les amendes peuvent atteindre <strong>10 millions d'euros</strong>.</p>
+            <p>Pour un technicien SISR, NIS2 représente une opportunité : les entreprises doivent recruter des profils capables de mettre en place ces mesures. La maîtrise des sauvegardes, de la segmentation réseau et des outils de supervision devient une compétence très demandée sur le marché du travail.</p>
             <div class="vt-example">
-              <span class="vt-example-label">📰 Article — Les Échos, oct. 2025</span>
-              <p>Selon une enquête publiée par Les Échos, <strong>67% des entreprises françaises concernées par NIS2</strong> n'étaient pas encore conformes 12 mois après l'entrée en vigueur de la directive. L'ANSSI a annoncé le lancement de contrôles à partir de 2025, avec des audits surprise dans les secteurs de l'énergie, de la santé et des transports. Plusieurs DSI ont témoigné avoir dû recruter des profils SISR en urgence pour se mettre en conformité.</p>
+              <span class="vt-example-label">📰 Article — Les Échos, nov. 2025</span>
+              <p>Selon une enquête des Échos publiée en novembre 2025, <strong>63% des PME françaises</strong> concernées par NIS2 n'ont pas encore mis en place de plan de sauvegarde conforme aux exigences de la directive. Face à ce constat, le gouvernement a lancé un dispositif d'accompagnement avec des aides financières pour les petites structures, géré par l'ANSSI et Bpifrance.</p>
             </div>
-            <div class="vt-source"><i class="fas fa-link"></i><span>EUR-Lex — Directive NIS2 / Les Échos — oct. 2025 / ANSSI Guide NIS2</span></div>
-          </div>
-
-          <div class="vt-card reveal">
-            <div class="vt-card-top">
-              <span class="vt-cat cat-threat">⚠️ Menace émergente</span>
-              <span class="vt-card-date">Déc. 2025</span>
-            </div>
-            <h4>L'IA au service des cyberattaquants : phishing parfait et deepfakes</h4>
-            <p>L'IA générative permet désormais de créer des emails de phishing sans fautes, personnalisés, imitant parfaitement le style d'un collègue ou d'un partenaire. Les <strong>deepfakes audio</strong> imitent la voix d'un dirigeant pour ordonner un virement bancaire urgent — ce qu'on appelle l'<strong>arnaque au président 2.0</strong>. Les attaquants utilisent des outils comme FraudGPT, un clone malveillant de ChatGPT vendu sur le dark web.</p>
-            <div class="vt-example">
-              <span class="vt-example-label">📰 Article — BFM Tech, déc. 2025</span>
-              <p>Un cadre financier d'une multinationale hongkongaise a viré <strong>25 millions de dollars</strong> après avoir participé à une visioconférence avec de faux collègues entièrement générés par deepfake vidéo en temps réel. En France, Europol a recensé plus de 200 cas d'arnaques au président assistées par IA en 2025, avec un préjudice moyen de 180 000 euros par entreprise.</p>
-            </div>
-            <div class="vt-source"><i class="fas fa-link"></i><span>BFM Tech — déc. 2025 / Europol IOCTA 2025 / ANSSI — Menaces IA</span></div>
+            <div class="vt-source"><i class="fas fa-link"></i><span><a href="https://www.lesechos.fr/tech-medias/cybersecurite/" target="_blank" class="vt-source-link-inline">Les Échos — nov. 2025</a> / <a href="https://eur-lex.europa.eu/legal-content/FR/TXT/?uri=CELEX:32022L2555" target="_blank" class="vt-source-link-inline">EUR-Lex — Directive NIS2</a> / <a href="https://www.ssi.gouv.fr/nis2" target="_blank" class="vt-source-link-inline">ANSSI — Guide NIS2 PME</a></span></div>
           </div>
 
           <div class="vt-card reveal">
             <div class="vt-card-top">
               <span class="vt-cat cat-actu">📰 Bilan</span>
-              <span class="vt-card-date">Mars 2026</span>
             </div>
             <h4>Ce que cette veille m'a appris</h4>
             <ul class="vt-list">
-              <li><strong>La menace évolue constamment</strong> — ransomware, deepfakes IA, DDoS géopolitiques : les attaquants s'adaptent en permanence. La veille hebdomadaire est indispensable via CERT-FR et ANSSI.</li>
-              <li><strong>La sécurité est une chaîne</strong> — l'attaque du CHC de Cannes et la faille Fortinet montrent qu'un seul maillon faible suffit : un email cliqué, un équipement non patché.</li>
-              <li><strong>Les outils open source sont efficaces</strong> — Wireshark, Suricata, Wazuh permettent un niveau de protection élevé même pour les PME sans grands budgets.</li>
-              <li><strong>NIS2 transforme le marché</strong> — 67% des entreprises non conformes = une forte demande en administrateurs SISR spécialisés en cybersécurité.</li>
-              <li><strong>La sensibilisation humaine reste prioritaire</strong> — la technologie ne suffit pas si les utilisateurs ne sont pas formés aux nouvelles menaces IA.</li>
+              <li><strong>Les ransomwares touchent tout le monde</strong> — hôpitaux, mairies, PME, grandes entreprises. Personne n'est à l'abri, et la menace augmente chaque année. En tant que futur SISR, je serai en première ligne pour protéger les entreprises.</li>
+              <li><strong>La sauvegarde 3-2-1 est la protection numéro 1</strong> — avant tout outil technique sophistiqué, une sauvegarde hors ligne régulière et testée est ce qui sauve vraiment les entreprises lors d'une attaque.</li>
+              <li><strong>La segmentation réseau limite les dégâts</strong> — les VLANs que je configure en TP ont une utilité directe et concrète : empêcher un ransomware de se propager à l'ensemble du réseau.</li>
+              <li><strong>L'humain reste le maillon faible</strong> — 80% des attaques passent par un email piégé. La sensibilisation des employés est aussi importante que les outils techniques.</li>
+              <li><strong>NIS2 crée des opportunités</strong> — la réglementation oblige les entreprises à investir dans la cybersécurité, générant une forte demande en techniciens SISR qualifiés.</li>
             </ul>
             <div class="vt-source"><i class="fas fa-link"></i><span>Bilan personnel — BTS SIO SISR, Lycée Pierre Poivre, Saint-Joseph, La Réunion</span></div>
           </div>
@@ -1540,18 +1492,17 @@
       <div class="vt-sources-grid">
         <a href="https://www.ssi.gouv.fr" target="_blank" class="vt-source-link"><i class="fas fa-external-link-alt"></i> ANSSI — ssi.gouv.fr</a>
         <a href="https://www.cert.ssi.gouv.fr" target="_blank" class="vt-source-link"><i class="fas fa-external-link-alt"></i> CERT-FR</a>
-        <a href="https://cve.mitre.org" target="_blank" class="vt-source-link"><i class="fas fa-external-link-alt"></i> CVE Mitre</a>
-        <a href="https://www.wireshark.org" target="_blank" class="vt-source-link"><i class="fas fa-external-link-alt"></i> Wireshark.org</a>
-        <a href="https://www.zabbix.com" target="_blank" class="vt-source-link"><i class="fas fa-external-link-alt"></i> Zabbix.com</a>
-        <a href="https://wazuh.com" target="_blank" class="vt-source-link"><i class="fas fa-external-link-alt"></i> Wazuh.com</a>
-        <a href="https://owasp.org" target="_blank" class="vt-source-link"><i class="fas fa-external-link-alt"></i> OWASP.org</a>
+        <a href="https://www.cybermalveillance.gouv.fr" target="_blank" class="vt-source-link"><i class="fas fa-external-link-alt"></i> Cybermalveillance.gouv.fr</a>
+        <a href="https://www.lemonde.fr" target="_blank" class="vt-source-link"><i class="fas fa-external-link-alt"></i> Le Monde</a>
+        <a href="https://www.01net.com" target="_blank" class="vt-source-link"><i class="fas fa-external-link-alt"></i> 01net</a>
+        <a href="https://www.lesechos.fr" target="_blank" class="vt-source-link"><i class="fas fa-external-link-alt"></i> Les Échos</a>
         <a href="https://eur-lex.europa.eu" target="_blank" class="vt-source-link"><i class="fas fa-external-link-alt"></i> Directive NIS2</a>
+        <a href="https://www.proofpoint.com" target="_blank" class="vt-source-link"><i class="fas fa-external-link-alt"></i> Proofpoint</a>
       </div>
     </div>
 
   </section>
 
-  <!-- TABLEAU DE SYNTHÈSE -->
   <section id="synthese">
     <div class="section-header reveal">
       <span class="section-label">// 07 — tableau de synthèse</span>
