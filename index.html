@@ -641,6 +641,132 @@
       .vt-cards { grid-template-columns: 1fr; }
     }
 
+    /* RSS AUTOMATIQUE */
+    .rss-block {
+      max-width: 1000px;
+      margin: 2.5rem auto 0;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+    }
+    .rss-header {
+      padding: 1.4rem 1.6rem 1rem;
+      border-bottom: 1px solid var(--border);
+      background: linear-gradient(90deg, rgba(0,255,157,0.05), rgba(0,150,255,0.04));
+    }
+    .rss-title-row {
+      display: flex;
+      align-items: center;
+      gap: 0.7rem;
+      margin-bottom: 0.5rem;
+    }
+    .rss-dot {
+      width: 10px; height: 10px;
+      border-radius: 50%;
+      background: var(--accent);
+      animation: blink 1.5s ease-in-out infinite;
+    }
+    .rss-title-row h3 {
+      font-family: var(--font-display);
+      font-size: 1rem;
+      font-weight: 700;
+      margin: 0;
+    }
+    .rss-live {
+      font-family: var(--font-mono);
+      font-size: 0.62rem;
+      padding: 0.15rem 0.5rem;
+      border-radius: 3px;
+      background: rgba(0,255,157,0.12);
+      border: 1px solid rgba(0,255,157,0.3);
+      color: var(--accent);
+      letter-spacing: 0.1em;
+    }
+    .rss-desc {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      margin: 0;
+    }
+    .rss-feeds-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0;
+    }
+    .rss-feed-col {
+      padding: 1.2rem 1.4rem;
+      border-right: 1px solid var(--border);
+    }
+    .rss-feed-col:last-child { border-right: none; }
+    .rss-feed-label {
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+      color: var(--accent);
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      margin-bottom: 0.9rem;
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+    .rss-feed-label i { font-size: 0.65rem; }
+    .rss-loading {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: var(--text-muted);
+      font-size: 0.82rem;
+      font-family: var(--font-mono);
+    }
+    .rss-spinner {
+      width: 14px; height: 14px;
+      border: 2px solid var(--border);
+      border-top-color: var(--accent);
+      border-radius: 50%;
+      animation: spin 0.8s linear infinite;
+      display: inline-block;
+      flex-shrink: 0;
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+    .rss-item {
+      padding: 0.6rem 0;
+      border-bottom: 1px solid rgba(26,37,64,0.5);
+    }
+    .rss-item:last-child { border-bottom: none; }
+    .rss-item a {
+      font-size: 0.83rem;
+      color: var(--text);
+      text-decoration: none;
+      line-height: 1.4;
+      display: block;
+      margin-bottom: 0.2rem;
+      transition: color var(--tr);
+    }
+    .rss-item a:hover { color: var(--accent); }
+    .rss-item-date {
+      font-family: var(--font-mono);
+      font-size: 0.65rem;
+      color: var(--text-muted);
+    }
+    .rss-error {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      padding: 0.5rem 0;
+    }
+    .rss-footer {
+      padding: 0.7rem 1.4rem;
+      border-top: 1px solid var(--border);
+      font-family: var(--font-mono);
+      font-size: 0.65rem;
+      color: var(--text-muted);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .rss-footer i { color: var(--accent); font-size: 0.6rem; }
+    @media (max-width: 640px) { .rss-feeds-grid { grid-template-columns: 1fr; } .rss-feed-col { border-right: none; border-bottom: 1px solid var(--border); } }
+
     /* SYNTHÈSE */
     .synthese-wrapper { max-width: 1000px; margin: 0 auto; }
     .img-zone {
@@ -1503,9 +1629,46 @@
       </div>
     </div>
 
-  </section>
+    <!-- FLUX RSS AUTOMATIQUE -->
+    <div class="rss-block reveal">
+      <div class="rss-header">
+        <div class="rss-title-row">
+          <div class="rss-dot"></div>
+          <h3>Actualités cybersécurité en temps réel</h3>
+          <span class="rss-live">LIVE</span>
+        </div>
+        <p class="rss-desc">Les dernières alertes et publications officielles chargées automatiquement depuis les flux RSS du CERT-FR et de l'ANSSI.</p>
+      </div>
 
-  <section id="synthese">
+      <div class="rss-feeds-grid">
+
+        <!-- CERT-FR -->
+        <div class="rss-feed-col">
+          <div class="rss-feed-label">
+            <i class="fas fa-shield-alt"></i> CERT-FR — Alertes officielles
+          </div>
+          <div class="rss-list" id="rss-certfr">
+            <div class="rss-loading"><span class="rss-spinner"></span> Chargement...</div>
+          </div>
+        </div>
+
+        <!-- ANSSI -->
+        <div class="rss-feed-col">
+          <div class="rss-feed-label">
+            <i class="fas fa-lock"></i> ANSSI — Publications
+          </div>
+          <div class="rss-list" id="rss-anssi">
+            <div class="rss-loading"><span class="rss-spinner"></span> Chargement...</div>
+          </div>
+        </div>
+
+      </div>
+      <div class="rss-footer">
+        <i class="fas fa-sync-alt"></i> Mis à jour automatiquement à chaque chargement de la page
+      </div>
+    </div>
+
+  </section>
     <div class="section-header reveal">
       <span class="section-label">// 07 — tableau de synthèse</span>
       <h2 class="section-title">Tableau de <span>synthèse BTS</span></h2>
@@ -1804,6 +1967,35 @@
   </footer>
 
   <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+    // ── FLUX RSS AUTOMATIQUE ──────────────────────────────────────────────────
+    const RSS_API = 'https://api.rss2json.com/v1/api.json?rss_url=';
+    const rssFeeds = [
+      { id: 'rss-certfr', url: 'https://www.cert.ssi.gouv.fr/feed/', count: 5 },
+      { id: 'rss-anssi',  url: 'https://www.ssi.gouv.fr/feed/',      count: 5 },
+    ];
+    function fmtDate(s) {
+      try { return new Date(s).toLocaleDateString('fr-FR',{day:'2-digit',month:'short',year:'numeric'}); }
+      catch { return ''; }
+    }
+    async function loadFeed(f) {
+      const el = document.getElementById(f.id);
+      if (!el) return;
+      try {
+        const r = await fetch(`${RSS_API}${encodeURIComponent(f.url)}&count=${f.count}`);
+        const d = await r.json();
+        if (d.status !== 'ok' || !d.items?.length) throw new Error();
+        el.innerHTML = d.items.map(i => `
+          <div class="rss-item">
+            <a href="${i.link}" target="_blank" rel="noopener">${i.title}</a>
+            <span class="rss-item-date">${fmtDate(i.pubDate)}</span>
+          </div>`).join('');
+      } catch {
+        el.innerHTML = '<div class="rss-error">⚠ Flux temporairement indisponible.</div>';
+      }
+    }
+    rssFeeds.forEach(loadFeed);
+    // ─────────────────────────────────────────────────────────────────────────
+
     // Email anti-bot : reconstruction par JS
     (function() {
       const u = 'noahvienne.pro';
