@@ -1634,10 +1634,10 @@
       <div class="rss-header">
         <div class="rss-title-row">
           <div class="rss-dot"></div>
-          <h3>Actualités cybersécurité en temps réel</h3>
-          <span class="rss-live">LIVE</span>
+          <h3>Actualités cybersécurité — Sources officielles</h3>
+          <span class="rss-live">CERT-FR · ANSSI</span>
         </div>
-        <p class="rss-desc">Les dernières alertes et publications officielles chargées automatiquement depuis les flux RSS du CERT-FR et de l'ANSSI.</p>
+        <p class="rss-desc">Dernières alertes et publications officielles du CERT-FR et de l'ANSSI, mis à jour régulièrement.</p>
       </div>
 
       <div class="rss-feeds-grid">
@@ -1647,8 +1647,27 @@
           <div class="rss-feed-label">
             <i class="fas fa-shield-alt"></i> CERT-FR — Alertes officielles
           </div>
-          <div class="rss-list" id="rss-certfr">
-            <div class="rss-loading"><span class="rss-spinner"></span> Chargement...</div>
+          <div class="rss-list">
+            <div class="rss-item">
+              <a href="https://www.cert.ssi.gouv.fr/alerte/CERTFR-2026-ALE-004/" target="_blank" rel="noopener">Vulnérabilité dans F5 BIG-IP Access Policy Manager — exploitation active</a>
+              <span class="rss-item-date">31 mars 2026 · Alerte en cours</span>
+            </div>
+            <div class="rss-item">
+              <a href="https://www.cert.ssi.gouv.fr/alerte/CERTFR-2026-ALE-003/" target="_blank" rel="noopener">Note d'alerte — Ciblage des messageries instantanées</a>
+              <span class="rss-item-date">20 mars 2026 · Alerte en cours</span>
+            </div>
+            <div class="rss-item">
+              <a href="https://www.cert.ssi.gouv.fr/actualite/CERTFR-2026-ACT-017/" target="_blank" rel="noopener">Bulletin d'actualité — Vulnérabilités critiques du 06 au 12 avril 2026</a>
+              <span class="rss-item-date">13 avril 2026</span>
+            </div>
+            <div class="rss-item">
+              <a href="https://www.cert.ssi.gouv.fr/alerte/CERTFR-2026-ALE-001/" target="_blank" rel="noopener">Multiples vulnérabilités dans Ivanti Endpoint Manager Mobile</a>
+              <span class="rss-item-date">30 janvier 2026 · Alerte en cours</span>
+            </div>
+            <div class="rss-item">
+              <a href="https://www.cert.ssi.gouv.fr/cti/CERTFR-2026-CTI-002/" target="_blank" rel="noopener">Panorama de la cybermenace 2025 — Rapport annuel ANSSI</a>
+              <span class="rss-item-date">11 mars 2026</span>
+            </div>
           </div>
         </div>
 
@@ -1657,14 +1676,33 @@
           <div class="rss-feed-label">
             <i class="fas fa-lock"></i> ANSSI — Publications
           </div>
-          <div class="rss-list" id="rss-anssi">
-            <div class="rss-loading"><span class="rss-spinner"></span> Chargement...</div>
+          <div class="rss-list">
+            <div class="rss-item">
+              <a href="https://www.cert.ssi.gouv.fr/cti/CERTFR-2026-CTI-001/" target="_blank" rel="noopener">L'intelligence artificielle générative face aux attaques informatiques</a>
+              <span class="rss-item-date">04 février 2026</span>
+            </div>
+            <div class="rss-item">
+              <a href="https://www.cert.ssi.gouv.fr/cti/CERTFR-2025-CTI-003/" target="_blank" rel="noopener">Panorama de la cybermenace 2024 — Rapport complet</a>
+              <span class="rss-item-date">11 mars 2025</span>
+            </div>
+            <div class="rss-item">
+              <a href="https://cyber.gouv.fr/la-directive-nis-2" target="_blank" rel="noopener">La directive NIS 2 — Guide officiel ANSSI pour les entreprises</a>
+              <span class="rss-item-date">Mis à jour 2025</span>
+            </div>
+            <div class="rss-item">
+              <a href="https://www.cybermalveillance.gouv.fr/tous-nos-contenus/fiches-reflexes/rancongiciels-ransomwares" target="_blank" rel="noopener">Rançongiciels — Que faire si vous êtes victime ? (Cybermalveillance)</a>
+              <span class="rss-item-date">Mis à jour 2025</span>
+            </div>
+            <div class="rss-item">
+              <a href="https://www.cybermalveillance.gouv.fr/tous-nos-contenus/bonnes-pratiques/325" target="_blank" rel="noopener">Pourquoi et comment bien gérer ses sauvegardes ?</a>
+              <span class="rss-item-date">Mis à jour 2025</span>
+            </div>
           </div>
         </div>
 
       </div>
       <div class="rss-footer">
-        <i class="fas fa-sync-alt"></i> Mis à jour automatiquement à chaque chargement de la page
+        <i class="fas fa-external-link-alt"></i> Sources : cert.ssi.gouv.fr · cyber.gouv.fr · cybermalveillance.gouv.fr — Cliquez sur un article pour accéder à la page officielle
       </div>
     </div>
 
@@ -1967,42 +2005,6 @@
   </footer>
 
   <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
-    // ── FLUX RSS AUTOMATIQUE ──────────────────────────────────────────────────
-    const rssFeeds = [
-      { id: 'rss-certfr', url: 'https://www.cert.ssi.gouv.fr/feed/', count: 5 },
-      { id: 'rss-anssi',  url: 'https://www.ssi.gouv.fr/feed/',      count: 5 },
-    ];
-    function fmtDate(s) {
-      try { return new Date(s).toLocaleDateString('fr-FR',{day:'2-digit',month:'short',year:'numeric'}); }
-      catch { return ''; }
-    }
-    async function loadFeed(f) {
-      const el = document.getElementById(f.id);
-      if (!el) return;
-      try {
-        const proxy = `https://api.allorigins.win/get?url=${encodeURIComponent(f.url)}`;
-        const r = await fetch(proxy);
-        const d = await r.json();
-        const parser = new DOMParser();
-        const xml = parser.parseFromString(d.contents, 'text/xml');
-        const items = Array.from(xml.querySelectorAll('item')).slice(0, f.count);
-        if (!items.length) throw new Error();
-        el.innerHTML = items.map(i => {
-          const title = i.querySelector('title')?.textContent || '';
-          const link  = i.querySelector('link')?.textContent || '#';
-          const date  = i.querySelector('pubDate')?.textContent || '';
-          return `<div class="rss-item">
-            <a href="${link}" target="_blank" rel="noopener">${title}</a>
-            <span class="rss-item-date">${fmtDate(date)}</span>
-          </div>`;
-        }).join('');
-      } catch {
-        el.innerHTML = '<div class="rss-error">⚠ Flux temporairement indisponible.</div>';
-      }
-    }
-    rssFeeds.forEach(loadFeed);
-    // ─────────────────────────────────────────────────────────────────────────
-
     // Email anti-bot : reconstruction par JS
     (function() {
       const u = 'noahvienne.pro';
