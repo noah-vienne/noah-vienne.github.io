@@ -1968,7 +1968,6 @@
 
   <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
     // ── FLUX RSS AUTOMATIQUE ──────────────────────────────────────────────────
-    const RSS_API = 'https://api.rss2json.com/v1/api.json?rss_url=';
     const rssFeeds = [
       { id: 'rss-certfr', url: 'https://www.cert.ssi.gouv.fr/feed/', count: 5 },
       { id: 'rss-anssi',  url: 'https://www.ssi.gouv.fr/feed/',      count: 5 },
@@ -1981,14 +1980,22 @@
       const el = document.getElementById(f.id);
       if (!el) return;
       try {
-        const r = await fetch(`${RSS_API}${encodeURIComponent(f.url)}&count=${f.count}`);
+        const proxy = `https://api.allorigins.win/get?url=${encodeURIComponent(f.url)}`;
+        const r = await fetch(proxy);
         const d = await r.json();
-        if (d.status !== 'ok' || !d.items?.length) throw new Error();
-        el.innerHTML = d.items.map(i => `
-          <div class="rss-item">
-            <a href="${i.link}" target="_blank" rel="noopener">${i.title}</a>
-            <span class="rss-item-date">${fmtDate(i.pubDate)}</span>
-          </div>`).join('');
+        const parser = new DOMParser();
+        const xml = parser.parseFromString(d.contents, 'text/xml');
+        const items = Array.from(xml.querySelectorAll('item')).slice(0, f.count);
+        if (!items.length) throw new Error();
+        el.innerHTML = items.map(i => {
+          const title = i.querySelector('title')?.textContent || '';
+          const link  = i.querySelector('link')?.textContent || '#';
+          const date  = i.querySelector('pubDate')?.textContent || '';
+          return `<div class="rss-item">
+            <a href="${link}" target="_blank" rel="noopener">${title}</a>
+            <span class="rss-item-date">${fmtDate(date)}</span>
+          </div>`;
+        }).join('');
       } catch {
         el.innerHTML = '<div class="rss-error">⚠ Flux temporairement indisponible.</div>';
       }
