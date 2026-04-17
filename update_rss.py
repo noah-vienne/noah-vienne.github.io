@@ -22,42 +22,47 @@ FEEDS = [
         "icon": "fas fa-shield-alt",
     },
     {
-        "name": "ANSSI",
-        "url": "https://www.ssi.gouv.fr/feed/",
-        "label": "ANSSI — Publications",
-        "icon": "fas fa-lock",
+        "name": "LeMagIT",
+        "url": "https://www.lemagit.fr/rss/Securite.xml",
+        "label": "LeMagIT — Sécurité",
+        "icon": "fas fa-newspaper",
     },
     {
-        "name": "Cybermalveillance",
-        "url": "https://www.cybermalveillance.gouv.fr/feed/",
-        "label": "Cybermalveillance.gouv.fr",
-        "icon": "fas fa-user-shield",
+        "name": "01net",
+        "url": "https://www.01net.com/rss/actualites/securite/",
+        "label": "01net — Cybersécurité",
+        "icon": "fas fa-globe",
     },
 ]
 
-# Mots-clés pour filtrer les articles ransomware
+# Mots-clés pour filtrer — si AUCUN résultat, on affiche tout sans filtre
 KEYWORDS = [
     "ransomware", "rançongiciel", "rançon", "ransom",
-    "chiffrement", "extorsion", "lockbit", "blackcat",
-    "alphv", "ryuk", "conti", "phishing", "malware",
-    "cyberattaque", "cyber-attaque", "sauvegarde",
-    "nis2", "nis 2", "cybersécurité", "cybersecurite",
+    "chiffrement des données", "extorsion", "lockbit", "blackcat",
+    "alphv", "ryuk", "conti", "clop", "akira", "play ransomware",
+    "phishing", "hameçonnage", "cyberattaque", "cyber-attaque",
+    "malware", "logiciel malveillant", "sauvegarde", "backup",
+    "nis2", "nis 2", "double extorsion", "rançon",
+    "données chiffrées", "système chiffré", "attaque informatique",
+    "violation de données", "fuite de données",
 ]
 
-MAX_PER_FEED = 5      # Articles max par flux
-MAX_FALLBACK = 5      # Articles à afficher si aucun résultat filtré
+MAX_PER_FEED = 8      # Articles max par flux
+MAX_FALLBACK = 8      # Articles si aucun résultat filtré
 
-# Balises HTML de début et fin du bloc à remplacer
 MARKER_START = "<!-- FLUX RSS AUTOMATIQUE -->"
 MARKER_END   = "<!-- FIN FLUX RSS -->"
 
 # ── Helpers ────────────────────────────────────────────────────────────────────
 
-def fetch_feed(url: str) -> list[dict]:
-    """Télécharge et parse un flux RSS, retourne une liste d'articles."""
+def fetch_feed(url: str) -> list:
+    """Télécharge et parse un flux RSS."""
     try:
-        req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0"})
-        with urllib.request.urlopen(req, timeout=10) as resp:
+        req = urllib.request.Request(url, headers={
+            "User-Agent": "Mozilla/5.0 (compatible; RSS Reader)",
+            "Accept": "application/rss+xml, application/xml, text/xml",
+        })
+        with urllib.request.urlopen(req, timeout=15) as resp:
             raw = resp.read()
         root = ET.fromstring(raw)
         items = root.findall(".//item")
@@ -67,12 +72,14 @@ def fetch_feed(url: str) -> list[dict]:
             link    = item.findtext("link", "").strip()
             pub     = item.findtext("pubDate", "").strip()
             summary = item.findtext("description", "").strip()
+            # Nettoyer le HTML dans le résumé
+            summary = re.sub(r"<[^>]+>", " ", summary)
             if title and link:
                 result.append({
                     "title":   title,
                     "link":    link,
                     "date":    pub,
-                    "summary": summary,
+                    "summary": summary[:300],
                 })
         return result
     except Exception as e:
@@ -81,21 +88,23 @@ def fetch_feed(url: str) -> list[dict]:
 
 
 def matches_keywords(text: str) -> bool:
-    """Retourne True si le texte contient au moins un mot-clé ransomware."""
+    """Retourne True si le texte contient au moins un mot-clé."""
     low = text.lower()
     return any(kw in low for kw in KEYWORDS)
 
 
-def filter_articles(articles: list[dict], max_count: int) -> list[dict]:
-    """Garde les articles dont le titre ou le résumé contient un mot-clé."""
+def filter_articles(articles: list, max_count: int) -> list:
+    """Filtre les articles par mots-clés, ou retourne les plus récents si aucun."""
     filtered = [
         a for a in articles
         if matches_keywords(a["title"] + " " + a["summary"])
     ]
-    # Si aucun article filtré, on prend les plus récents sans filtre
-    if not filtered:
-        return articles[:max_count]
-    return filtered[:max_count]
+    if filtered:
+        print(f"     → {len(filtered)} articles filtrés (ransomware/cyber)")
+        return filtered[:max_count]
+    # Fallback : pas de filtre, on prend les plus récents
+    print(f"     → Aucun article filtré, affichage des {min(len(articles), max_count)} plus récents")
+    return articles[:max_count]
 
 
 def format_date(date_str: str) -> str:
@@ -103,7 +112,6 @@ def format_date(date_str: str) -> str:
     if not date_str:
         return ""
     try:
-        # Supprimer le fuseau horaire en texte type "+0200"
         date_str = re.sub(r"\s+[A-Z]{2,4}$", "", date_str.strip())
         formats = [
             "%a, %d %b %Y %H:%M:%S %z",
@@ -126,8 +134,8 @@ def format_date(date_str: str) -> str:
     return date_str[:16] if len(date_str) > 16 else date_str
 
 
-def build_rss_html(feeds_data: list[dict]) -> str:
-    """Génère le bloc HTML complet du flux RSS."""
+def build_rss_html(feeds_data: list) -> str:
+    """Génère le bloc HTML complet."""
     now = datetime.now(timezone.utc)
     update_str = f"{now.day:02d}/{now.month:02d}/{now.year} à {now.hour:02d}h{now.minute:02d} UTC"
 
@@ -138,16 +146,15 @@ def build_rss_html(feeds_data: list[dict]) -> str:
             for art in feed["articles"]:
                 date_display = format_date(art["date"])
                 date_html = f'<span class="rss-item-date">{date_display}</span>' if date_display else ""
-                # Tronquer les titres trop longs
                 title = art["title"]
-                if len(title) > 90:
-                    title = title[:87] + "…"
+                if len(title) > 100:
+                    title = title[:97] + "…"
                 items_html += f"""            <div class="rss-item">
               <a href="{art['link']}" target="_blank" rel="noopener">{title}</a>
               {date_html}
             </div>\n"""
         else:
-            items_html = '            <div class="rss-error">Aucun article récent trouvé.</div>\n'
+            items_html = '            <div class="rss-error">Flux temporairement indisponible.</div>\n'
 
         cols_html += f"""
         <!-- {feed['name']} -->
@@ -175,7 +182,7 @@ def build_rss_html(feeds_data: list[dict]) -> str:
 {cols_html}
       </div>
       <div class="rss-footer">
-        <i class="fas fa-sync-alt"></i> Mis à jour automatiquement chaque jour via GitHub Actions — Sources : cert.ssi.gouv.fr · ssi.gouv.fr · cybermalveillance.gouv.fr
+        <i class="fas fa-sync-alt"></i> Mis à jour automatiquement chaque jour via GitHub Actions — Sources : cert.ssi.gouv.fr · lemagit.fr · 01net.com
       </div>
     </div>
 
@@ -187,15 +194,10 @@ def update_html(html_path: str, new_block: str) -> bool:
     with open(html_path, "r", encoding="utf-8") as f:
         content = f.read()
 
-    # Vérifier que les deux marqueurs existent
-    if MARKER_START not in content:
-        print(f"  [ERREUR] Marqueur de début introuvable dans {html_path}", file=sys.stderr)
-        return False
-    if MARKER_END not in content:
-        print(f"  [ERREUR] Marqueur de fin introuvable dans {html_path}", file=sys.stderr)
+    if MARKER_START not in content or MARKER_END not in content:
+        print(f"  [ERREUR] Marqueurs introuvables dans {html_path}", file=sys.stderr)
         return False
 
-    # Remplacer tout ce qui est entre (et incluant) les deux marqueurs
     pattern = re.compile(
         re.escape(MARKER_START) + r".*?" + re.escape(MARKER_END),
         re.DOTALL
@@ -222,7 +224,6 @@ def main():
         articles = fetch_feed(feed["url"])
         print(f"     {len(articles)} articles récupérés")
         filtered = filter_articles(articles, MAX_PER_FEED)
-        print(f"     {len(filtered)} articles après filtrage ransomware")
         feeds_data.append({
             "name":     feed["name"],
             "label":    feed["label"],
