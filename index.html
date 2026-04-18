@@ -690,7 +690,7 @@
     }
     .rss-feeds-grid {
       display: grid;
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr;
       gap: 0;
     }
     .rss-feed-col {
@@ -1629,15 +1629,15 @@
       </div>
     </div>
 
-        <!-- FLUX RSS AUTOMATIQUE -->
+    <!-- FLUX RSS AUTOMATIQUE -->
     <div class="rss-block reveal">
       <div class="rss-header">
         <div class="rss-title-row">
           <div class="rss-dot"></div>
-          <h3>Actualités ransomwares — Sources officielles</h3>
-          <span class="rss-live">MÀJ AUTO</span>
+          <h3>Actualités cybersécurité — Sources officielles</h3>
+          <span class="rss-live">CERT-FR · ANSSI</span>
         </div>
-        <p class="rss-desc">Articles filtrés sur les ransomwares et la cybersécurité, mis à jour automatiquement chaque jour. Dernière mise à jour : 17/04/2026 à 10h31 UTC</p>
+        <p class="rss-desc">Dernières alertes et publications officielles du CERT-FR et de l'ANSSI, mis à jour régulièrement.</p>
       </div>
 
       <div class="rss-feeds-grid">
@@ -1645,28 +1645,28 @@
         <!-- CERT-FR -->
         <div class="rss-feed-col">
           <div class="rss-feed-label">
-            <i class="fas fa-shield-alt"></i> CERT-FR — Alertes & Bulletins
+            <i class="fas fa-shield-alt"></i> CERT-FR — Alertes officielles
           </div>
           <div class="rss-list">
             <div class="rss-item">
-              <a href="https://www.cert.ssi.gouv.fr/avis/CERTFR-2026-AVI-0320/" target="_blank" rel="noopener">Multiples vulnérabilités dans Roundcube (19 mars 2026)</a>
-              <span class="rss-item-date">19 mars 2026</span>
+              <a href="https://www.cert.ssi.gouv.fr/alerte/CERTFR-2026-ALE-004/" target="_blank" rel="noopener">Vulnérabilité dans F5 BIG-IP Access Policy Manager — exploitation active</a>
+              <span class="rss-item-date">31 mars 2026 · Alerte en cours</span>
             </div>
             <div class="rss-item">
-              <a href="https://www.cert.ssi.gouv.fr/avis/CERTFR-2026-AVI-0418/" target="_blank" rel="noopener">Multiples vulnérabilités dans Apache Tomcat (10 avril 2026)</a>
-              <span class="rss-item-date">10 avr. 2026</span>
+              <a href="https://www.cert.ssi.gouv.fr/alerte/CERTFR-2026-ALE-003/" target="_blank" rel="noopener">Note d'alerte — Ciblage des messageries instantanées</a>
+              <span class="rss-item-date">20 mars 2026 · Alerte en cours</span>
             </div>
             <div class="rss-item">
-              <a href="https://www.cert.ssi.gouv.fr/avis/CERTFR-2026-AVI-0420/" target="_blank" rel="noopener">Multiples vulnérabilités dans les produits Microsoft (10 avril 2026)</a>
-              <span class="rss-item-date">10 avr. 2026</span>
+              <a href="https://www.cert.ssi.gouv.fr/actualite/CERTFR-2026-ACT-017/" target="_blank" rel="noopener">Bulletin d'actualité — Vulnérabilités critiques du 06 au 12 avril 2026</a>
+              <span class="rss-item-date">13 avril 2026</span>
             </div>
             <div class="rss-item">
-              <a href="https://www.cert.ssi.gouv.fr/avis/CERTFR-2026-AVI-0415/" target="_blank" rel="noopener">Multiples vulnérabilités dans Tenable Security Center (10 avril 2026)</a>
-              <span class="rss-item-date">10 avr. 2026</span>
+              <a href="https://www.cert.ssi.gouv.fr/alerte/CERTFR-2026-ALE-001/" target="_blank" rel="noopener">Multiples vulnérabilités dans Ivanti Endpoint Manager Mobile</a>
+              <span class="rss-item-date">30 janvier 2026 · Alerte en cours</span>
             </div>
             <div class="rss-item">
-              <a href="https://www.cert.ssi.gouv.fr/avis/CERTFR-2026-AVI-0419/" target="_blank" rel="noopener">Multiples vulnérabilités dans Mattermost Desktop App (10 avril 2026)</a>
-              <span class="rss-item-date">10 avr. 2026</span>
+              <a href="https://www.cert.ssi.gouv.fr/cti/CERTFR-2026-CTI-002/" target="_blank" rel="noopener">Panorama de la cybermenace 2025 — Rapport annuel ANSSI</a>
+              <span class="rss-item-date">11 mars 2026</span>
             </div>
           </div>
         </div>
@@ -1677,23 +1677,32 @@
             <i class="fas fa-lock"></i> ANSSI — Publications
           </div>
           <div class="rss-list">
-            <div class="rss-error">Aucun article récent trouvé.</div>
-          </div>
-        </div>
-
-        <!-- Cybermalveillance -->
-        <div class="rss-feed-col">
-          <div class="rss-feed-label">
-            <i class="fas fa-user-shield"></i> Cybermalveillance.gouv.fr
-          </div>
-          <div class="rss-list">
-            <div class="rss-error">Aucun article récent trouvé.</div>
+            <div class="rss-item">
+              <a href="https://www.cert.ssi.gouv.fr/cti/CERTFR-2026-CTI-001/" target="_blank" rel="noopener">L'intelligence artificielle générative face aux attaques informatiques</a>
+              <span class="rss-item-date">04 février 2026</span>
+            </div>
+            <div class="rss-item">
+              <a href="https://www.cert.ssi.gouv.fr/cti/CERTFR-2025-CTI-003/" target="_blank" rel="noopener">Panorama de la cybermenace 2024 — Rapport complet</a>
+              <span class="rss-item-date">11 mars 2025</span>
+            </div>
+            <div class="rss-item">
+              <a href="https://cyber.gouv.fr/la-directive-nis-2" target="_blank" rel="noopener">La directive NIS 2 — Guide officiel ANSSI pour les entreprises</a>
+              <span class="rss-item-date">Mis à jour 2025</span>
+            </div>
+            <div class="rss-item">
+              <a href="https://www.cybermalveillance.gouv.fr/tous-nos-contenus/fiches-reflexes/rancongiciels-ransomwares" target="_blank" rel="noopener">Rançongiciels — Que faire si vous êtes victime ? (Cybermalveillance)</a>
+              <span class="rss-item-date">Mis à jour 2025</span>
+            </div>
+            <div class="rss-item">
+              <a href="https://www.cybermalveillance.gouv.fr/tous-nos-contenus/bonnes-pratiques/325" target="_blank" rel="noopener">Pourquoi et comment bien gérer ses sauvegardes ?</a>
+              <span class="rss-item-date">Mis à jour 2025</span>
+            </div>
           </div>
         </div>
 
       </div>
       <div class="rss-footer">
-        <i class="fas fa-sync-alt"></i> Mis à jour automatiquement chaque jour via GitHub Actions — Sources : cert.ssi.gouv.fr · ssi.gouv.fr · cybermalveillance.gouv.fr
+        <i class="fas fa-external-link-alt"></i> Sources : cert.ssi.gouv.fr · cyber.gouv.fr · cybermalveillance.gouv.fr — Cliquez sur un article pour accéder à la page officielle
       </div>
     </div>
 
