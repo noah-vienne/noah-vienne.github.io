@@ -16,22 +16,22 @@ import os
 
 FEEDS = [
     {
-        "name": "CERT-FR",
-        "url": "https://www.cert.ssi.gouv.fr/feed/",
-        "label": "CERT-FR — Alertes & Bulletins",
+        "name": "CERT-FR Alertes",
+        "url": "https://www.cert.ssi.gouv.fr/alerte/feed/",
+        "label": "CERT-FR — Alertes de sécurité",
+        "icon": "fas fa-exclamation-triangle",
+    },
+    {
+        "name": "ANSSI",
+        "url": "https://www.cert.ssi.gouv.fr/cti/feed/",
+        "label": "ANSSI — Publications & Rapports",
+        "icon": "fas fa-lock",
+    },
+    {
+        "name": "CERT-FR Bulletins",
+        "url": "https://www.cert.ssi.gouv.fr/actualite/feed/",
+        "label": "CERT-FR — Bulletins d'actualité",
         "icon": "fas fa-shield-alt",
-    },
-    {
-        "name": "LeMagIT",
-        "url": "https://www.lemagit.fr/rss/Securite.xml",
-        "label": "LeMagIT — Sécurité",
-        "icon": "fas fa-newspaper",
-    },
-    {
-        "name": "01net",
-        "url": "https://www.01net.com/rss/actualites/securite/",
-        "label": "01net — Cybersécurité",
-        "icon": "fas fa-globe",
     },
 ]
 
@@ -182,7 +182,7 @@ def build_rss_html(feeds_data: list) -> str:
 {cols_html}
       </div>
       <div class="rss-footer">
-        <i class="fas fa-sync-alt"></i> Mis à jour automatiquement chaque jour via GitHub Actions — Sources : cert.ssi.gouv.fr · lemagit.fr · 01net.com
+        <i class="fas fa-sync-alt"></i> Mis à jour automatiquement chaque jour via GitHub Actions — Sources : cert.ssi.gouv.fr/alerte · cert.ssi.gouv.fr/cti · cert.ssi.gouv.fr/actualite
       </div>
     </div>
 
