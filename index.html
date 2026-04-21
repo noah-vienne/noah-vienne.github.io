@@ -973,8 +973,9 @@
       <li><a href="#parcours">Parcours</a></li>
       <li><a href="#diplomes">Diplômes</a></li>
       <li><a href="#certifications">Certifications</a></li>
-      <li><a href="#stages">Stages</a></li>
       <li><a href="#competences">Compétences</a></li>
+      <li><a href="#stages">Stages</a></li>
+      <li><a href="#projets">Projets</a></li>
       <li><a href="#veille">Veille</a></li>
       <li><a href="#synthese">Synthèse</a></li>
     </ul>
@@ -1251,10 +1252,50 @@
     </div>
   </section>
 
+
+  <section id="competences">
+    <div class="section-header reveal">
+      <span class="section-label">// 04 — compétences techniques</span>
+      <h2 class="section-title">Mes <span>compétences</span></h2>
+      <p class="section-desc">Les outils et technologies maîtrisés au cours de ma formation et de mes stages.</p>
+    </div>
+    <div class="skills-wrapper">
+      <div class="skill-group reveal">
+        <div class="sg-title"><i class="fas fa-network-wired"></i> Réseaux & Supervision</div>
+        <div class="skill-list">
+          <span class="skill-tag">Cisco Packet Tracer</span>
+          <span class="skill-tag">Wireshark</span>
+          <span class="skill-tag">Zabbix</span>
+        </div>
+      </div>
+      <div class="skill-group reveal">
+        <div class="sg-title"><i class="fas fa-server"></i> Systèmes & Virtualisation</div>
+        <div class="skill-list">
+          <span class="skill-tag">Linux</span>
+          <span class="skill-tag">Windows</span>
+          <span class="skill-tag">VirtualBox</span>
+          <span class="skill-tag">Proxmox</span>
+          <span class="skill-tag">GLPI</span>
+          <span class="skill-tag">Active Directory</span>
+        </div>
+      </div>
+      <div class="skill-group reveal">
+        <div class="sg-title"><i class="fas fa-code"></i> Développement & Web</div>
+        <div class="skill-list">
+          <span class="skill-tag">Python</span>
+          <span class="skill-tag">SQL</span>
+          <span class="skill-tag">HTML / CSS</span>
+          <span class="skill-tag">WordPress</span>
+          <span class="skill-tag">Webself</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- STAGES -->
   <section id="stages">
     <div class="section-header reveal">
-      <span class="section-label">// 04 — stages</span>
+      <span class="section-label">// 05 — stages</span>
       <h2 class="section-title">Mes <span>stages</span></h2>
       <p class="section-desc">Détail de mes expériences professionnelles en entreprise.</p>
     </div>
@@ -1382,51 +1423,148 @@
     </div>
   </section>
 
-  <!-- COMPÉTENCES -->
-  <section id="competences">
+  <!-- PROJETS -->
+  <section id="projets">
     <div class="section-header reveal">
-      <span class="section-label">// 05 — compétences techniques</span>
-      <h2 class="section-title">Mes <span>compétences</span></h2>
-      <p class="section-desc">Les outils et technologies maîtrisés au cours de ma formation et de mes stages.</p>
+      <span class="section-label">// 06 — projets</span>
+      <h2 class="section-title">Mes <span>projets</span></h2>
+      <p class="section-desc">Projets techniques réalisés en formation — infrastructure réseau complète déployée au lycée Pierre Poivre.</p>
     </div>
-    <div class="skills-wrapper">
-      <div class="skill-group reveal">
-        <div class="sg-title"><i class="fas fa-network-wired"></i> Réseaux & Supervision</div>
-        <div class="skill-list">
-          <span class="skill-tag">Cisco Packet Tracer</span>
-          <span class="skill-tag">Wireshark</span>
-          <span class="skill-tag">Zabbix</span>
+    <div class="stages-grid">
+
+      <!-- GLPI -->
+      <div class="stage-card reveal">
+        <div class="stage-header">
+          <div class="stage-num">Projet 1</div>
+          <div class="stage-dates">2025 — 2026 · Infrastructure réseau</div>
+        </div>
+        <div class="stage-body">
+          <div class="stage-title-row">
+            <h3>Mise en place de GLPI</h3>
+            <div class="stage-lieu"><i class="fas fa-school"></i> Lycée Pierre Poivre — BTS SIO SISR</div>
+          </div>
+          <div class="stage-section-title"><i class="fas fa-bullseye"></i> Objectif</div>
+          <p class="stage-text">Déploiement de <strong>GLPI</strong> (Gestionnaire Libre de Parc Informatique) pour centraliser la gestion du parc informatique et mettre en place un système de ticketing permettant de tracer et résoudre les incidents.</p>
+          <div class="stage-section-title"><i class="fas fa-tasks"></i> Réalisations</div>
+          <ul class="stage-list">
+            <li>Installation de GLPI sur un serveur Linux (Apache, MySQL, PHP)</li>
+            <li>Configuration des catégories d'équipements et des utilisateurs</li>
+            <li>Mise en place du module helpdesk pour la gestion des tickets</li>
+            <li>Intégration avec FusionInventory pour l'inventaire automatique</li>
+          </ul>
+          <div class="stage-section-title"><i class="fas fa-tools"></i> Technologies</div>
+          <div class="stage-tags">
+            <span class="stage-tag">GLPI</span>
+            <span class="stage-tag">Linux</span>
+            <span class="stage-tag">Apache</span>
+            <span class="stage-tag">MySQL</span>
+            <span class="stage-tag">FusionInventory</span>
+          </div>
         </div>
       </div>
-      <div class="skill-group reveal">
-        <div class="sg-title"><i class="fas fa-server"></i> Systèmes & Virtualisation</div>
-        <div class="skill-list">
-          <span class="skill-tag">Linux</span>
-          <span class="skill-tag">Windows</span>
-          <span class="skill-tag">VirtualBox</span>
-          <span class="skill-tag">Proxmox</span>
-          <span class="skill-tag">GLPI</span>
-          <span class="skill-tag">Active Directory</span>
+
+      <!-- ZABBIX -->
+      <div class="stage-card reveal">
+        <div class="stage-header">
+          <div class="stage-num">Projet 2</div>
+          <div class="stage-dates">2025 — 2026 · Infrastructure réseau</div>
+        </div>
+        <div class="stage-body">
+          <div class="stage-title-row">
+            <h3>Mise en place de Zabbix</h3>
+            <div class="stage-lieu"><i class="fas fa-school"></i> Lycée Pierre Poivre — BTS SIO SISR</div>
+          </div>
+          <div class="stage-section-title"><i class="fas fa-bullseye"></i> Objectif</div>
+          <p class="stage-text">Déploiement de <strong>Zabbix</strong>, outil de supervision réseau open source, pour surveiller en temps réel l'état des serveurs, des équipements réseau et des services de l'infrastructure.</p>
+          <div class="stage-section-title"><i class="fas fa-tasks"></i> Réalisations</div>
+          <ul class="stage-list">
+            <li>Installation du serveur Zabbix et de l'interface web</li>
+            <li>Configuration des hôtes et des éléments supervisés (CPU, RAM, disque, réseau)</li>
+            <li>Mise en place des seuils d'alerte et des notifications</li>
+            <li>Création de tableaux de bord de supervision personnalisés</li>
+          </ul>
+          <div class="stage-section-title"><i class="fas fa-tools"></i> Technologies</div>
+          <div class="stage-tags">
+            <span class="stage-tag">Zabbix</span>
+            <span class="stage-tag">Linux</span>
+            <span class="stage-tag">SNMP</span>
+            <span class="stage-tag">Agent Zabbix</span>
+            <span class="stage-tag">Supervision</span>
+          </div>
         </div>
       </div>
-      <div class="skill-group reveal">
-        <div class="sg-title"><i class="fas fa-code"></i> Développement & Web</div>
-        <div class="skill-list">
-          <span class="skill-tag">Python</span>
-          <span class="skill-tag">SQL</span>
-          <span class="skill-tag">HTML / CSS</span>
-          <span class="skill-tag">WordPress</span>
-          <span class="skill-tag">Webself</span>
+
+      <!-- ACTIVE DIRECTORY -->
+      <div class="stage-card reveal">
+        <div class="stage-header">
+          <div class="stage-num">Projet 3</div>
+          <div class="stage-dates">2025 — 2026 · Infrastructure réseau</div>
+        </div>
+        <div class="stage-body">
+          <div class="stage-title-row">
+            <h3>Mise en place d'Active Directory</h3>
+            <div class="stage-lieu"><i class="fas fa-school"></i> Lycée Pierre Poivre — BTS SIO SISR</div>
+          </div>
+          <div class="stage-section-title"><i class="fas fa-bullseye"></i> Objectif</div>
+          <p class="stage-text">Déploiement d'un contrôleur de domaine <strong>Active Directory</strong> sous Windows Server pour centraliser l'authentification des utilisateurs, gérer les droits d'accès et appliquer des stratégies de sécurité (GPO) sur l'ensemble du réseau.</p>
+          <div class="stage-section-title"><i class="fas fa-tasks"></i> Réalisations</div>
+          <ul class="stage-list">
+            <li>Installation et configuration de Windows Server avec le rôle AD DS</li>
+            <li>Création de l'arborescence : domaine, unités organisationnelles, groupes</li>
+            <li>Création et gestion des comptes utilisateurs</li>
+            <li>Configuration des GPO pour les stratégies de mot de passe et de sécurité</li>
+            <li>Jonction des postes clients au domaine</li>
+          </ul>
+          <div class="stage-section-title"><i class="fas fa-tools"></i> Technologies</div>
+          <div class="stage-tags">
+            <span class="stage-tag">Windows Server</span>
+            <span class="stage-tag">Active Directory</span>
+            <span class="stage-tag">GPO</span>
+            <span class="stage-tag">DNS</span>
+            <span class="stage-tag">DHCP</span>
+          </div>
         </div>
       </div>
+
+      <!-- FOG -->
+      <div class="stage-card reveal">
+        <div class="stage-header">
+          <div class="stage-num">Projet 4</div>
+          <div class="stage-dates">2025 — 2026 · Infrastructure réseau</div>
+        </div>
+        <div class="stage-body">
+          <div class="stage-title-row">
+            <h3>Mise en place d'un serveur FOG</h3>
+            <div class="stage-lieu"><i class="fas fa-school"></i> Lycée Pierre Poivre — BTS SIO SISR</div>
+          </div>
+          <div class="stage-section-title"><i class="fas fa-bullseye"></i> Objectif</div>
+          <p class="stage-text">Déploiement d'un serveur <strong>FOG</strong> (Free Open-Source Ghost), solution de clonage et de déploiement d'images système par le réseau (PXE). Permet de déployer rapidement un système d'exploitation sur plusieurs postes simultanément sans support physique.</p>
+          <div class="stage-section-title"><i class="fas fa-tasks"></i> Réalisations</div>
+          <ul class="stage-list">
+            <li>Installation et configuration du serveur FOG sur Linux</li>
+            <li>Création d'une image système de référence (master)</li>
+            <li>Configuration du démarrage PXE sur les postes clients</li>
+            <li>Déploiement d'images sur plusieurs machines simultanément</li>
+            <li>Gestion des hôtes et des groupes de déploiement</li>
+          </ul>
+          <div class="stage-section-title"><i class="fas fa-tools"></i> Technologies</div>
+          <div class="stage-tags">
+            <span class="stage-tag">FOG Project</span>
+            <span class="stage-tag">Linux</span>
+            <span class="stage-tag">PXE</span>
+            <span class="stage-tag">Clonage réseau</span>
+            <span class="stage-tag">TFTP</span>
+          </div>
+        </div>
+      </div>
+
     </div>
   </section>
 
   <!-- VEILLE TECHNOLOGIQUE -->
-  <!-- VEILLE TECHNOLOGIQUE -->
   <section id="veille">
     <div class="section-header reveal">
-      <span class="section-label">// 06 — veille technologique</span>
+      <span class="section-label">// 07 — veille technologique</span>
       <h2 class="section-title">Veille <span>technologique</span></h2>
       <p class="section-desc">Les ransomwares : comment les entreprises se protègent — 18 mois de suivi (Oct. 2024 – Mars 2026)</p>
     </div>
@@ -1629,32 +1767,44 @@
       </div>
     </div>
 
-        <!-- FLUX RSS AUTOMATIQUE -->
+    <!-- FLUX RSS AUTOMATIQUE -->
     <div class="rss-block reveal">
       <div class="rss-header">
         <div class="rss-title-row">
           <div class="rss-dot"></div>
-          <h3>Actualités ransomwares — Sources officielles</h3>
-          <span class="rss-live">MÀJ AUTO</span>
+          <h3>Actualités cybersécurité — Sources officielles</h3>
+          <span class="rss-live">CERT-FR · ANSSI</span>
         </div>
-        <p class="rss-desc">Articles filtrés sur les ransomwares et la cybersécurité, mis à jour automatiquement chaque jour. Dernière mise à jour : 21/04/2026 à 10h54 UTC</p>
+        <p class="rss-desc">Dernières alertes et publications officielles du CERT-FR et de l'ANSSI, mis à jour régulièrement.</p>
       </div>
 
       <div class="rss-feeds-grid">
 
-        <!-- CERT-FR Alertes -->
+        <!-- CERT-FR -->
         <div class="rss-feed-col">
           <div class="rss-feed-label">
-            <i class="fas fa-exclamation-triangle"></i> CERT-FR — Alertes de sécurité
+            <i class="fas fa-shield-alt"></i> CERT-FR — Alertes officielles
           </div>
           <div class="rss-list">
             <div class="rss-item">
-              <a href="https://www.cert.ssi.gouv.fr/alerte/CERTFR-2024-ALE-003/" target="_blank" rel="noopener">[MàJ] Incident affectant les solutions AnyDesk (05 février 2024)</a>
-              <span class="rss-item-date">05 fév. 2024</span>
+              <a href="https://www.cert.ssi.gouv.fr/alerte/CERTFR-2026-ALE-004/" target="_blank" rel="noopener">Vulnérabilité dans F5 BIG-IP Access Policy Manager — exploitation active</a>
+              <span class="rss-item-date">31 mars 2026 · Alerte en cours</span>
             </div>
             <div class="rss-item">
-              <a href="https://www.cert.ssi.gouv.fr/alerte/CERTFR-2024-ALE-006/" target="_blank" rel="noopener">[MàJ] Vulnérabilité dans Palo Alto Networks GlobalProtect (12 avril 2024)</a>
-              <span class="rss-item-date">12 avr. 2024</span>
+              <a href="https://www.cert.ssi.gouv.fr/alerte/CERTFR-2026-ALE-003/" target="_blank" rel="noopener">Note d'alerte — Ciblage des messageries instantanées</a>
+              <span class="rss-item-date">20 mars 2026 · Alerte en cours</span>
+            </div>
+            <div class="rss-item">
+              <a href="https://www.cert.ssi.gouv.fr/actualite/CERTFR-2026-ACT-017/" target="_blank" rel="noopener">Bulletin d'actualité — Vulnérabilités critiques du 06 au 12 avril 2026</a>
+              <span class="rss-item-date">13 avril 2026</span>
+            </div>
+            <div class="rss-item">
+              <a href="https://www.cert.ssi.gouv.fr/alerte/CERTFR-2026-ALE-001/" target="_blank" rel="noopener">Multiples vulnérabilités dans Ivanti Endpoint Manager Mobile</a>
+              <span class="rss-item-date">30 janvier 2026 · Alerte en cours</span>
+            </div>
+            <div class="rss-item">
+              <a href="https://www.cert.ssi.gouv.fr/cti/CERTFR-2026-CTI-002/" target="_blank" rel="noopener">Panorama de la cybermenace 2025 — Rapport annuel ANSSI</a>
+              <span class="rss-item-date">11 mars 2026</span>
             </div>
           </div>
         </div>
@@ -1662,44 +1812,35 @@
         <!-- ANSSI -->
         <div class="rss-feed-col">
           <div class="rss-feed-label">
-            <i class="fas fa-lock"></i> ANSSI — Publications & Rapports
+            <i class="fas fa-lock"></i> ANSSI — Publications
           </div>
           <div class="rss-list">
             <div class="rss-item">
-              <a href="https://www.cert.ssi.gouv.fr/cti/CERTFR-2022-CTI-002/" target="_blank" rel="noopener">Panorama de la menace informatique 2021 (09 mars 2022)</a>
-              <span class="rss-item-date">09 mars 2022</span>
+              <a href="https://www.cert.ssi.gouv.fr/cti/CERTFR-2026-CTI-001/" target="_blank" rel="noopener">L'intelligence artificielle générative face aux attaques informatiques</a>
+              <span class="rss-item-date">04 février 2026</span>
             </div>
             <div class="rss-item">
-              <a href="https://www.cert.ssi.gouv.fr/cti/CERTFR-2023-CTI-003/" target="_blank" rel="noopener">Le Ransomware-as-a-Service LockBit (14 juin 2023)</a>
-              <span class="rss-item-date">14 juin 2023</span>
+              <a href="https://www.cert.ssi.gouv.fr/cti/CERTFR-2025-CTI-003/" target="_blank" rel="noopener">Panorama de la cybermenace 2024 — Rapport complet</a>
+              <span class="rss-item-date">11 mars 2025</span>
             </div>
             <div class="rss-item">
-              <a href="https://www.cert.ssi.gouv.fr/cti/CERTFR-2023-CTI-007/" target="_blank" rel="noopener">FIN 12 : Un groupe cybercriminel aux multiples rançongiciels (18 septembre 2023)</a>
-              <span class="rss-item-date">18 sep. 2023</span>
+              <a href="https://cyber.gouv.fr/la-directive-nis-2" target="_blank" rel="noopener">La directive NIS 2 — Guide officiel ANSSI pour les entreprises</a>
+              <span class="rss-item-date">Mis à jour 2025</span>
             </div>
             <div class="rss-item">
-              <a href="https://www.cert.ssi.gouv.fr/cti/CERTFR-2026-CTI-002/" target="_blank" rel="noopener">Panorama de la cybermenace 2025 (11 mars 2026)</a>
-              <span class="rss-item-date">11 mars 2026</span>
+              <a href="https://www.cybermalveillance.gouv.fr/tous-nos-contenus/fiches-reflexes/rancongiciels-ransomwares" target="_blank" rel="noopener">Rançongiciels — Que faire si vous êtes victime ? (Cybermalveillance)</a>
+              <span class="rss-item-date">Mis à jour 2025</span>
             </div>
-          </div>
-        </div>
-
-        <!-- CERT-FR Bulletins -->
-        <div class="rss-feed-col">
-          <div class="rss-feed-label">
-            <i class="fas fa-shield-alt"></i> CERT-FR — Bulletins d'actualité
-          </div>
-          <div class="rss-list">
             <div class="rss-item">
-              <a href="https://www.cert.ssi.gouv.fr/actualite/CERTFR-2025-ACT-051/" target="_blank" rel="noopener">Attaque par la chaîne d’approvisionnement de plusieurs paquets NPM (27 novembre 2025)</a>
-              <span class="rss-item-date">27 nov. 2025</span>
+              <a href="https://www.cybermalveillance.gouv.fr/tous-nos-contenus/bonnes-pratiques/325" target="_blank" rel="noopener">Pourquoi et comment bien gérer ses sauvegardes ?</a>
+              <span class="rss-item-date">Mis à jour 2025</span>
             </div>
           </div>
         </div>
 
       </div>
       <div class="rss-footer">
-        <i class="fas fa-sync-alt"></i> Mis à jour automatiquement chaque jour via GitHub Actions — Sources : cert.ssi.gouv.fr/alerte · cert.ssi.gouv.fr/cti · cert.ssi.gouv.fr/actualite
+        <i class="fas fa-external-link-alt"></i> Sources : cert.ssi.gouv.fr · cyber.gouv.fr · cybermalveillance.gouv.fr — Cliquez sur un article pour accéder à la page officielle
       </div>
     </div>
 
@@ -1710,7 +1851,7 @@
   <!-- TABLEAU DE SYNTHÈSE -->
   <section id="synthese">
     <div class="section-header reveal">
-      <span class="section-label">// 07 — tableau de synthèse</span>
+      <span class="section-label">// 08 — tableau de synthèse</span>
       <h2 class="section-title">Tableau de <span>synthèse BTS</span></h2>
       <p class="section-desc">Tableau de synthèse des réalisations professionnelles — Épreuve E5 · Session 2026 · Option SISR</p>
     </div>
@@ -1831,7 +1972,7 @@
               <td style="text-align:center"></td>
               <td style="text-align:center"><span class="synthese-check">✓</span></td>
               <td style="text-align:center"><span class="synthese-check">✓</span></td>
-              <td style="text-align:center"><span class="synthese-check">✓</span></td>
+              <td style="text-align:center"></td>
             </tr>
 
             <tr>
@@ -1875,6 +2016,17 @@
               <td style="text-align:center"></td>
               <td style="text-align:center"><span class="synthese-check">✓</span></td>
               <td style="text-align:center"></td>
+              <td style="text-align:center"></td>
+            </tr>
+
+            <tr>
+              <td>Mise en place d'un serveur FOG</td>
+              <td style="color:var(--text-muted);font-size:0.8rem">2025–2026</td>
+              <td style="text-align:center"><span class="synthese-check">✓</span></td>
+              <td style="text-align:center"></td>
+              <td style="text-align:center"></td>
+              <td style="text-align:center"></td>
+              <td style="text-align:center"><span class="synthese-check">✓</span></td>
               <td style="text-align:center"></td>
             </tr>
 
